@@ -1,0 +1,53 @@
+@import url("https://fonts.cdnfonts.com/css/marine-sikona");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: auto;
+  height: 100%;
+}
+
+body {
+  background-color: #fcfff6;
+}
+
+footer {
+  background-color: #ecf0e4;
+}
+
+p,
+h2,
+h3 {
+  font-family: "Lato";
+  text-decoration: none;
+  color: #494242;
+}
+
+p {
+  font-size: 18px;
+}
+
+h1 {
+  font-family: "Marine Sikona", sans-serif;
+  color: #5c604d;
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 780px) {
+  p {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+}
