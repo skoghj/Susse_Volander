@@ -1,16 +1,179 @@
----
+<!DOCTYPE html>
+<html lang="da">
 
----
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Background Image</title>
+    <link rel="stylesheet" href="layout.css">
+</head>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astronauts!</h1>
-	</body>
+<body>
+    <main>
+        <div class="container">
+            <article class="intro">
+                <img id="frontpage_img" src="/images/Is_this_the_one.png" alt="Your Image" class="image">
+                <div class="front_pos_text">
+                    <h1 id="susse_volander_title">SUSSE VOLANDER</h1>
+                    <p>Velkommen til mit digitale galleri! Udforsk en verden af farver, følelser og kreativitet gennem
+                        maleri, og oplev unikke værker, der vækker glæde.</p>
+                    <div class="middle">
+                        <button>Shop her!</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <article class="front_om_mig">
+            <h3 class="h3_text">Om Susse</h3>
+            <p class="spacing">Jeg er Susse Volander, en kunstner med et overflødighedshorn af kreativitet! Mine
+                malerier er legende og
+                fyldt med liv, hvor jeg elsker at udforske forskellige teknikker og materialer. Gennem mine workshops
+                inviterer jeg andre til at udfolde deres kreativitet og finde inspiration i det ukendte. Sammen kan
+                vi skabe et rum for fri udfoldelse og drømmende eksperimenter!
+            </p>
+            <button>Vid mere om mig</button>
+            <div class="portrait_container">
+                <img id="big_flower" src="/images/flower.svg" alt="big flower">
+                <img id="small_flower" src="/images/flower.svg" alt="small flower">
+                <img src="/images/susse_portrait.png" alt="susse_portrait">
+            </div>
+        </article>
+
+        <div class="front_gallery_container">
+            <article class="front_gallery_text">
+                <h3 class="h3_text">Tidligere værker</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus nisi quidem optio error
+                    repudiandae,
+                    labore laborum, veniam quae ea atque repellat fugiat ad ullam. Mollitia inventore velit esse officia
+                    labore.</p>
+            </article>
+        </div>
+    </main>
+</body>
+
 </html>
+
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: auto; /* Adjust the width of the image */
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+.intro h1 {
+  margin: auto;
+  font-size: 45px;
+}
+
+.container {
+  position: relative;
+  width: 150%; /* Adjust the width of the container */
+  height: 100%; /* Ensure the container covers the height of the viewport */
+  overflow: hidden; /* Hide overflow */
+}
+
+.front_pos_text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-85%, -50%);
+  color: white;
+}
+
+#susse_volander_title {
+  margin-bottom: 10px;
+}
+
+.middle {
+  margin-top: 15px;
+}
+.h3_text {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#frontpage_img {
+  width: 160%; /* Adjust the width of the image for mobile view */
+  height: auto;
+}
+.spacing {
+  margin-bottom: 15px;
+}
+
+.container {
+  width: 100%; /* Set width to 100% for mobile view */
+  overflow: hidden; /* Hide overflow on mobile devices */
+}
+
+.front_om_mig,
+.front_gallery_container {
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 450px;
+}
+
+.portrait_container {
+  position: relative;
+  max-width: 450px;
+}
+
+#big_flower {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  left: 68%;
+  top: 5%;
+}
+
+#small_flower {
+  position: absolute;
+  width: 60px;
+  height: auto;
+  left: 0%;
+  top: 80%;
+}
+
+@keyframes rock {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+#big_flower,
+#small_flower {
+  animation: rock 5s ease-in-out infinite alternate; /* Adjust the animation duration and timing function as needed */
+}
+
+/* .front_gallery_container {
+  height: 100%;
+  width: 100%;  
+} */
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+  }
+
+.hidden {
+  opacity: 0;
+}
+
+front_om_mig @media screen and (max-width: 768px) {
+}
+
+</style>
+
+<script>
+
+</script>
