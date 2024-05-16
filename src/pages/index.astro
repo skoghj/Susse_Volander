@@ -1,3 +1,7 @@
+---
+import Frontgallery from "../components/Frontgallery.astro";
+---
+
 <!DOCTYPE html>
 <html lang="da">
 
@@ -38,16 +42,12 @@
                 <img src="/images/susse_portrait.png" alt="susse_portrait">
             </div>
         </article>
-
-        <div class="front_gallery_container">
-            <article class="front_gallery_text">
-                <h3 class="h3_text">Tidligere værker</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus nisi quidem optio error
-                    repudiandae,
-                    labore laborum, veniam quae ea atque repellat fugiat ad ullam. Mollitia inventore velit esse officia
-                    labore.</p>
-            </article>
-        </div>
+        <Frontgallery></Frontgallery>
+        <article>
+          <div class="container">
+          <img id="front_workshop_img" src="/images/workshop_background_front.png" alt="workshop front image">
+          </div>
+        </article>
     </main>
 </body>
 
@@ -82,7 +82,7 @@ img {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-85%, -50%);
+  transform: translate(-70%, -50%);
   color: white;
 }
 
@@ -112,10 +112,11 @@ img {
   overflow: hidden; /* Hide overflow on mobile devices */
 }
 
-.front_om_mig,
-.front_gallery_container {
+.front_om_mig, {
   margin-left: 20px;
   margin-right: 20px;
+}
+.front_om_mig{
   max-width: 450px;
 }
 
@@ -157,17 +158,10 @@ img {
   animation: rock 5s ease-in-out infinite alternate; /* Adjust the animation duration and timing function as needed */
 }
 
-/* .front_gallery_container {
-  height: 100%;
-  width: 100%;  
-} */
   @media only screen and (max-width: 480px) {
     width: 100%;
   }
 
-.hidden {
-  opacity: 0;
-}
 
 front_om_mig @media screen and (max-width: 768px) {
 }
