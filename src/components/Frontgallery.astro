@@ -3,11 +3,10 @@
 ---
 <div class="front_gallery_container">
     <article class="front_gallery_text">
-        <h2 class="h3_text">Tidligere værker</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus nisi quidem optio error
-            repudiandae,
-            labore laborum, veniam quae ea atque repellat fugiat ad ullam. Mollitia inventore velit esse officia
-            labore.</p>
+        <h2 class="spacing">Tidligere værker</h2>
+        <p class="spacing">Kære venner, tag et ømt kig tilbage på disse nøje udvalgte værker fra min tidligere skabninger! Hvert maleri er som et vindue ind i min kunstneriske rejse, en eksplosion af liv og farve, der fanger et unikt øjeblik og udfolder sig på lærredet!
+        </p>
+            <button class="spacing">Galleri</button>
     </article>
    <div class="carrousel_gallery1">
     <body>
@@ -27,7 +26,17 @@
   
         <style>
           /*carousel (kode lånt fra: https://freefrontend.com/css-carousels)*/
-  
+
+.h3_text {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+          .spacing {
+  margin-bottom: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
 .front_gallery_container{
   background-image: url("/images/neutral_background.svg");
   background-repeat: no-repeat;
@@ -38,6 +47,16 @@
 .front_gallery_text{
     margin-top: 90px;
 }
+
+@media screen and (min-width: 768px) {
+    .front_gallery_text{
+        text-align: center;
+        max-width: 950px;
+        margin: 120px auto auto;
+    }
+}
+
+
 
           .carrousel_gallery1 {
             height: 500px;

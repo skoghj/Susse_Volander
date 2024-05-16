@@ -14,6 +14,7 @@ import "../styles/style.css";
     <title>Responsive Background Image</title>
     <link rel="stylesheet" href="layout.css">
     <link href="https://fonts.cdnfonts.com/css/marine-sikona" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@ import "../styles/style.css";
                 <img id="frontpage_img" src="/images/Is_this_the_one.png" alt="Your Image" class="image">
                 <div class="front_pos_text">
                     <h1 id="susse_volander_title">SUSSE VOLANDER</h1>
-                    <p>Velkommen til mit digitale galleri! Udforsk en verden af farver, følelser og kreativitet gennem
+                    <p id="front_image_text">Velkommen til mit digitale galleri! Udforsk en verden af farver, følelser og kreativitet gennem
                         maleri, og oplev unikke værker, der vækker glæde.</p>
                     <div class="middle">
                         <button>Shop her!</button>
@@ -33,14 +34,16 @@ import "../styles/style.css";
             </article>
         </div>
         <article class="front_om_mig">
-            <h2 class="h3_text">Om Susse</h2>
+          <article id="middle_spacing">
+            <h2 class="spacing">Om Susse</h2>
             <p class="spacing">Jeg er Susse Volander, en kunstner med et overflødighedshorn af kreativitet! Mine
                 malerier er legende og
                 fyldt med liv, hvor jeg elsker at udforske forskellige teknikker og materialer. Gennem mine workshops
                 inviterer jeg andre til at udfolde deres kreativitet og finde inspiration i det ukendte. Sammen kan
                 vi skabe et rum for fri udfoldelse og drømmende eksperimenter!
             </p>
-            <button>Vid mere om mig</button>
+            <button class="spacing">Vid mere om mig</button>
+          </article>
             <div class="portrait_container">
                 <img id="big_flower" src="/images/flower.svg" alt="big flower">
                 <img id="small_flower" src="/images/flower.svg" alt="small flower">
@@ -48,11 +51,33 @@ import "../styles/style.css";
             </div>
         </article>
         <Frontgallery></Frontgallery>
-        <article>
-          <div class="container">
-          <img id="front_workshop_img" src="/images/workshop_background_front.png" alt="workshop front image">
+        <article class="container">
+          <div class="image-container">
+            <img id="front_workshop_img" src="/images/workshop_background_front.png" alt="workshop front image">
+            <div class="text-container">
+              <div class="white-box">
+                <h2>Mine workshops</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut!</p>
+                <button>Mine workshops</button>
+              </div>
+            </div>
           </div>
         </article>
+
+        <div class="form">
+          <div>
+            <h2>Workshop mailing list</h2>
+            <p>Sign up og få at vide hvad den næste workshop vil være om</p>
+          </div>
+          <form class="email_form" name="email-form">
+            <div class="input-group">
+              <input class="emailform" type="email" placeholder="Please enter your email" required />
+              <button class="email-icon" type="submit"><i class="fa-regular fa-envelope"></i></button>
+            </div>
+          </form>
+        </div>
+        
     </main>
 </body>
 
@@ -85,14 +110,20 @@ img {
 
 .front_pos_text {
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-70%, -50%);
-  color: white;
+  top: 45%;
+  left: 2%;
+  transform: translate(-2%, -50%);
+  padding: 20px; /* Adjust as needed */
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
-#susse_volander_title {
+#susse_volander_title, #front_image_text {
   margin-bottom: 10px;
+  color:#fcfff6;
+}
+#front_image_text{
+  max-width: 450px;
 }
 
 .middle {
@@ -110,6 +141,8 @@ img {
 }
 .spacing {
   margin-bottom: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .container {
@@ -117,17 +150,15 @@ img {
   overflow: hidden; /* Hide overflow on mobile devices */
 }
 
-.front_om_mig, {
+.front_om_mig {
   margin-left: 20px;
   margin-right: 20px;
-}
-.front_om_mig{
-  max-width: 450px;
 }
 
 .portrait_container {
   position: relative;
   max-width: 450px;
+  margin: 0 auto;
 }
 
 #big_flower {
@@ -163,12 +194,118 @@ img {
   animation: rock 5s ease-in-out infinite alternate; /* Adjust the animation duration and timing function as needed */
 }
 
-  @media only screen and (max-width: 480px) {
-    width: 100%;
+.image-container {
+  position: relative;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translate(-2%, -50%);
+  padding: 20px; /* Adjust as needed */
+}
+
+.white-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+}
+
+.white-box button {
+  background-color: #007bff; /* Example button color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/*//////KONTAKT FORMULAR //////////*/
+.form {
+    margin: 0 auto;
+    color: #f2f2f2;
+    background-color: white;
+    padding: 40px 40px;
+  }
+  .form p {
+    padding-top: 10px;
   }
 
+  .email_form {
+    width: 100%;
+    max-width: 500px;
+    padding-top: 20px;
+  }
 
-front_om_mig @media screen and (max-width: 768px) {
+  .input-group {
+    position: relative;
+    display: flex;
+  }
+
+  .emailform {
+    width: calc(100% - 40px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0px 0px 5px;
+    flex: 1;
+  }
+
+  .email-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background-color: #969696;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  .email-icon i {
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+@media screen and (min-width: 768px) {
+  #frontpage_img {
+  width: 100%; /* Adjust the width of the image for mobile view */
+}
+.container {
+  position: relative;
+  width: 100%; /* Adjust the width of the container */
+  height: 100%; /* Ensure the container covers the height of the viewport */
+  overflow: hidden; /* Hide overflow */
+}
+.front_pos_text {
+  top: 35%;
+}
+.front_om_mig {
+display: grid;
+grid-template-columns: 1.5Sfr 1fr;
+}
+
+#middle_spacing{
+  margin: auto;
+}
+
+.white-box{
+  text-align: center;
+  max-width: 70%;
+  margin: auto;
+}
+.white-box h2{
+  margin-bottom: 15px;
+}
+.form, .email_form{
+text-align: center;
+margin: auto;
+}
 }
 
 </style>
