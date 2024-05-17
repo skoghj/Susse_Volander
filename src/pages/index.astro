@@ -24,7 +24,7 @@ import Pink_knap from "../components/Pink_knap.astro";
     <main>
         <div class="container">
             <article class="intro">
-                <img id="frontpage_img" src="/images/Is_this_the_one.png" alt="Your Image" class="image">
+                <img id="frontpage_img" src="/images/webpp/frontpage_background.webp" alt="Your Image" class="image">
                 <div class="front_pos_text">
                     <h1 id="susse_volander_title">SUSSE VOLANDER</h1>
                     <p id="front_image_text">Velkommen til mit digitale galleri! Udforsk en verden af farver, følelser og kreativitet gennem
@@ -36,15 +36,17 @@ import Pink_knap from "../components/Pink_knap.astro";
             </article>
         </div>
         <article class="front_om_mig">
-          <article id="middle_spacing">
+          <article class="middle">
             <h2 class="spacing">Om Susse</h2>
-            <p class="spacing">Jeg er Susse Volander, en kunstner med et overflødighedshorn af kreativitet! Mine
+            <p>Jeg er Susse Volander, en kunstner med et overflødighedshorn af kreativitet! Mine
                 malerier er legende og
                 fyldt med liv, hvor jeg elsker at udforske forskellige teknikker og materialer. Gennem mine workshops
                 inviterer jeg andre til at udfolde deres kreativitet og finde inspiration i det ukendte. Sammen kan
                 vi skabe et rum for fri udfoldelse og drømmende eksperimenter!
             </p>
-            <button class="spacing">Læs mere</button>
+            <div class="spacing">
+              <Pink_knap linknavn="Læs mere"></Pink_knap>
+            </div>
           </article>
             <div class="portrait_container">
                 <img id="big_flower" src="/images/flower.svg" alt="big flower">
@@ -58,10 +60,10 @@ import Pink_knap from "../components/Pink_knap.astro";
             <img id="front_workshop_img" src="/images/workshop_background_front.png" alt="workshop front image">
             <div class="text-container">
               <div class="white-box">
-                <h2>Mine workshops</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut!</p>
-                <button>Mine workshops</button>
+                <h2 class="spacing">Mine workshops</h2>
+                <p class="spacing">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="spacing">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut!</p>
+                <Pink_knap linknavn="Mine workshops"></Pink_knap>
               </div>
             </div>
           </div>
@@ -69,8 +71,7 @@ import Pink_knap from "../components/Pink_knap.astro";
 
         <div class="form">
           <div>
-            <h2>Workshop mailing list</h2>
-            <p>Sign up og få at vide hvad den næste workshop vil være om</p>
+            <h2 class="spacing">Workshop mailing list</h2>
           </div>
           <form class="email_form" name="email-form">
             <div class="input-group">
@@ -116,9 +117,7 @@ img {
   top: 45%;
   left: 2%;
   transform: translate(-2%, -50%);
-  padding: 20px; /* Adjust as needed */
-  margin-left: 40px;
-  margin-right: 40px;
+  margin: 0 33px;
 }
 
 #susse_volander_title, #front_image_text {
@@ -130,7 +129,7 @@ img {
 }
 
 .middle {
-  margin-top: 15px;
+  margin: auto;
 }
 .h3_text {
   margin-top: 30px;
@@ -143,19 +142,16 @@ img {
   height: auto;
 }
 .spacing {
-  margin-bottom: 15px;
-  margin-left: 50px;
-  margin-right: 50px;
+margin: 15px 0;
 }
-
 .container {
   width: 100%; /* Set width to 100% for mobile view */
   overflow: hidden; /* Hide overflow on mobile devices */
 }
 
 .front_om_mig {
-  margin-left: 20px;
-  margin-right: 20px;
+
+margin: auto 33px;
 }
 
 .portrait_container {
@@ -168,7 +164,7 @@ img {
   position: absolute;
   width: 80px;
   height: auto;
-  left: 88%;
+  left: 83%;
   top: 5%;
 }
 
@@ -206,7 +202,6 @@ img {
   top: 50%;
   left: 4%;
   transform: translate(-2%, -50%);
-  padding: 20px; /* Adjust as needed */
 }
 
 .white-box {
@@ -228,19 +223,22 @@ img {
 
 /*//////KONTAKT FORMULAR //////////*/
 .form {
-    margin: 0 auto;
+    margin: 15px auto;
     color: #f2f2f2;
-    background-color: white;
-    padding: 40px 40px;
+    margin: 15px 33px;
+    display: flex;
+    justify-content: center;
   }
   .form p {
     padding-top: 10px;
   }
 
+
+
   .email_form {
     width: 100%;
     max-width: 500px;
-    padding-top: 20px;
+    margin: auto;
   }
 
   .input-group {
@@ -253,7 +251,6 @@ img {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px 0px 0px 5px;
-    flex: 1;
   }
 
   .email-icon {
@@ -266,6 +263,10 @@ img {
     border: none;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .email-icon:hover{
+    background-color: #8AAF9D;
   }
 
   .email-icon i {
@@ -287,17 +288,15 @@ img {
 }
 .front_pos_text {
   top: 35%;
-  left: 6%;
+  left: 7%;
+  margin: 0 0;
 }
 .front_om_mig {
 display: grid;
-grid-template-columns: 1.5fr 1fr;
+grid-template-columns: 1fr 1fr;
 margin: auto 6%;
 }
 
-#middle_spacing{
-  margin: auto;
-}
 
 .white-box{
   text-align: center;
@@ -307,12 +306,19 @@ margin: auto 6%;
 .white-box h2{
   margin-bottom: 15px;
 }
-.form, .email_form{
+.email_form{
 text-align: center;
-margin: auto;
-}
+margin: auto 15px;
+justify-content: center;
 }
 
+}
+
+@media screen and (min-width: 1200px) {
+.front_om_mig {
+  margin: auto 19%;
+}
+}
 </style>
 
 <script>
