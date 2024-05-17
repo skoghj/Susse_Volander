@@ -3,6 +3,7 @@ import Frontgallery from "../components/Frontgallery.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/style.css";
+import Pink_knap from "../components/Pink_knap.astro";
 ---
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@ import "../styles/style.css";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
-    <title>Responsive Background Image</title>
+    <title>Frontpage</title>
     <link rel="stylesheet" href="layout.css">
     <link href="https://fonts.cdnfonts.com/css/marine-sikona" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
@@ -29,7 +30,7 @@ import "../styles/style.css";
                     <p id="front_image_text">Velkommen til mit digitale galleri! Udforsk en verden af farver, følelser og kreativitet gennem
                         maleri, og oplev unikke værker, der vækker glæde.</p>
                     <div class="middle">
-                        <button>Shop her!</button>
+                        <Pink_knap linknavn="Se shop"></Pink_knap>
                     </div>
                 </div>
             </article>
@@ -167,7 +168,7 @@ img {
   position: absolute;
   width: 80px;
   height: auto;
-  left: 68%;
+  left: 88%;
   top: 5%;
 }
 
@@ -193,7 +194,7 @@ img {
 
 #big_flower,
 #small_flower {
-  animation: rock 5s ease-in-out infinite alternate; /* Adjust the animation duration and timing function as needed */
+  animation: rock 3s ease-in-out infinite alternate; /* Adjust the animation duration and timing function as needed */
 }
 
 .image-container {
