@@ -1,0 +1,178 @@
+---
+import "../styles/style.css";
+---
+
+<section class="main_wrapper">
+  <article class="catalog_items">
+    <div class="item_1 slide-in">
+      <img class="animalabstraks" src="/gallery/vol5051.webp" alt="" />
+      <p class="title">Animal abstraks IV</p>
+      <p class="caption_dashed"><span class="caption_tekst">900x900</span></p>
+    </div>
+    <div class="item_2 slide-in">
+      <img class="animalabstraks" src="/gallery/vol5081.webp" alt="" />
+      <p class="title">Animal abstraks IV</p>
+      <p class="caption_dashed"><span class="caption_tekst">900x900</span></p>
+    </div>
+    <div class="item_3 slide-in">
+      <img class="animalabstraks" src="/gallery/vol5241.webp" alt="" />
+      <p class="title">Animal abstraks IV</p>
+      <p class="caption_dashed"><span class="caption_tekst">900x900</span></p>
+    </div>
+  </article>
+</section>
+
+<style>
+  .main_wrapper {
+    padding: 0 150px 0 150px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .catalog_items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .catalog_items img {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+  }
+  .catalog_items img.appear {
+    opacity: 1;
+  }
+
+  .item_1 {
+    transform: translateX(-50%);
+  }
+  .item_2 {
+    transform: translateY(6%);
+  }
+  .item_3 {
+    transform: translateX(50%);
+  }
+  .item_1.appear {
+    transform: translate(0, -20%);
+    opacity: 1;
+  }
+  .item_2.appear {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .item_3.appear {
+    transform: translate(0, -12%);
+    opacity: 1;
+  }
+
+  .item_1,
+  .item_2,
+  .item_3 {
+    transition:
+      opacity 250ms ease-in,
+      transform 400ms ease-in;
+    opacity: 0;
+  }
+
+  .caption_dashed::before {
+    width: 65px;
+    margin-right: 16px;
+    margin-left: 20px;
+    content: " ";
+    display: inline-block;
+    background-color: #c8cbcc;
+    height: 1px;
+    vertical-align: middle;
+    margin-top: 0.68em;
+    margin-bottom: 0.7em;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 700px) {
+    .catalog_items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      justify-items: center;
+      align-items: center;
+      gap: 80px;
+      padding-top: 150px;
+    }
+
+    /*@media (prefers-reduced-motion: no-preference);
+    .item > img {
+      animation: fade-in linear forwards;
+      animation-timeline: view();
+      animation-range: 250px 500px;
+    }
+    @keyframes fade-in {
+      from {
+        scale: 0.8;
+        opacity: 0;
+      }
+      to {
+        scale: 1;
+        opacity: 1;
+      }
+    }
+
+    .item {
+      opacity: 0;
+      transition: opacity 250ms ease-in;
+    }
+    .item.appear {
+      opacity: 1;
+    }
+  }*/
+  }
+</style>
+
+<script>
+  /*document.addEventListener("DOMContentLoaded", () => {
+    const galleryItem = document.querySelector("#item_1") as HTMLElement | null;
+
+    window.addEventListener("scroll", function () {
+      let value = window.scrollY;
+      console.log("scrollY", value);
+
+      if (value > 364) {
+        galleryItem.style.animation = "reverse 1s ease-out forwards";
+      } else {
+        galleryItem.style.animation = "slide 1s ease-out";
+      }
+    });
+  });*/
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const faders = document.querySelectorAll(".catalog_items img");
+    const sliders = document.querySelectorAll(".slide-in");
+
+    const appearOptions = {
+      threshold: 0, // 요소가 50% 뷰포트에 나타날 때 트리거
+      rootMargin: "0px 0px -250px 0px",
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add("appear");
+          appearOnScroll.unobserve(entry.target); // 요소가 나타난 후 옵저버 해제
+        }
+      });
+    }, appearOptions); // 여기서 `options` 대신 `appearOptions` 사용
+
+    faders.forEach((fader) => {
+      appearOnScroll.observe(fader);
+    });
+    sliders.forEach((slider) => {
+      appearOnScroll.observe(slider);
+    });
+    ///////////////////////////////////////////////
+  });
+</script>

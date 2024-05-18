@@ -1,0 +1,123 @@
+---
+import GalleryLayout from "../components/layouts/GalleryLayout.astro";
+import GalleryCards from "../components/GalleryCards.astro";
+import "../styles/style.css";
+---
+
+<GalleryLayout title="Gallery">
+  <main>
+    <article class="intro">
+      <img class="gallery_title_img" src="/gallery/gallery_head.webp" alt="Susses signature" class="signimg" />
+      <div class="intro_gallery">
+        <h1 class="gallery_title">Gallery</h1>
+        <p class="gallery_intro_tekst">Velkommen til mit galleri! Her mødes farver og glæde i en festlig symfoni af kreativitet. Udforsk mine malerier, der emmer af livlige kompositioner og sprudlende energi. Tag med på en rejse gennem mit kunstneriske univers og lad dig inspirere af mine levende værker!</p>
+      </div>
+    </article>
+    <GalleryCards />
+    <GalleryCards />
+    <GalleryCards />
+    <GalleryCards />
+    <GalleryCards />
+
+    <style>
+      .intro {
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
+      .gallery_title_img {
+        width: 100%;
+        /*animation: header_image_animation linear forwards;
+        animation-timeline: view();
+        animation-range: exit;*/
+      }
+
+      /*@keyframes header_image_animation {
+        25% {
+          opacity: 1;
+        }
+        85%,
+        100% {
+          opacity: 0;
+          scale: 2;
+        }
+      }*/
+      .intro_gallery {
+        display: flex;
+        position: absolute;
+        flex-flow: column wrap;
+        width: 30%;
+        top: 36%;
+        left: 7%;
+        margin: 0 0;
+        transform: translate(-2%, -50%);
+        object-fit: cover;
+        animation: fade-out linear;
+        animation-timeline: view();
+        animation-range: exit -200px;
+      }
+
+      /*@keyframes fade-out {
+        to {
+          opacity: 0;
+        }
+      }
+
+      @supports (animation-timeline: view()) {
+        .gallery_title_img {
+          animation: header_image_animation linear forwards;
+          animation-timeline: view();
+          animation-range: exit;
+        }
+      }*/
+      .gallery_title,
+      .gallery_intro_tekst {
+        color: #fcfff6;
+        padding: 10px;
+      }
+
+      .main_wrapper {
+        padding: 0 150px 0 150px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .catalog_items {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      .catalog_items img {
+        padding: 20px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .caption_dashed::before {
+        width: 65px;
+        margin-right: 16px;
+        margin-left: 20px;
+        content: " ";
+        display: inline-block;
+        background-color: #c8cbcc;
+        height: 1px;
+        vertical-align: middle;
+        margin-top: 0.68em;
+        margin-bottom: 0.7em;
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+    </style>
+  </main>
+</GalleryLayout>
+<script>
+  /*let IntroText = document.querySelector(".intro_gallery") as HTMLElement | null;
+
+  window.addEventListener("scroll", function () {
+    let value = window.scrollY;
+    console.log("scrollY", value);
+
+    if (value > 364) {
+      IntroText.style.animation = "header_image_animation linear forwards";
+    }
+  });*/
+</script>
