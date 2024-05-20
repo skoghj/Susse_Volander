@@ -1,0 +1,46 @@
+---
+
+---
+
+<div class="scroll">
+  <p class="arrow">
+    Scroll <span class="movearrow"><i class="fa-solid fa-arrow-right"></i></span>
+  </p>
+</div>
+<style>
+  .scroll {
+    border: 3px solid #f20056;
+    border-radius: 50%;
+    width: 90px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 90px 40px 0 20px;
+    aspect-ratio: 1 / 1;
+  }
+  .arrow {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #f20056;
+  }
+  .movearrow {
+    position: relative;
+    animation: arrow-right 1s infinite alternate;
+  }
+
+  @keyframes arrow-right {
+    from {
+      color: #ffcce5;
+      left: 0px;
+      top: 0;
+    }
+    to {
+      color: #f20056;
+      left: 40px;
+      top: 0;
+    }
+  }
+</style>
