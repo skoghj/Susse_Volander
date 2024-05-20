@@ -1,0 +1,41 @@
+---
+const { variant, category } = Astro.props;
+---
+
+<div class="custom-flower" data-variant={variant} data-category={category}>
+  <img class="flower" src="/images/flower.svg" alt="flower" />
+</div>
+
+<style>
+  .flower {
+    position: absolute;
+    height: auto;
+    left: 83%;
+    top: 5%;
+    animation: rock 3s ease-in-out infinite alternate;
+    z-index: -1;
+  }
+
+  @keyframes rock {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+
+  /* Variant specific styles */
+  [data-variant="primary"] .flower {
+    width: 50px; /* Width for primary variant */
+  }
+  [data-variant="secondary"] .flower {
+    width: 30px; /* Width for secondary variant */
+  }
+  [data-variant="third"] .flower {
+    width: 60px; /* Width for primary variant */
+  }
+</style>
