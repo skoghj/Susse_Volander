@@ -1,0 +1,49 @@
+---
+const data = Astro.props;
+console.log("Astro.props:", data);
+---
+
+<div id="myBtnContainer">
+  <button class="btn" onclick="filterSelection('Plakat')"> Plakat</button>
+  <button class="btn1" onclick="filterSelection('Lærred')"> Lærred</button>
+  <button class="btn2" onclick="filterSelection('Tryk')"> Tryk</button>
+  <button class="btn3" onclick="filterSelection('Serie')"> Serie</button>
+  <button class="filter">Filter <img src="/images/filtering_overview.webp" alt="filter" /></button>
+</div>
+
+<style>
+  button {
+    border: 0;
+    background-color: #ffff;
+    font-family: "Lato";
+    font-size: 15px;
+    color: #494242;
+    padding: 10px;
+    width: 120px;
+    border-radius: 10px;
+    margin-left: 35px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  button:hover {
+    background-color: #dadada;
+    cursor: pointer;
+  }
+
+  button:active {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+    background-color: #dadada;
+  }
+
+  .filter img {
+    width: 16px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .btn1,
+    .btn2,
+    .btn3 {
+      display: none;
+    }
+  }
+</style>

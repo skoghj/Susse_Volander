@@ -1,0 +1,45 @@
+---
+import OverviewLayout from "../components/layouts/OverviewLayout.astro";
+import CardOverview from "../components/CardOverview.astro";
+import CatFilterButtons from "../components/CatFilterButtons.astro";
+import ShowMore from "../components/ShowMore.astro";
+import "../styles/overview.css";
+import "../styles/general_overview.css";
+import "../styles/style.css";
+
+const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paintings", {
+  method: "GET",
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxdXdha3NydnVhaWxyYnd6ZXFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MDgyNzEsImV4cCI6MjAzMTE4NDI3MX0.TAN2h-nqq62fwRfrJesymEvsWNpJv_HsJnaiA0kzups",
+  },
+}).then((res) => res.json());
+---
+
+<OverviewLayout title="Shop">
+  <div class="start-text1">
+    <h1>WEBSHOP</h1>
+    <img src="../images/flower.svg" alt="flower illustration" />
+  </div>
+  <div class="start-text2">
+    <p>
+      Velkommen til min webshop! Træd ind i en verden af unikke <br /> kunstværker, skabt med kærlighed og passion. Udforsk en samling <br /> af malerier,
+      der fanger øjet og berører sjælen. Hvert stykke er en <br />
+      fortælling, en rejse, og en unik skat at tage med hjem.
+    </p>
+  </div>
+  <div class="filterDiv">
+    <CatFilterButtons />
+  </div>
+  <div class="cards_list">
+    {
+      data.map((data) => {
+        return <CardOverview data={data} />;
+      })
+    }
+  </div>
+
+  <div class="show_more">
+    <ShowMore />
+  </div>
+</OverviewLayout>

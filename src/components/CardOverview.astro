@@ -1,0 +1,81 @@
+---
+const { data } = Astro.props;
+---
+
+<div class="card">
+  <img src={data.image} alt="random image" />
+  <div class="overlay">
+    <h1>{data.name}</h1>
+    <p class="price">{data.price} kr.</p>
+    <p><button>Læs mere..</button></p>
+  </div>
+</div>
+
+<style>
+  /* CARD STYLING */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fafafa;
+    height: 550px;
+    width: 392px;
+    border-radius: 10px;
+    text-align: left;
+    font-family: "Lato";
+    line-height: 1.8;
+    border-radius: 10px;
+    transition: 0.6s;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .card img {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+  }
+
+  .price {
+    color: #494242;
+    font-size: 20px;
+  }
+
+  .overlay {
+    margin: 20px;
+  }
+
+  .overlay h1 {
+    font-size: 22.5px;
+    font-family: "Lato";
+    color: #494242;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* CARD BUTTON */
+  .card button {
+    border: 0;
+    padding: 10px;
+    color: #494242;
+    text-align: left;
+    cursor: pointer;
+    width: 110px;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+    background-color: #ffdded;
+  }
+
+  .card button:hover {
+    background-color: #ffcce6;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<script></script>
