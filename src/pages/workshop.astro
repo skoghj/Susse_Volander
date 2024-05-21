@@ -1,0 +1,372 @@
+---
+import WorkshopLayout from "../components/layouts/WorkshopLayout.astro";
+import Kontaktform from "../components/Kontaktform.astro";
+import FlowerAnimation from "../components/FlowerAnimation.astro";
+import WorkshopSlider from "../components/WorkshopSlide.astro";
+import ScrollArrow from "../components/ScrollArrow.astro";
+import "../styles/style.css";
+---
+
+<WorkshopLayout title="Workshop">
+  <section class="page_title">
+    <h1 class="title_1">ART WORKSHOP</h1>
+    <div class="flower_1"><FlowerAnimation variant="primary" /></div>
+    <h1 class="title_2">CREATIVE ZONE</h1>
+  </section>
+
+  <section class="om_workshop">
+    <div class="flower_2"><FlowerAnimation variant="secondary" /></div>
+    <img class="workshop_susse" src="/workshop/workshopsusse.webp" alt="Susse Volander" />
+    <article class="workshop_tekst">
+      <h2>WORKSHOP</h2>
+      <br />
+      <p>
+        Jeg underviser i mine teknikker, så hvis du ser noget på min hjemmeside du gerne vil lære teknikken på, så er det her du kan lære det. Jeg går ud fra de spørgsmål mange har spurgt mig om: Hvordan kommer man igang med at male, hvordan finder man et motiv, hvordan finder man inspiration og hvordan holder man gang i inspirationen. Disse undervisninger er både for voksne og børn i mit værksted og i folks eget hjem. I denne meget intensive undervisning, bruger eleven sine egne materialer. <br />
+        <div class="workshop_price" style="font-weight: 700;">
+          Pris <br />2 timer 500kr for en person. <br />
+          2 timer 600kr for 2 personer. <br />
+          2 timer 700kr for 3 personer. <br />
+        </div>
+      </p>
+    </article>
+  </section>
+
+  <section class="tidligere_workshop">
+    <article class="workshop">
+      <div class="background"><img src="/workshop/bgr.png" alt="" /></div>
+      <div class="wrap">
+        <div class="tidligere_tekst">
+          <h1 class="tidligere_workshop_title">MINE<br />TIDLIGERE<br />WORKSHOP</h1>
+          <div class="flower_3"><FlowerAnimation variant="third" /></div>
+          <p class="tidligere_bodytekst">I vores tidligere workshops har deltagerne udforsket deres kreative potentiale gennem aktiviteter som skulpturbygning med genbrugsmaterialer, skabelse af tredimensionelle collager, kreative udfoldelser for voksne samt interaktive sanseudstillinger om lys, skygge og fordybelse.</p>
+        </div>
+        <img class="workshop_1" src="/workshop/mobil.webp" alt="workshop_mobile" />
+      </div>
+      <div class="wrap_2">
+        <img class="workshop_2" src="/workshop/kort.webp" alt="workshop" />
+        <img class="workshop_3" src="/workshop/workshop2.webp" alt="workshop" />
+      </div>
+    </article>
+    <div class="slide">
+      <ScrollArrow />
+      <WorkshopSlider />
+    </div>
+    <section class="kontaktform">
+      <div class="kontakt">
+        <h2>KONTAKT</h2><br />
+        <p>Kontakt mig her, hvis du har spørgsmål ang. workshops, malerier  eller andet, eller hvis du gerne vil modtage nyhedsmail omkring Brug Bogen og leg med mig.</p>
+      </div>
+      <div class="form">
+        <div class="form_susse"><Kontaktform /></div>
+        <img class="illust_susse" src="/workshop/kontaktsusse.webp" alt="Susse" />
+      </div>
+    </section>
+  </section>
+</WorkshopLayout>
+<style>
+  /************************************ mobil */
+  .page_title {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 20px;
+  }
+  .title_1,
+  .title_2,
+  .tidligere_workshop_title {
+    font-size: 40px;
+    padding: 0 20px;
+  }
+  .title_2 {
+    margin-left: 0px;
+  }
+  .flower_1,
+  .flower_2,
+  .flower_3 {
+    position: absolute;
+  }
+  .flower_1 {
+    top: 0;
+    left: 119px;
+  }
+  .flower_2 {
+    top: -4px;
+    left: 27px;
+  }
+  .flower_3 {
+    top: -8px;
+    left: 159px;
+  }
+  .workshop_susse,
+  .workshop_1,
+  .kontakt,
+  .workshop_2,
+  .workshop_3 {
+    width: 100%;
+  }
+
+  .workshop_susse {
+    margin: 40px 0px;
+  }
+
+  .workshop_1,
+  .kontakt {
+    padding: 20px 40px;
+  }
+  .workshop_2,
+  .workshop_3 {
+    padding: 0 40px 20px 40px;
+  }
+
+  .workshop_tekst,
+  .tidligere_bodytekst {
+    margin: 0 40px;
+    font-size: 16px;
+  }
+
+  .workshop_price {
+    padding: 20px 0;
+  }
+
+  .om_workshop {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 0px;
+  }
+
+  .workshop {
+    display: block;
+    margin: 0;
+    position: relative;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tidligere_workshop_title {
+    margin: 40px 20px 20px 20px;
+  }
+  .tidligere_bodytekst {
+    padding-bottom: 20px;
+  }
+
+  .slide {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .kontakt p {
+    width: 100%;
+    padding-right: 0px;
+  }
+  .form {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 40px 40px 40px;
+    position: relative;
+  }
+
+  .illust_susse {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (min-width: 425px) {
+    .title_1,
+    .title_2,
+    .tidligere_workshop_title {
+      font-size: 40px;
+      padding: 0 20px;
+    }
+    .workshop_tekst,
+    .tidligere_bodytekst {
+      margin: 0 40px;
+      font-size: 16px;
+    }
+    .title_2 {
+      margin-left: 0px;
+    }
+    .flower_1 {
+      top: 30px;
+      left: 333px;
+    }
+    .flower_2 {
+      top: 0;
+      left: 36px;
+    }
+    .flower_3 {
+      top: -8px;
+      left: 159px;
+    }
+    .om_workshop {
+      display: flex;
+      gap: 40px;
+      margin-top: 0px;
+    }
+  }
+
+  /**********************************************'Tablet */
+  @media (min-width: 768px) {
+    .page_title h1 {
+      font-size: 60px;
+    }
+    .workshop_tekst,
+    .tidligere_bodytekst {
+      margin: 0 40px;
+      font-size: 18px;
+    }
+    .title_2 {
+      margin-left: 200px;
+    }
+    .om_workshop {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      margin-top: 80px;
+    }
+    .workshop_tekst {
+      margin: 0;
+      padding: 20px 40px;
+    }
+    .workshop_susse {
+      width: 50%;
+      margin: 0px 0px;
+      object-fit: cover;
+    }
+    .flower_1 {
+      top: 19px;
+      left: 516px;
+    }
+    .flower_2 {
+      top: -34px;
+      left: 48px;
+    }
+    .flower_3 {
+      top: -8px;
+      left: 120px;
+    }
+    .workshop_1 {
+      justify-self: flex-end;
+      grid-column: 1 / 2;
+      object-fit: cover;
+      max-width: 80%;
+      height: auto;
+      padding: 0;
+    }
+    .wrap,
+    .wrap_2 {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr 1fr;
+      grid-auto-rows: auto auto;
+      gap: 40px;
+    }
+
+    .wrap {
+      margin: 100px 100px 40px 100px;
+    }
+    .wrap_2 {
+      margin: 0 100px;
+    }
+    .tidligere_tekst {
+      grid-column: 2/3;
+      position: relative;
+    }
+
+    .tidligere_workshop_title {
+      padding: 0 0 10px 0;
+      margin: 0;
+    }
+    .tidligere_bodytekst {
+      padding: 0;
+      margin: 0;
+    }
+    .tidligere_workshop {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+    }
+
+    .workshop_2 {
+      justify-self: flex-end;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      object-fit: cover;
+      margin-left: 100px;
+    }
+    .workshop_3 {
+      grid-column: 2/3;
+      grid-row: 1/3;
+      object-fit: cover;
+      margin-right: 100px;
+    }
+    .workshop_2,
+    .workshop_3 {
+      padding: 0;
+    }
+
+    .background img {
+      position: absolute;
+      top: -32%;
+      left: 0;
+      width: 100%;
+    }
+    .slide {
+      padding-top: 50px;
+      padding-left: 100px;
+    }
+    .kontakt {
+      margin: 100px 100px;
+      max-width: 100%;
+      padding: 0;
+    }
+    .kontakt p {
+      width: 70%;
+      padding-right: 0px;
+    }
+    .form {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 0 0 100px;
+    }
+    .form_susse {
+      padding-bottom: 50px;
+    }
+    .illust_susse {
+      flex-shrink: 0; /* Illustrationen beholder sin størrelse, når skærmen bliver mindre */
+    }
+  }
+  /*********************************************************'laptop */
+  @media (min-width: 1024px) {
+    .workshop_1 {
+      max-width: 50%;
+    }
+    .workshop_2,
+    .workshop_3 {
+      max-width: 70%;
+    }
+  }
+</style>
