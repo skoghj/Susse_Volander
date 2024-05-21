@@ -1,0 +1,52 @@
+---
+import KontaktLayout from "../components/layouts/KontaktLayout.astro";
+import SomeIcons from "../components/SomeIcons.astro";
+import Form from "../components/Form.astro";
+import "../styles/general_ovko.css";
+import "../styles/kontakt.css";
+import "../styles/style.css";
+---
+
+<KontaktLayout title="Kontakt">
+  <div class="bg">
+    <h1>KONTAKT</h1>
+    <img src="../images/gradient2.webp" alt="background" />
+  </div>
+  <div class="container">
+    <div class="illustration">
+      <img src="../images/sus_graphic.webp" alt="illustration" />
+    </div>
+    <div class="text">
+      <h2>Forbind med kunsten</h2>
+      <p>
+        Mit navn er Susse Volander, og jeg er den kreative sjæl bag hvert eneste unikke maleri her på min website. Det glæder mig, at du er
+        interesseret i mine værker og gerne vil komme tættere på dem.
+        <br />
+        Jeg er altid åben for en god samtale, feedback eller bare en venlig hilsen. Udfyld formularen nedenfor, og jeg vil gøre mit bedste for at svare
+        så hurtigt som muligt.
+      </p>
+      <br />
+      <h3>Lad os forbinde</h3>
+      <p>Følg med i mine kreative rejser på sociale medier, hvor jeg deler glimt fra mit liv som kunstner og min kærlighed til maleri</p>
+      <br />
+      <SomeIcons />
+    </div>
+  </div>
+  <div class="container2">
+    <Form />
+    <div class="showcase">
+      <img src="../images/vector1.webp" alt="vector" />
+      <div class="centered">
+        <h2 class="h2_text">En fremvisning?</h2>
+        <br />
+        <h3>Et kig ind i mit kunstneriske univers</h3>
+        <br />
+        <p>
+          Mit atelier er ikke blot et sted, hvor jeg skaber, men også et sted, hvor mine malerier kommer til live. Jeg ville elske at give dig en
+          personlig rundvisning, hvor du kan se og føle magien bag hvert penselstrøg og farvesammensætning. Kontakt mig her for at planlægge din helt
+          egen kunstoplevelse.
+        </p>
+      </div>
+    </div>
+  </div>
+</KontaktLayout>

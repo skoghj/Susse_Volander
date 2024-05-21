@@ -1,0 +1,31 @@
+---
+const { title, category } = Astro.props;
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+---
+
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://kit.fontawesome.com/0b02d067e0.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <footer><Footer /></footer>
+  </body>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</html>
