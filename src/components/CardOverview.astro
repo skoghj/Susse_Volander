@@ -2,7 +2,7 @@
 const { data } = Astro.props;
 ---
 
-<a class="card" href="/singleview">
+<a class="card" href="/[slug].astro/">
   <img src={data.image} alt="random image" />
   <div class="overlay">
     <h1>{data.name}</h1>
@@ -35,7 +35,7 @@ const { data } = Astro.props;
 
   .card img {
     width: 100%;
-    height: 350px;
+    height: 328px;
     border-radius: 10px 10px 0 0;
     object-fit: cover;
   }
