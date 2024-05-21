@@ -2,15 +2,17 @@
 
 .bg {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-h1 {
+.title {
   margin: 80px;
   font-weight: 400;
   font-size: 60px;
-  padding: 20px 0;
+  display: flex;
+  justify-content: left;
 }
 
 /*CONTAINER */
