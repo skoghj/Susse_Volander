@@ -32,246 +32,245 @@ console.log(data);
             );
           })
         }
-        <!--{
-          data.map((show) => {
-            return <GalleryCards data={show} />;
-          })
-        }
-        <div class="item_1 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_2 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_3 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_1 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_2 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_3 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_1 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_2 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_3 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_1 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_2 slide-in">
-          <GalleryCards />
-        </div>
-        <div class="item_3 slide-in">
-          <GalleryCards />
-        </div> -->
+
+        <!-- <div class="item_1 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_2 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_3 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_1 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_2 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_3 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_1 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_2 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_3 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_1 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_2 slide-in">
+            <GalleryCards />
+          </div>
+          <div class="item_3 slide-in">
+            <GalleryCards />
+          </div>
+       
+      </article>-->
       </article>
     </section>
+
+    <style>
+      /***********************************************mobil*/
+
+      .intro {
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
+      .gallery_title_img {
+        width: 100%;
+      }
+      .intro_gallery {
+        display: flex;
+        position: absolute;
+        flex-flow: column wrap;
+        width: 100%;
+        top: 43%;
+        left: 2%;
+        margin: 0 0;
+        padding: 10px 20px;
+        transform: translate(-2%, -50%);
+        object-fit: cover;
+        animation: fade-out linear;
+        animation-timeline: view();
+        animation-range: exit -200px;
+      }
+
+      @keyframes fade-out {
+        to {
+          opacity: 0;
+        }
+      }
+
+      .gallery_title,
+      .gallery_intro_tekst {
+        color: #fcfff6;
+        padding: 0px;
+      }
+      .gallery_title {
+        font-size: 30px;
+      }
+      ..gallery_intro_tekst {
+        font-size: 16px;
+      }
+      .main_wrapper {
+        padding: 50px 20px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 50px;
+      }
+
+      .item_1 {
+        transform: translateX(-50%);
+      }
+      .item_2 {
+        transform: translateY(6%);
+      }
+      .item_3 {
+        transform: translateX(50%);
+      }
+      .item_1.appear {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      .item_2.appear {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .item_3.appear {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      .item_1,
+      .item_2,
+      .item_3 {
+        transition:
+          opacity 250ms ease-in,
+          transform 400ms ease-in;
+        opacity: 0;
+      }
+
+      @media (min-width: 425px) {
+        .catalog_items {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+        .intro_gallery {
+          width: 82%;
+          gap: 10px;
+        }
+      }
+      /**************************************************Tablet*/
+      @media (min-width: 760px) {
+        .catalog_items {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+        .item_1 {
+          transform: translateX(-50%);
+        }
+        .item_2 {
+          transform: translateY(6%);
+        }
+        .item_3 {
+          transform: translateX(50%);
+        }
+        .item_1.appear {
+          transform: translate(0, -15%);
+          opacity: 1;
+        }
+        .item_2.appear {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        .item_3.appear {
+          transform: translate(0, -10%);
+          opacity: 1;
+        }
+        .item_1,
+        .item_2,
+        .item_3 {
+          transition:
+            opacity 250ms ease-in,
+            transform 400ms ease-in;
+          opacity: 0;
+        }
+        .intro_gallery {
+          width: 69%;
+          left: 5%;
+        }
+        .gallery_title {
+          font-size: 30px;
+        }
+        ..gallery_intro_tekst {
+          font-size: 16px;
+        }
+      }
+      /***********************************************Laptop */
+      @media (min-width: 1024px) {
+        .catalog_items {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          justify-items: center;
+          align-items: center;
+          gap: 80px;
+          padding-top: 50px;
+        }
+        .intro_gallery {
+          width: 47%;
+          left: 6%;
+          gap: 20px;
+        }
+
+        .main_wrapper {
+          margin: 0 100px;
+          margin-bottom: 0px;
+        }
+        .gallery_title {
+          font-size: 60px;
+        }
+        .gallery_intro_tekst {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const faders = document.querySelectorAll(".catalog_items img");
+        const sliders = document.querySelectorAll(".slide-in");
+
+        const appearOptions = {
+          threshold: 0, // 요소가 50% 뷰포트에 나타날 때 트리거
+          rootMargin: "0px 0px -250px 0px",
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            } else {
+              entry.target.classList.add("appear");
+              appearOnScroll.unobserve(entry.target); // 요소가 나타난 후 옵저버 해제
+            }
+          });
+        }, appearOptions); // 여기서 `options` 대신 `appearOptions` 사용
+
+        faders.forEach((fader) => {
+          appearOnScroll.observe(fader);
+        });
+        sliders.forEach((slider) => {
+          appearOnScroll.observe(slider);
+        });
+      });
+    </script>
   </main>
 </GalleryLayout>
-
-<style>
-  /***********************************************mobil*/
-  .intro {
-    display: grid;
-    place-items: center;
-    position: relative;
-  }
-  .gallery_title_img {
-    width: 100%;
-  }
-  .intro_gallery {
-    display: flex;
-    position: absolute;
-    flex-flow: column wrap;
-    width: 100%;
-    top: 43%;
-    left: 2%;
-    margin: 0 0;
-    padding: 10px 20px;
-    transform: translate(-2%, -50%);
-    object-fit: cover;
-    animation: fade-out linear;
-    animation-timeline: view();
-    animation-range: exit -200px;
-  }
-
-  @keyframes fade-out {
-    to {
-      opacity: 0;
-    }
-  }
-
-  .gallery_title,
-  .gallery_intro_tekst {
-    color: #fcfff6;
-    padding: 0px;
-  }
-  .gallery_title {
-    font-size: 30px;
-  }
-  ..gallery_intro_tekst {
-    font-size: 16px;
-  }
-  .main_wrapper {
-    padding: 50px 20px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 50px;
-  }
-
-  .item_1 {
-    transform: translateX(-50%);
-  }
-  .item_2 {
-    transform: translateY(6%);
-  }
-  .item_3 {
-    transform: translateX(50%);
-  }
-  .item_1.appear {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-  .item_2.appear {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  .item_3.appear {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-  .item_1,
-  .item_2,
-  .item_3 {
-    transition:
-      opacity 250ms ease-in,
-      transform 400ms ease-in;
-    opacity: 0;
-  }
-
-  @media (min-width: 425px) {
-    .catalog_items {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .intro_gallery {
-      width: 82%;
-      gap: 10px;
-    }
-  }
-  /**************************************************Tablet*/
-  @media (min-width: 760px) {
-    .catalog_items {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .item_1 {
-      transform: translateX(-50%);
-    }
-    .item_2 {
-      transform: translateY(6%);
-    }
-    .item_3 {
-      transform: translateX(50%);
-    }
-    .item_1.appear {
-      transform: translate(0, -15%);
-      opacity: 1;
-    }
-    .item_2.appear {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    .item_3.appear {
-      transform: translate(0, -10%);
-      opacity: 1;
-    }
-    .item_1,
-    .item_2,
-    .item_3 {
-      transition:
-        opacity 250ms ease-in,
-        transform 400ms ease-in;
-      opacity: 0;
-    }
-    .intro_gallery {
-      width: 69%;
-      left: 5%;
-    }
-    .gallery_title {
-      font-size: 30px;
-    }
-    ..gallery_intro_tekst {
-      font-size: 16px;
-    }
-  }
-  /***********************************************Laptop */
-  @media (min-width: 1024px) {
-    .catalog_items {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      justify-items: center;
-      align-items: center;
-      gap: 80px;
-      padding-top: 50px;
-    }
-    .intro_gallery {
-      width: 47%;
-      left: 6%;
-      gap: 20px;
-    }
-
-    .main_wrapper {
-      margin: 0 100px;
-      margin-bottom: 0px;
-    }
-    .gallery_title {
-      font-size: 60px;
-    }
-    .gallery_intro_tekst {
-      font-size: 18px;
-      line-height: 24px;
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const faders = document.querySelectorAll(".catalog_items img");
-    const sliders = document.querySelectorAll(".slide-in");
-
-    const appearOptions = {
-      threshold: 0, // 요소가 50% 뷰포트에 나타날 때 트리거
-      rootMargin: "0px 0px -250px 0px",
-    };
-
-    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("appear");
-          appearOnScroll.unobserve(entry.target); // 요소가 나타난 후 옵저버 해제
-        }
-      });
-    }, appearOptions); // 여기서 `options` 대신 `appearOptions` 사용
-
-    faders.forEach((fader) => {
-      appearOnScroll.observe(fader);
-    });
-    sliders.forEach((slider) => {
-      appearOnScroll.observe(slider);
-    });
-  });
-</script>
