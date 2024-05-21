@@ -2,7 +2,7 @@
 const { data } = Astro.props;
 ---
 
-<a class="card" href="/[slug].astro/">
+<a class="card" href={data.slug}>
   <img src={data.image} alt="random image" />
   <div class="overlay">
     <h1>{data.name}</h1>
