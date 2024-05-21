@@ -2,6 +2,12 @@
 import GalleryLayout from "../components/layouts/GalleryLayout.astro";
 import GalleryCards from "../components/GalleryCards.astro";
 import "../styles/style.css";
+
+const data = await fetch("https://kzwdodzkuyregkxdogsp.supabase.co/rest/v1/SusseVolander_Gallery", {
+  method: "GET",
+  headers: { apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6d2RvZHprdXlyZWdreGRvZ3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYyMzQ3NjEsImV4cCI6MjAzMTgxMDc2MX0.G7BAKl7YMqVe8k0n5d8nABx91EvQpBZLI7mtu9KMVuI" },
+}).then((res) => res.json());
+console.log(data);
 ---
 
 <GalleryLayout title="Gallery">
@@ -16,6 +22,21 @@ import "../styles/style.css";
 
     <section class="main_wrapper">
       <article class="catalog_items">
+        {
+          data.map((show, galleri) => {
+            const className = `item_${(galleri % 3) + 1} slide-in`;
+            return (
+              <div class={className}>
+                <GalleryCards data={show} />
+              </div>
+            );
+          })
+        }
+        <!--{
+          data.map((show) => {
+            return <GalleryCards data={show} />;
+          })
+        }
         <div class="item_1 slide-in">
           <GalleryCards />
         </div>
@@ -51,7 +72,7 @@ import "../styles/style.css";
         </div>
         <div class="item_3 slide-in">
           <GalleryCards />
-        </div>
+        </div> -->
       </article>
     </section>
   </main>

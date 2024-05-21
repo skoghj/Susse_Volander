@@ -1,13 +1,21 @@
 ---
 import "../styles/style.css";
+
+const { data } = Astro.props;
+console.log(data);
 ---
 
 <div class="gallery_cards">
+  <img class="animalabstraks" src={data.img} alt={data.name} />
+  <p class="title">{data.name}</p>
+  <p class="caption_dashed"><span class="caption_tekst">{data.measure}</span></p>
+</div>
+
+<!--<div class="gallery_cards">
   <img class="animalabstraks" src="/gallery/vol5051.webp" alt="" />
   <p class="title">Animal abstraks IV</p>
   <p class="caption_dashed"><span class="caption_tekst">900x900</span></p>
-</div>
-
+</div> -->
 <style>
   .gallery_cards img {
     padding: 20px;
