@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll with GSAP</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            height: 100vh;
+            width: 500vw;
+            /* Adjust based on the total number of sections */
+        }
+
+        #container {
+            height: 100vh;
+            white-space: nowrap;
+            font-size: 0;
+        }
+
+        #container>* {
+            font-size: 1rem;
+        }
+
+        #intro,
+        .module {
+            height: 100vh;
+            width: 100vw;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+        }
+
+        #intro {
+            background: #fff;
+        }
+
+        #intro img {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            max-width: 50%;
+            /* Adjust as needed */
+            height: auto;
+            opacity: 0;
+            /* Start with hidden image */
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="intro">
+            <h1>Kunstneren bag lærredet</h1>
+            <img id="susse_half" src="/images/susse_eyes.webp" alt="susse half face">
+        </div>
+        <div class="module pink">
+            <h1>Slide 1</h1>
+        </div>
+        <div class="module yellow">Slide 2</div>
+        <div class="module purple">Slide 3</div>
+        <div class="module orange">Slide 4</div>
+        <div class="module blue">Slide 5</div>
+        <div class="module red">Slide 6</div>
+    </div>
+
+<script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+      gsap.registerPlugin(ScrollTrigger);
+
+        const container = document.getElementById("container");
+
+        gsap.to(container, {
+            x: () => -(container.scrollWidth - window.innerWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: container,
+                pin: true,
+                scrub: 1,
+                end: () => "+=" + (container.scrollWidth - window.innerWidth),
+                invalidateOnRefresh: true,
+                markers: true,
+            }
+        });
+
+        // Fade-in animation for image on window load
+        window.addEventListener('load', () => {
+            gsap.to("#intro img", { opacity: 1, duration: 2 });
+        });
+    </script>
+</body>
+
+</html>
