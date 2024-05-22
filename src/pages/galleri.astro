@@ -44,7 +44,7 @@ console.log(data);
         position: relative;
       }
       .gallery_title_img {
-        width: 100%;
+        width: 200%;
       }
       .intro_gallery {
         display: flex;
@@ -126,9 +126,15 @@ console.log(data);
           width: 82%;
           gap: 10px;
         }
+        .gallery_title_img {
+          width: 140%;
+        }
       }
       /**************************************************Tablet*/
       @media (min-width: 760px) {
+        .gallery_title_img {
+          width: 100%;
+        }
         .catalog_items {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
