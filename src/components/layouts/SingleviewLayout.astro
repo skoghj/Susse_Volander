@@ -1,5 +1,6 @@
 ---
 import Header from "../Header.astro";
+import Footer from "../Footer.astro";
 const { title } = Astro.props;
 ---
 
@@ -20,7 +21,7 @@ const { title } = Astro.props;
       <slot />
     </main>
     <footer>
-
+      <Footer />
     </footer>
   </body>
 </html>
@@ -37,7 +38,7 @@ const { title } = Astro.props;
     /******** MOBIL FORMAT ********/
   
     main {
-      margin: 8%;
+      margin: 15%;
     }
   
   

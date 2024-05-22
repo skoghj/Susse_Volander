@@ -1,6 +1,6 @@
 ---
 import SingleviewLayout from "../../components/layouts/SingleviewLayout.astro";
-
+import "../../styles/style.css";
 
 export async function getStaticPaths() {
   const url = "https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paintings";
@@ -22,160 +22,148 @@ const { paintings } = Astro.props;
 ---
 
 <SingleviewLayout title="SINGLEVIEW">
-    <div class="container">
-        <div class="gallery">
-            <div class="breadcrumb-nav">
-  <ul class="breadcrumb">
-    <li><a href="#">Forside</a></li>
-    <li><a href="#">Shop</a></li>
-    <li>{paintings.category}</li>
-    <li>{paintings.name}</li>
-  </ul>
-</div>
-
-
-<div class="card-wrapper">
-    <div class="card">
-        <!-- Venstre side -->
-        <div class="product-imgs">
+  <div class="container">
+    <div class="gallery">
+      <div class="breadcrumb-nav">
+        <ul class="breadcrumb">
+          <li><a href="/index/">Forside</a></li>
+          <li><a href="/overview/">Shop</a></li>
+          <li>{paintings.category}</li>
+          <li>{paintings.name}</li>
+        </ul>
+      </div>
+      <div class="card-wrapper">
+        <div class="card">
+          <!-- Venstre side -->
+          <div class="product-imgs">
             <div class="img-display">
-                <div class="img-showcase">
-                    <img src={paintings.image} alt="" />
-                    <img src={paintings.image} alt="" />
-                    <img src={paintings.image} alt="" />
-                </div>
+              <div class="img-showcase">
+                <img src={paintings.image} alt="" />
+                <img src={paintings.image} alt="" />
+                <img src={paintings.image} alt="" />
+              </div>
             </div>
             <div class="img-select">
-                <div class="img-item">
-                    <a href="#" data-id="1">
-                        <img src={paintings.image} alt="" />
-                    </a>
-                </div>
-                <div class="img-item">
-                    <a href="#" data-id="2">
-                        <img src={paintings.image} alt="" />
-                    </a>
-                </div>
-                <div class="img-item">
-                    <a href="#" data-id="3">
-                        <img src={paintings.image} alt="" />
-                    </a>
-                </div>
+              <div class="img-item">
+                <a href="#" data-id="1">
+                  <img src={paintings.image} alt="" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="2">
+                  <img src={paintings.image} alt="" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="3">
+                  <img src={paintings.image} alt="" />
+                </a>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-  <!-- Højre side -->
-<div class="content">
-    <div class="product-section">
+    <!-- Højre side -->
+    <div class="content">
+      <div class="product-section">
         <div class="price">
-            <div class="title-wrapper">
-                <h1 class="title">{paintings.name}</h1>
-                <p class="discount">{paintings.discount}</p>
-            </div>
-            <div class="prices">
-                <p class="discounted-price">{paintings.discountedprice}</p>
-                <p class="normal-price">{paintings.price}</p>
-            </div>
+          <div class="title-wrapper">
+            <h1 class="title">{paintings.name}</h1>
+          </div>
+          <div class="prices">
+            <p class="discounted-price">{paintings.discountedprice}</p>
+            <p class="normal-price">{paintings.price}</p>
+            <p class="discount">{paintings.discount}</p>
+          </div>
         </div>
-    </div>
-
-    <button type="button" class="icon-button">LÆG I <i class="fa-solid fa-bag-shopping"></i></button>
-
-    <details class="styled_details">
-        <summary class="ac_1">Produktbeskrivelse</summary>
-        <article>
-            <p>{paintings.productdescription}</p>
-        </article>
-    </details>
-    <details class="styled_details">
-        <summary>Materiale</summary>
-        <article>
-            <p>{paintings.materials}</p>
-        </article>
-    </details>
-    <details class="styled_details">
-        <summary class="ac_2">Tema</summary>
-        <article>
-            <p>{paintings.theme}</p>
-        </article>
-    </details>
-
-    <div class="line_section">
+      </div>
+      <button type="button" class="icon-button">LÆG I <i class="fa-solid fa-bag-shopping"></i></button>
+      <div>
+        <button class="accordion ac-1">Beskrivelse</button>
+        <div class="panel">
+          <p>{paintings.productdescription}</p>
+        </div>
+        <button class="accordion">Materiale</button>
+        <div class="panel">
+          <p>{paintings.materials}</p>
+        </div>
+        <button class="accordion ac-3">Tema</button>
+        <div class="panel">
+          <p>{paintings.theme}</p>
+        </div>
+      </div>
+      <div class="line_section">
         <hr class="line_1">
         <ul class="line-list">
-            <li>På lager</li>
-            <li>Levering 1-4 arbejdsdage</li>
-            <li>Gratis fragt over 800 kr.</li>
+          <li>På lager</li>
+          <li>Levering 1-4 arbejdsdage</li>
+          <li>Gratis fragt over 800 kr.</li>
         </ul>
         <hr class="line_2">
+      </div>
     </div>
-</div>
-</div>
-   
+  </div>
 </SingleviewLayout>
 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    margin: 2rem;
+    background-color: #fcfff6;
+  }
 
-<style> 
- * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  margin: 2rem;
-  background-color: #fcfff6;
-}
-  
-  
-/* BREADCRUMB */
-.breadcrumb-nav {
-  margin-bottom: 40px;
-}
+  /* BREADCRUMB */
+  .breadcrumb-nav {
+    margin-bottom: 20px;
+  }
 
-ul.breadcrumb {
-  list-style: none;
-}
+  ul.breadcrumb {
+    list-style: none;
+  }
 
-ul.breadcrumb li {
-  display: inline;
-  color: #494242;
-  text-decoration: none;
-  font-size: 15px;
-}
+  ul.breadcrumb li {
+    display: inline;
+    color: #494242;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Lato";
+    text-transform: uppercase;
+  }
 
-/* SLASH SYMBOL (/) */
-ul.breadcrumb li + li:before {
-  padding: 8px;
-  color: #494242;
-  content: "/\00a0";
-}
+  /* SLASH SYMBOL (/) */
+  ul.breadcrumb li + li:before {
+    padding: 3px;
+    color: #494242;
+    content: "/\00a0";
+  }
 
-ul.breadcrumb li a {
-  color: #494242;
-  text-decoration: none;
-}
+  ul.breadcrumb li a {
+    color: #494242;
+    text-decoration: none;
+  }
 
-ul.breadcrumb li a:hover {
-  color: #f20056;
-}
-  
-    /******** MOBIL FORMAT ********/
-    @media only screen and (max-width: 768px)
-   
-    .container {
+  ul.breadcrumb li a:hover {
+    color: #f20056;
+  }
+
+  /******** MOBIL FORMAT ********/
+  .container {
     display: flex;
     flex-direction: column;
   }
 
-  .gallery,
+.gallery,
   .content {
-    margin: 0 auto;
     max-width: 100%;
   }
 
   .product-section {
-    margin-top: 20px;
+    margin-top: 60px;
   }
 
   /* Knappen */
@@ -183,241 +171,279 @@ ul.breadcrumb li a:hover {
     width: 100%;
     margin-bottom: 20px;
   }
-  
-  
-    /******** DESKTOP FORMAT ********/
-  
-    @media (min-width: 1024px) {
-    
-        .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Deler containeren i to kolonner */
-  gap: 20px; /* Afstand mellem kolonnerne */
+
+  /* GALLERI */
+  .card-wrapper {
+    max-width: 100%;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    border: 1px solid #d1d7c6;
+  }
+
+  .img-display {
+    overflow: hidden;
+  }
+
+  .img-showcase {
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+
+  .img-showcase img {
+    min-width: 100%;
+  }
+
+  .img-select {
+    display: flex;
+    margin-top: 5px;
+    gap: 5px;
+  }
+
+  .img-item {
+    margin: 0.3rem;
+  }
+
+  .img-item:nth-child(1),
+  .img-item:nth-child(2),
+  .img-item:nth-child(3) {
+    margin-right: 0;
+  }
+
+  .img-item:hover {
+    opacity: 0.8;
+  }
+
+  /* PRODUCT CONTENT */
+  .price {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+  }
+
+  .discount {
+    font-size: 16px;
+    color: #fff;
+    max-width: 111px;
+    background-color: #ffb700;
+    padding: 2px 15px;
+  }
+
+  .prices {
+    display: flex;
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+
+  .prices p {
+    margin-right: 10px;
+  }
+
+  .normal-price {
+    color: #8d8787;
+    text-decoration: line-through;
+  }
+
+  /* KNAP */
+  .icon-button {
+    background-color: #494242;
+    color: #fcfff6;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 40px;
+    font-family: "Lato";
+  }
+
+  .icon-button i {
+    margin-left: 5px;
+    color: #fcfff6;
+  }
+
+  .icon-button:hover {
+    color: #494242;
+    background-color: #fcbddd;
+  }
+
+  /* ACCORDION */
+  .accordion {
+    background-color: #ecf0e4;
+    color: #494242;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    border-bottom: 1px solid #ccc;
+    font-family: "Lato";
+  }
+
+  .accordion:last-of-type {
+    border-bottom: 0;
+  }
+
+  .active,
+  .accordion:hover {
+    background-color: #d1d7c6;
+  }
+
+  .accordion:after {
+    content: "\002B";
+    color: #939985;
+    font-weight: 700;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .active:after {
+    content: "\2212";
+  }
+
+  .panel {
+    padding: 0 18px;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  }
+
+  .panel p {
+    font-size: 15px;
+    font-family: "Lato";
+  }
+
+  .ac-1 {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .ac-3 {
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  /* LINE SECTION */
+  .line_section {
+    margin-top: 40px;
+  }
+
+  hr {
+    color: #494242;
+    width: 100%;
+  }
+
+  .line_section p {
+    margin-top: 20px;
+  }
+
+  .line_2 {
+    margin-top: 20px;
+  }
+
+  .line-list {
+    padding-left: 0.5em;
+    list-style: none;
+    margin: 1.5em 0 2em 0;
+  }
+
+  .line-list li {
+    margin-block: 1em;
+    padding-inline-start: 2em;
+    position: relative;
+    font-family: "Lato";
+    color: #494242;
+  }
+
+  .line_section li::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    transform: rotate(45deg);
+    height: 0.8em;
+    width: 0.43em;
+    border-bottom: 0.15em solid;
+    border-right: 0.15em solid;
+  }
+
+  /******** DESKTOP FORMAT ********/
+  @media only screen and (min-width: 992px){
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .gallery,
+    .content {
+      margin: 0 auto;
+    }
+
+    .gallery {
+      grid-column: 1 / 2;
+    }
+
+    .content {
+      grid-column: 2 / 3;
+    }
+
+    .card-wrapper {
+  max-width: 350px;
 }
 
-.gallery,
-.content {
-  margin: 0 auto; /* Centrerer indholdet vandret */
-}
-
-.gallery {
-  grid-column: 1 / 2; /* Placerer galleriet i den første kolonne */
-}
-
-.content {
-  grid-column: 2 / 3; /* Placerer indholdet i den anden kolonne */
-}
-
-/* GALLERI */
-
-.card-wrapper {
-  max-width: 400px;
-}
-img {
-  width: 100%;
-  display: block;
-  border: 1px solid black;
-}
-.img-display {
-  overflow: hidden;
-}
-.img-showcase {
-  display: flex;
-  width: 100%;
-  transition: all 0.5s ease;
-}
-.img-showcase img {
-  min-width: 100%;
-}
-.img-select {
-  display: flex;
-  margin-top: 5px;
-  gap: 5px;
-}
-.img-item {
-  margin: 0.3rem;
-}
-.img-item:nth-child(1),
-.img-item:nth-child(2),
-.img-item:nth-child(3) {
-  margin-right: 0;
-}
-.img-item:hover {
-  opacity: 0.8;
-}
-
-/* PRODUCT CONTENT */
-
-.price {
-  display: flex;
-  flex-direction: column;
-}
-
-.title-wrapper {
-  display: flex;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.title {
-  font-size: 40px;
+    .title {
+  font-size: 35px;
   margin-right: 10px; /* Tilføjer mellemrum mellem titel og rabat */
   margin-bottom: 40px;
 }
 
-.discount {
-  font-size: 16px;
-  color: #fff;
-  max-width: 111px;
-  background-color: #ffb700;
-  padding: 5px 20px;
-}
-
-.prices {
-  display: flex;
-  margin-bottom: 40px;
-  font-size: 18px;
-}
-
-.prices p {
-  margin-right: 10px; /* Tilføjer mellemrum mellem priserne */
-}
-
-.normal-price {
-  color: #8d8787;
-  text-decoration: line-through; /* Overstreg den normale pris */
-}
-
-/* KNAP */
-
-.icon-button {
-  background-color: #494242;
-  color: #fcfff6;
-  border: none;
-  padding: 12px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 10px;
-  width: 400px;
-  margin-bottom: 40px;
-}
-
-.icon-button i {
-  margin-left: 5px;
-  color: #fcfff6;
-}
-
-.icon-button:hover {
-  color: #494242;
-  background-color: #fcbddd;
-}
-
-/* ACCODIAN */
-.styled_details {
-  max-width: 400px;
-  font-size: 18px;
-}
-
-.ac_1 {
-  border-radius: 10px 10px 0px 0px;
-}
-
-.ac_2 {
-  border-radius: 0px 0px 10px 10px;
-}
-
-.styled_details summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  list-style: none;
-  margin-bottom: 0rem;
-  padding: 14px;
-  border: 1px solid #8a7d7d;
-}
-.styled_details article {
-  background-color: #fcfff6;
-  padding: 0.5rem;
-  border: 1px solid #8a7d7d;
-}
-/* PIL IKON */
-.styled_details summary::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 0.5rem solid #8a7d7d;
-  border-inline: 0.4rem solid transparent;
-}
-details[open] > summary::after {
-  transform: rotate(-180deg);
-}
-
-/* LINE SECTION */
-.line_section {
-  margin-top: 40px;
-}
-
-hr {
-  color: #494242;
-}
-
-.line_section p {
-  margin-top: 20px;
-}
-
-.line_2 {
-  margin-top: 20px;
-}
-
-.line-list {
-  padding-left: 0.5em;
-  list-style: none;
-  margin: 1.5em 0 2em 0;
-}
-
-.line-list li {
-  margin-block: 1em;
-  padding-inline-start: 2em;
-  position: relative;
-}
-
-.line_section li::before {
-  content: ""; /* Behold checkmarks */
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  /* Styling */
-  transform: rotate(45deg);
-  height: 0.8em;
-  width: 0.43em;
-  border-bottom: 0.15em solid;
-  border-right: 0.15em solid;
-}
-
+    .icon-button {
+      width: 400px;
     }
-  </style>
-  
 
-  <script>
-    const imgs = document.querySelectorAll(".img-select a");
-const imgBtns = [...imgs];
-let imgId = 1;
+    .accordion {
+      width: 400px;
+    }
 
-imgBtns.forEach((imgItem) => {
-  imgItem.addEventListener("click", (event) => {
-    event.preventDefault();
-    imgId = imgItem.dataset.id;
-    slideImage();
-  });
-});
+    hr {
+      width: 400px;
+    }
+  }
+</style>
 
-function slideImage() {
-  const displayWidth = document.querySelector(".img-showcase img:first-child").clientWidth;
+<script>
+  var acc = document.getElementsByClassName("accordion");
 
-  document.querySelector(".img-showcase").style.transform = `translateX(${-(imgId - 1) * displayWidth}px)`;
-}
-
-window.addEventListener("resize", slideImage);
-
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        panel.style.paddingTop = null;
+        panel.style.paddingBottom = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "200px";
+        panel.style.paddingTop = "18px";
+        panel.style.paddingBottom = "18px";
+      }
+    });
+  }
 </script>
