@@ -53,21 +53,20 @@ import "../styles/style.css";
       <ScrollArrow />
       <WorkshopSlider />
     </div>
-    <section class="kontaktform">
-      <div class="kontakt">
-        <h2>KONTAKT</h2><br />
-        <p>Kontakt mig her, hvis du har spørgsmål ang. workshops, malerier eller andet, <br />eller hvis du gerne vil modtage nyhedsmail omkring Brug Bogen og leg med mig.</p>
-      </div>
-      <div class="form">
-        <div class="form_susse"><Kontaktform /></div>
-        <img class="illust_susse" src="/workshop/kontaktsusse.webp" alt="Susse" />
-      </div>
-    </section>
+  </section>
+  <section class="kontaktform">
+    <div class="kontakt">
+      <h2>KONTAKT</h2><br />
+      <p>Kontakt mig her, hvis du har spørgsmål ang. workshops, malerier eller andet, <br />eller hvis du gerne vil modtage nyhedsmail omkring Brug Bogen og leg med mig.</p>
+    </div>
+    <div class="form">
+      <div class="form_susse"><Kontaktform /></div>
+      <img class="illust_susse" src="/workshop/kontaktsusse.webp" alt="Susse" />
+    </div>
   </section>
 </WorkshopLayout>
 <style>
   /**************************************darkmode */
-
   body.dark,
   body.dark .navbar {
     background-color: #494242;
@@ -140,7 +139,7 @@ import "../styles/style.css";
   .workshop_2,
   .workshop_3 {
     padding: 0 40px 20px 40px;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .workshop_tekst,
@@ -345,7 +344,7 @@ import "../styles/style.css";
     .workshop_2,
     .workshop_3 {
       padding: 0;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .background img {
@@ -389,7 +388,7 @@ import "../styles/style.css";
     .workshop_2,
     .workshop_3 {
       max-width: 70%;
-      object-fit: cover;
+      object-fit: contain;
     }
     .flower_2 {
       top: -31px;
