@@ -6,13 +6,18 @@ console.log(data);
 ---
 
 <div class="gallery_cards">
-  <img class="animalabstraks" src={data.img} alt={data.name} />
+  <img class="gallery_img" src={data.img} alt={data.name} />
   <p class="title">{data.name}</p>
   <p class="caption_dashed"><span class="caption_tekst">{data.measure}</span></p>
+
+  <div class="popup-img">
+    <span>&times;</span>
+    <img class="gallery_img" src={data.img} alt={data.name} />
+  </div>
 </div>
 
 <style>
-  /*Darkmode*/
+  /*******************************'Darkmode************************************/
   body.dark,
   body.dark .navbar {
     background-color: #494242;
@@ -25,6 +30,42 @@ console.log(data);
   body.dark .kurv {
     color: #fff;
   }
+  /********************************popup image*************************************/
+  .gallery_cards .popup-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.929);
+    height: 110%;
+    width: 110%;
+    z-index: 900;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .gallery_cards .popup-img span {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+  }
+  .gallery_cards .popup-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+  }
+
+  /********************************************mobil*****************/
   .gallery_cards img {
     padding: 20px;
     width: 100%;
@@ -32,6 +73,7 @@ console.log(data);
     object-fit: cover;
     opacity: 0;
     transition: opacity 250ms ease-in;
+    cursor: pointer;
   }
   .gallery_cards img.appear {
     opacity: 1;
@@ -50,4 +92,32 @@ console.log(data);
     flex-grow: 0;
     flex-shrink: 0;
   }
+  /*tablet*/
+  @media (max-width: 768px) {
+    .gallery_cards .popup-img {
+      height: 100%;
+      width: 100%;
+    }
+    .gallery_cards .popup-img img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll<HTMLElement>(".gallery_cards img").forEach((image) => {
+      image.onclick = () => {
+        const popup = image.closest(".gallery_cards")!.querySelector(".popup-img") as HTMLElement;
+        popup.style.display = "flex";
+        (popup.querySelector("img") as HTMLImageElement).src = (image as HTMLImageElement).src;
+      };
+    });
+
+    document.querySelectorAll<HTMLElement>(".popup-img span").forEach((closeBtn) => {
+      closeBtn.onclick = () => {
+        (closeBtn.closest(".popup-img") as HTMLElement).style.display = "none";
+      };
+    });
+  });
+</script>
