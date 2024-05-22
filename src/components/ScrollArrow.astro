@@ -8,16 +8,44 @@
   </p>
 </div>
 <style>
+  /*Darkmode*/
+
+  body.dark .scroll {
+    border: 3px solid #fff;
+  }
+  body.dark .arrow {
+    color: #fff;
+  }
+
+  body.dark .movearrow {
+    position: relative;
+    animation: arrow-right-dark 1s infinite alternate;
+  }
+
+  @keyframes arrow-right-dark {
+    from {
+      color: #ffcce5;
+      left: 0px;
+      top: 0;
+    }
+    to {
+      color: #f2f3ed;
+      left: 20px;
+      top: 0;
+    }
+  }
+
+  /*****************************************mobil */
   .scroll {
     border: 3px solid #f20056;
     border-radius: 50%;
-    width: 90px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin: 90px 40px 0 20px;
+    margin: 90px 10px 0 10px;
     aspect-ratio: 1 / 1;
   }
   .arrow {
@@ -25,6 +53,8 @@
     flex-direction: column;
     position: relative;
     color: #f20056;
+    font-size: 14px;
+    padding: 10px;
   }
   .movearrow {
     position: relative;
@@ -39,8 +69,28 @@
     }
     to {
       color: #f20056;
-      left: 40px;
+      left: 20px;
       top: 0;
+    }
+  }
+
+  /*****************************************tablet */
+  @media (min-width: 768px) {
+    .scroll {
+      width: 60px;
+      height: 60px;
+      margin: 90px 20px 0 20px;
+    }
+  }
+  /*****************************************laptop */
+  @media (min-width: 1024px) {
+    .scroll {
+      width: 80px;
+      height: 80px;
+      margin: 90px 20px 0 20px;
+    }
+    .arrow {
+      font-size: 18px;
     }
   }
 </style>
