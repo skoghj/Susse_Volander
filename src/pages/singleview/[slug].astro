@@ -28,7 +28,6 @@ const { paintings } = Astro.props;
         <ul class="breadcrumb">
           <li><a href="/index/">Forside</a></li>
           <li><a href="/overview/">Shop</a></li>
-          <li>{paintings.category}</li>
           <li>{paintings.name}</li>
         </ul>
       </div>
@@ -116,6 +115,49 @@ const { paintings } = Astro.props;
     margin: 2rem;
     background-color: #fcfff6;
   }
+
+  /* DARKDMODE */
+  
+  body.dark,
+  body.dark .navbar {
+    background-color: #494242;
+  }
+  body.dark h1,
+  body.dark h2,
+  body.dark a,
+  body.dark p,
+  body.dark ul.breadcrumb li + li:before,
+  body.dark ul.breadcrumb li a,
+  body.dark ul.breadcrumb li,
+  body.dark .kurv,
+  body.dark ul.line-list li {
+    color: #fff;
+  }
+
+
+  body.dark .icon-button,
+  body.dark hr{
+    background-color: #ac9999;
+  }
+ body.dark .icon-button:hover{
+    background-color: #948585;
+  }
+  
+ body.dark .accordion {
+    background-color: #ac9999;
+    color: #211f1f;
+  }
+
+  body.dark .active,
+  body.dark .accordion:hover {
+    background-color: #948585;
+  }
+
+  body.dark .accordion:after,
+  body.dark .panel p {
+    color: #211f1f;
+  }
+
 
   /* BREADCRUMB */
   .breadcrumb-nav {
@@ -324,6 +366,7 @@ const { paintings } = Astro.props;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    max-width: 400px;
   }
 
   .panel p {
