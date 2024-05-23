@@ -1,20 +1,21 @@
 /* GENERAL */
 body {
-  background-image: url("/images/gradient_overview.webp");
+  background-image: linear-gradient(to bottom, rgba(233, 255, 189), rgba(252, 255, 246));
   background-repeat: no-repeat;
-  background-size: contain;
 }
-
+.hide {
+  display: none;
+}
 .cards_list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin: 60px;
+  margin: 40px;
   gap: 60px;
 }
 
 .start-text1 {
-  margin-left: 40px;
-  margin-top: 40px;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
 .start-text1 {
@@ -36,7 +37,7 @@ body {
 
 .start-text2 {
   margin-left: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   margin-top: 5px;
 }
 

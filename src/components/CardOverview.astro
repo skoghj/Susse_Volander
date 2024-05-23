@@ -1,16 +1,21 @@
 ---
 const { data } = Astro.props;
+
+let classAsString = "";
+data.category.forEach((element) => {
+  classAsString += element + " ";
+});
+console.log("classAsString", classAsString);
 ---
 
-<a class="card" href={"../singleview/" + data.slug}>
+<article class={"card " + classAsString}>
   <img src={data.image} alt="random image" />
   <div class="overlay">
     <h1>{data.name}</h1>
     <p class="price">{data.price} kr.</p>
-    <p><button>Læs mere..</button></p>
+    <a href={"../singleview/" + data.slug}>Læs mere..</a>
   </div>
-</a>
-
+</article>
 <style>
   /* CARD STYLING */
   .card {
@@ -43,7 +48,8 @@ const { data } = Astro.props;
 
   .price {
     color: #494242;
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 
   .overlay {
@@ -51,7 +57,7 @@ const { data } = Astro.props;
   }
 
   .overlay h1 {
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Lato";
     color: #494242;
     font-weight: 600;
@@ -61,23 +67,20 @@ const { data } = Astro.props;
   }
 
   /* CARD BUTTON */
-  .card button {
+  .card a {
     border: 0;
     padding: 10px;
     color: #494242;
     text-align: left;
     cursor: pointer;
-    width: 90px;
-    font-size: 12px;
+    font-size: 13px;
+    text-decoration: none;
     border-radius: 10px;
-    margin-top: 30px;
     background-color: #ffdded;
   }
 
-  .card button:hover {
+  .card a:hover {
     background-color: #ffcce6;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   }
 </style>
-
-<script></script>
