@@ -194,17 +194,38 @@
 </style>
 
 <script>
-  const checkbox = document.getElementById("checkbox");
+  const checkbox = document.getElementById("checkbox") as HTMLInputElement;
+
+  // Event listener for checkbox change
   checkbox.addEventListener("change", () => {
+    // Toggle dark mode class on the body
     document.body.classList.toggle("dark");
+
+    // Gem dark mode-indstillingen i localStorage
+    if (checkbox.checked) {
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      localStorage.setItem("darkMode", "disabled");
+    }
   });
 
+  // Hent dark mode-indstillingen fra localStorage
+  const darkModeSetting = localStorage.getItem("darkMode");
+
+  // Anvend dark mode-indstillingen, hvis den er gemt
+  if (darkModeSetting === "enabled") {
+    document.body.classList.add("dark");
+    checkbox.checked = true;
+  } else {
+    document.body.classList.remove("dark");
+    checkbox.checked = false;
+  }
+  //////////////////burgermenu//////////////////
+
   document.addEventListener("DOMContentLoaded", function () {
-    //////////////////burgermenu//////////////////
     document.getElementById("burgerIcon").addEventListener("click", function () {
       var navbar = document.getElementById("myNavbar");
       navbar.classList.toggle("show");
     });
   });
 </script>
- 
