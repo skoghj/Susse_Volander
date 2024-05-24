@@ -1,0 +1,27 @@
+---
+import Header from "../Header.astro";
+import Footer from "../Footer.astro"
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>{title}</title>
+    <link rel="stylesheet" href="layout.css">
+    <link href="https://fonts.cdnfonts.com/css/marine-sikona" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <Header></Header>
+    <main>
+<slot></slot>
+    </main>
+    <Footer></Footer>
+</body>
+
+</html>
