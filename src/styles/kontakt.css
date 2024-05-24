@@ -1,19 +1,26 @@
 /* GENERAL */
 
-.bg {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
+body {
+  background: rgb(252, 255, 246);
+  background: linear-gradient(
+    34deg,
+    rgba(252, 255, 246, 1) 80%,
+    rgba(225, 247, 182, 1) 88%,
+    rgba(213, 234, 173, 1) 90%,
+    rgba(205, 222, 167, 1) 92%,
+    rgba(173, 173, 145, 1) 96%
+  );
 }
 
 h1 {
-  margin: 80px;
+  margin: 50px;
   font-weight: 400;
   font-size: 60px;
   padding: 20px 0;
+  text-align: left; /* Added for better positioning */
 }
 
-/*CONTAINER */
+/* CONTAINER */
 
 .container {
   display: grid;
@@ -45,49 +52,62 @@ h1 {
   gap: 20px;
   font-family: "Lato";
   color: #494242;
-  position: relative;
 }
 
 .showcase {
-  grid-column: 2 / 3;
+  position: relative;
   margin-bottom: 40px;
 }
 
-/* Adjust styling as needed */
+.showcase img {
+  width: 100%;
+  height: auto;
+}
+
 .centered {
   position: absolute;
-  top: 40%;
-  left: 70%;
-  transform: translate(-50%, -60%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 55px;
 }
 
 .centered p {
   text-align: left;
   line-height: 1.5;
+  max-width: 800px;
+}
+
+.centered h2 {
+  margin-bottom: 15px;
+}
+
+.centered h3 {
+  margin-bottom: 12px;
 }
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
-  .bg {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .bg img {
-    width: 450px;
-  }
-
   h1 {
-    position: absolute;
-    top: 8%;
-    right: 25%;
+    position: static; /* Changed from absolute to static for better flow */
+    margin: 20px; /* Adjusted margins */
+    text-align: left; /* Ensure centering on small screens */
+    font-size: 48px; /* Adjust font size for better readability */
   }
+
   .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
+  }
+
+  .text {
+    margin: 40px;
   }
 
   .container2 {
@@ -96,31 +116,53 @@ h1 {
     justify-content: center;
   }
 
-  .illustration img {
-    width: 80%;
-  }
-
-  .text {
-    margin: 50px;
-    display: flex;
-  }
-
   .showcase {
-    grid-column: 1 / 3;
-  }
-
-  .centered {
-    position: absolute;
-    top: 65%;
-    left: 40%;
-    text-align: left;
-    font-size: 11.5px;
-  }
-
-  .showcase {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: fit-content;
+    margin-bottom: 20px; /* Adjust as needed for spacing */
+  }
+
+  .showcase img {
+    width: 100%;
+    height: auto;
+  }
+
+  .centered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 40px;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .centered p {
+    text-align: left;
+    line-height: 1.5;
+    max-width: 800px;
+    font-size: 13px;
+  }
+
+  .centered h2 {
+    font-size: 20px;
+  }
+
+  .illustration {
+    display: flex;
+    justify-content: left;
+  }
+
+  .illustration img {
+    height: auto;
+    width: 85%;
   }
 }
