@@ -1,6 +1,7 @@
 ---
 import CardOverview from "../components/CardOverview.astro";
 import OverviewLayout from "../components/layouts/OverviewLayout.astro";
+import FlowerAnimation from "../components/FlowerAnimation.astro";
 import Buttons from "../components/Buttons.astro";
 import "../styles/overview.css";
 import "../styles/style.css";
@@ -17,7 +18,7 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
 <OverviewLayout title="WEBSHOP">
   <div class="start-text1">
     <h1>WEBSHOP</h1>
-    <img src="../images/flower.svg" alt="flower illustration" />
+    <div class="flower_1"><FlowerAnimation variant="primary" /></div>
   </div>
   <div class="start-text2">
     <p>

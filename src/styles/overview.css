@@ -1,16 +1,4 @@
 /* GENERAL */
-body {
-  background: rgb(252, 255, 246);
-  background: linear-gradient(
-    34deg,
-    rgba(252, 255, 246, 1) 71%,
-    rgba(225, 247, 182, 1) 76%,
-    rgba(213, 234, 173, 1) 80%,
-    rgba(225, 225, 191, 1) 84%,
-    rgba(248, 206, 227, 1) 90%,
-    rgba(255, 204, 229, 1) 94%
-  );
-}
 
 .hide {
   display: none;
@@ -48,6 +36,14 @@ body {
   margin-left: 40px;
   margin-bottom: 20px;
   margin-top: 5px;
+}
+
+.flower_1 {
+  left: 350px;
+}
+
+.flower_1 {
+  position: absolute;
 }
 
 /* KNAPPER */
@@ -114,4 +110,15 @@ body {
   br {
     display: none;
   }
+}
+
+/* DARK MODE */
+body.dark {
+  background-color: #494242;
+}
+
+body.dark p,
+body.dark h1,
+body.dark .kurv {
+  color: #fcfff6;
 }

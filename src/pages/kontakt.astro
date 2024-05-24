@@ -1,5 +1,6 @@
 ---
 import KontaktLayout from "../components/layouts/KontaktLayout.astro";
+import FlowerAnimation from "../components/FlowerAnimation.astro";
 import SomeIcons from "../components/SomeIcons.astro";
 import Form from "../components/Form.astro";
 import "../styles/kontakt.css";
@@ -9,11 +10,19 @@ import "../styles/style.css";
 <KontaktLayout title="Kontakt">
   <div class="bg">
     <h1 class="title">KONTAKT</h1>
+    <div class="flower_1"><FlowerAnimation variant="primary" /></div>
   </div>
   <div class="container">
-    <div class="illustration">
-      <img src="../images/sus_graphic.webp" alt="illustration" />
+    <div class="illustration_container">
+      <div class="illustration">
+        <img src="../images/sus_graphic1.webp" alt="illustration" />
+      </div>
+
+      <div class="illustration2">
+        <img src="../images/sus_graphic2.webp" alt="illustration" />
+      </div>
     </div>
+
     <div class="text">
       <h2>Forbind med kunsten</h2>
       <p>
