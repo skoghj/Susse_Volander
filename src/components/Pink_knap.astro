@@ -1,11 +1,14 @@
 ---
-const linknavn = Astro.props.linknavn;
+const link = Astro.props.linknavn;
 ---
 
-<button>{linknavn}</button>
+<a href={link} class="custom-button">
+  <slot />
+</a>
 
 <style>
-button {
+  .custom-button {
+    display: inline-block;
     padding: 10px 15px;
     margin: 10px 0;
     border-radius: 10px;
@@ -14,15 +17,25 @@ button {
     text-decoration: none;
     color: #ffffff;
     background-color: #F20056;
-    border-color: #F20056;
+    border: 2px solid #F20056;
     font-size: 14px;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
+  }
 
-button:hover {
+  .custom-button:hover {
     color: #494242;
     background-color: #FFBAD2;
-    border-color:#FFBAD2;
+    border-color: #FFBAD2;
     cursor: pointer;
-}
+  }
+  .custom-button[data-variant="secondary"] {
+    border: 2px solid #F20056;
+    background-color: transparent;
+    color: #F20056;
+  }
+
+  .custom-button[data-variant="secondary"]:hover {
+    background-color: #F20056;
+    color: black;
+  }
 </style>
