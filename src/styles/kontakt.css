@@ -223,7 +223,3 @@ body.dark h3 {
 body.dark .showcase img {
   filter: grayscale(100%) brightness(40%);
 }
-
-body.dark .illustration img {
-  filter: grayscale(100%);
-}
