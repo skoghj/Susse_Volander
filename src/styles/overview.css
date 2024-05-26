@@ -6,7 +6,7 @@
 .cards_list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin: 40px;
+  margin: 30px;
   gap: 60px;
 }
 
@@ -46,40 +46,9 @@
   position: absolute;
 }
 
-/* KNAPPER */
-
-.show_more button {
-  border: 0;
-  background-color: #dadada;
-  font-family: "Lato";
-  font-size: 15px;
-  color: #494242;
-  padding: 10px;
-  width: 120px;
-  border-radius: 10px;
-  margin-left: 35px;
-}
-
-.show_more {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.show_more button {
-  background-color: #dadada;
-  font-family: "Lato";
-}
-
-.show_more button:hover {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-  background-color: #b0b0b0;
-  cursor: pointer;
-}
-
 /* MEDIA QUERIES */
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 500px) {
   .cards_list {
     display: flex;
     flex-direction: column;
@@ -87,28 +56,35 @@
     gap: 40px;
   }
 
-  .category2,
-  .category3 {
-    display: none;
-  }
-
   .start-text1,
   .start-text2 {
-    max-width: 350px;
+    max-width: 450px;
   }
 
   .start-text2 p {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 13.5px;
   }
 
-  .show_more button {
-    margin-left: 0;
-    margin-top: 20px;
-    font-size: 16px;
+  .flower_1 {
+    left: 300px;
   }
-  br {
-    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .cards_list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 20px;
+  }
+
+  .start-text2 p {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .flower_1 {
+    left: 300px;
   }
 }
 
