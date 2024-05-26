@@ -58,7 +58,7 @@ img {
 }
 
 .intro h1 {
-  font-size: 30px;
+  font-size: 25px;
   color: #fcfff6;
 }
 
@@ -69,8 +69,8 @@ img {
 
 #intro_text {
   position: absolute; /* Position the h1 absolutely within the .intro container */
-  top: 16%;
-  left: 55%;
+  top: 15%;
+  left: 50%;
   color: #fcfff6;
 }
 
@@ -136,8 +136,7 @@ hr {
   background-image: url("/om_mig_billeder/workshop_about.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
-  padding-top: 60px;
+  padding-top: 130px;
   padding-bottom: 60px;
 }
 
@@ -192,20 +191,15 @@ hr {
 
   /* INTRO DESKTOP */
   #intro_text {
-    top: 30%;
+    top: 37%;
   }
 
   #intro_text h1 {
     font-size: 45px;
   }
 
-  #intro_text p {
-    max-width: 300px;
-  }
-
   .none {
     display: block;
-    max-width: 450px;
   }
 
   /* KUNSTENS REJSE DESKTOP */
@@ -277,6 +271,10 @@ hr {
   .title_skewered_workshop {
     left: -18%;
     top: -14%;
+  }
+
+  .background_workshop {
+    padding-top: 250px;
   }
 
   .visible_mobile {

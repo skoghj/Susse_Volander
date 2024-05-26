@@ -9,7 +9,7 @@ import "../styles/ommig.css";
         <div class="intro">
             <img src="/om_mig_billeder/intro_om_mig.webp" alt="intro billede">
             <div id="intro_text">
-                <h1 class="fade-in">Kunstneren bag lærredet</h1>
+                <h1 class="fade-in">KUNSTNEREN BAG LÆRREDET</h1>
                 <p class="none fade-in">Jeg er Susse Volander, en kunstner, der lever og ånder for at udtrykke mig kreativt!</p>
             </div>
         </div>
@@ -62,8 +62,10 @@ import "../styles/ommig.css";
         </article>
     </div>
 </div>
+</div>
 
-    <div class="box_container fade-in">
+<div class="background_workshop">
+    <div class="box_container top_aligned_container fade-in">
         <h2 class="margin-bottom visible_mobile">GENBRUG: MIN UENDELIGE INSPIRATIONSKILDE</h2>
         <div class="grid_img_text">
                 <img class="slide-in from-left" src="/om_mig_billeder/workshop_wagon_last.webp" alt="susse malerier">
@@ -74,11 +76,11 @@ import "../styles/ommig.css";
                 <p> En lille pige, super begejstret for at være der, fik sine forældre til at deltage. Til at begynde med sad forældrene stille, men da de begyndte at deltage, skabte de nogle fantastiske ting sammen.</p>
                 <p>At se forældre og børn skabe noget sammen, der pludselig falder på plads er virkelig inspirerende. Børnenes entusiasme og kreativitet giver mig en masse energi og inspiration - som for eksempel ordet "tudsesuppe"!</p>
                 <p>At arrangere disse workshops er en ægte win-win situation for mig. så kom endelig, og lad kreativiteten flyde! Tjek mine workshops ud og vær med til at skabe nogle rigtige fede ting!</p>
-                <a href="/src/pages/workshop">Vid mere</a>
+                <a href="/src/pages/workshop">Læs mere</a>
             </article>
 
         </div>
-</div>
+    </div>
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -86,7 +88,7 @@ import "../styles/ommig.css";
         const sliders = document.querySelectorAll(".slide-in");
 
         const appearOptions = {
-            threshold: 0.5, // Adjust this value based on your needs
+            threshold: 0.1, // Adjust this value based on your needs
             rootMargin: "0px 0px -100px 0px" 
         };
 
@@ -144,5 +146,13 @@ import "../styles/ommig.css";
 .from-left.appear, .from-right.appear{
     transition: transform 400ms ease-in;
     transform: translateX(0);
+}
+
+.red_thread a{
+    text-decoration: underline;
+}
+
+.red_thread a:hover{
+    color: #F20056;
 }
 </style>
