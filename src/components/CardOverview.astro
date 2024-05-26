@@ -8,22 +8,21 @@ data.category.forEach((element) => {
 console.log("classAsString", classAsString);
 ---
 
-<a class="link" href={"../singleview/" + data.slug}>
-  <article class={"card " + classAsString}>
-    <img src={data.image} alt="random image" />
-    <div class="overlay">
-      <h1>{data.name}</h1>
-      <p class="price">{data.price} kr.</p>
-    </div>
-  </article>
-</a>
+<article class={"card " + classAsString}>
+  <img src={data.image} alt="random image" />
+  <div class="overlay">
+    <h1>{data.name}</h1>
+    <p class="price">{data.price} kr.</p>
+    <a href={"../singleview/" + data.slug}>Se mere..</a>
+  </div>
+</article>
 <style>
   /* CARD STYLING */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #fafafa;
-    height: 420px;
-    width: 290px;
+    height: 520px;
+    width: 310px;
     border-radius: 10px;
     text-align: left;
     font-family: "Lato";
@@ -41,8 +40,9 @@ console.log("classAsString", classAsString);
 
   .card img {
     width: 100%;
-    height: 300px;
+    height: 350px;
     border-radius: 10px 10px 0 0;
+    zoom: 100%;
     object-fit: cover;
   }
 
@@ -67,7 +67,7 @@ console.log("classAsString", classAsString);
   }
 
   /* CARD BUTTON */
-  a {
+  .card a {
     border: 0;
     padding: 10px;
     color: #494242;
@@ -76,6 +76,12 @@ console.log("classAsString", classAsString);
     font-size: 13px;
     text-decoration: none;
     border-radius: 10px;
+    background-color: #ffdded;
+  }
+
+  .card a:hover {
+    background-color: #ffcce6;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   }
 
   /* DARK MODE */
