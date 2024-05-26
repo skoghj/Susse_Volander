@@ -199,6 +199,12 @@ h1 {
     font-size: 30px;
     margin-bottom: 40px;
   }
+
+  .flower_1 {
+    position: absolute;
+    left: 260px;
+    top: 90px;
+  }
 }
 
 /* DARK MODE */

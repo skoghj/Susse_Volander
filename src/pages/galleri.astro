@@ -6,8 +6,7 @@ import "../styles/style.css";
 const data = await fetch("https://kzwdodzkuyregkxdogsp.supabase.co/rest/v1/SusseVolander_Gallery", {
   method: "GET",
   headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6d2RvZHprdXlyZWdreGRvZ3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYyMzQ3NjEsImV4cCI6MjAzMTgxMDc2MX0.G7BAKl7YMqVe8k0n5d8nABx91EvQpBZLI7mtu9KMVuI",
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6d2RvZHprdXlyZWdreGRvZ3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYyMzQ3NjEsImV4cCI6MjAzMTgxMDc2MX0.G7BAKl7YMqVe8k0n5d8nABx91EvQpBZLI7mtu9KMVuI",
   },
 }).then((res) => res.json());
 console.log(data);
@@ -19,10 +18,7 @@ console.log(data);
       <img class="gallery_title_img" src="/gallery/gallery_head.webp" alt="Susses signature" class="signimg" />
       <div class="intro_gallery">
         <h1 class="gallery_title">Galleri</h1>
-        <p class="gallery_intro_tekst">
-          Velkommen til mit galleri! Her mødes farver og glæde i en festlig symfoni af kreativitet. Udforsk mine malerier, der emmer af livlige
-          kompositioner og sprudlende energi. Tag med på en rejse gennem mit kunstneriske univers og lad dig inspirere af mine levende værker!
-        </p>
+        <p class="gallery_intro_tekst">Velkommen til mit galleri! Her mødes farver og glæde i en festlig symfoni af kreativitet. Udforsk mine malerier, der emmer af livlige kompositioner og sprudlende energi. Tag med på en rejse gennem mit kunstneriske univers og lad dig inspirere af mine levende værker!</p>
       </div>
     </article>
 
@@ -82,7 +78,7 @@ console.log(data);
       .gallery_title {
         font-size: 30px;
       }
-      ..gallery_intro_tekst {
+      .gallery_intro_tekst {
         font-size: 16px;
       }
       .main_wrapper {
@@ -183,7 +179,7 @@ console.log(data);
           font-size: 30px;
         }
         ..gallery_intro_tekst {
-          font-size: 16px;
+          font-size: 18px;
         }
       }
       /***********************************************Laptop */
