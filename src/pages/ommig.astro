@@ -1,6 +1,7 @@
 ---
 import Mainlayout from "../components/layouts/Mainlayout.astro";
 import "../styles/style.css";
+import "../styles/ommig.css";
 ---
 
 <Mainlayout title="Om mig">
@@ -8,13 +9,12 @@ import "../styles/style.css";
         <div class="intro">
             <img src="/om_mig_billeder/intro_om_mig.webp" alt="intro billede">
             <div id="intro_text">
-                <h1>Kunstneren bag lærredet</h1>
-                <p class="none">Jeg er Susse Volander, en kunstner, der lever og ånder for at udtrykke mig kreativt!</p>
+                <h1 class="fade-in">KUNSTNEREN BAG LÆRREDET</h1>
+                <p class="none fade-in">Jeg er Susse Volander, en kunstner, der lever og ånder for at udtrykke mig kreativt!</p>
             </div>
-</div>
+        </div>
 
-
-    <div class="box_container top_aligned_container">
+    <div class="box_container top_aligned_container fade-in">
         <article class="flex_row">
             <div>
                 <h2>MIN REJSE IND I KUNSTENS VERDEN</h2>
@@ -31,13 +31,11 @@ import "../styles/style.css";
 </div>
 
 <div class="everything_container">
-    <div class="box_container">
+    <div class="box_container fade-in ">
         <h2 class="margin-bottom visible_mobile">GENBRUG: MIN UENDELIGE INSPIRATIONSKILDE</h2>
         <div class="grid_img_text">
-            <div>
-                <img src="/om_mig_billeder/paintings.webp" alt="susse malerier">
-            </div>
-            <article class="red_thread">
+            <img class="slide-in from-left" src="/om_mig_billeder/paintings.webp" alt="susse malerier">
+            <article class="red_thread slide-in from-right">
                 <h2 class="visible_desktop title_skewered">GENBRUG: MIN UENDELIGE</h2>
                 <h2 class="visible_desktop">INSPIRATIONSKILDE</h2>
                 <p>Der er en rød tråd i hele mine malerier, og jeg inspirerer mig selv ud fra hvad der foregår omkring mig og ud fra de genbrugte materialer, der havner i genbrug. Jeg får alt det som genbrug ikke kunne sælge, et legetøjsgris der mangler et ben, eller et puslespil der mangler brikker. Det inspirerer mig SÅ meget, og det er det jeg laver workshop fra. Genbrug er en kæmpe, lækker suppe jeg slurker op!</p>
@@ -46,13 +44,13 @@ import "../styles/style.css";
         </div>
     </div>
     
-<div class="box_container ">
+<div class="box_container">
     <article>
         <h2>LEGENDE TILGANG MED GENBRUG</h2>         
     </article>
     <hr>
     <div id="grid_hanging">
-        <div id="hanging_container">
+        <div class="hanging_container slide-in from-right">
             <img id="hoved" src="/om_mig_billeder/hoved_uden_piner.webp" alt="hoved uden piner">
             <img id="pipaluk" src="/om_mig_billeder/pipaluk_hanging_around.webp" alt="pipaluk hanging">
             <img id="art_collage" src="/om_mig_billeder/hanging_art_collage.webp" alt="hanging art">
@@ -64,320 +62,97 @@ import "../styles/style.css";
         </article>
     </div>
 </div>
+</div>
 
-    <div class="box_container">
+<div class="background_workshop">
+    <div class="box_container top_aligned_container fade-in">
         <h2 class="margin-bottom visible_mobile">GENBRUG: MIN UENDELIGE INSPIRATIONSKILDE</h2>
         <div class="grid_img_text">
-            <div>
-                <img src="/om_mig_billeder/workshop_wagon_last.webp" alt="susse malerier">
-            </div>
-            <article class="red_thread">
+                <img class="slide-in from-left" src="/om_mig_billeder/workshop_wagon_last.webp" alt="susse malerier">
+            <article class="red_thread slide-in from-right">
                 <h2 class="visible_desktop title_skewered_workshop">NÅR KREATIVITETEN</h2>
                 <h2 class="visible_desktop">FORBINDER GENERATIONER</h2>
                 <p>Hele oplevelsen med mine workshops er virkelig speciel for mig. Under en fri workshop, hvor vi brugte naturens materialer som blade og sten, havde jeg et øjeblik, der virkelig gav mig et "wow!"-øjeblik.</p>
                 <p> En lille pige, super begejstret for at være der, fik sine forældre til at deltage. Til at begynde med sad forældrene stille, men da de begyndte at deltage, skabte de nogle fantastiske ting sammen.</p>
                 <p>At se forældre og børn skabe noget sammen, der pludselig falder på plads er virkelig inspirerende. Børnenes entusiasme og kreativitet giver mig en masse energi og inspiration - som for eksempel ordet "tudsesuppe"!</p>
                 <p>At arrangere disse workshops er en ægte win-win situation for mig. så kom endelig, og lad kreativiteten flyde! Tjek mine workshops ud og vær med til at skabe nogle rigtige fede ting!</p>
-                <a href="/src/pages/workshop">Vid mere</a>
+                <a href="/src/pages/workshop">Læs mere</a>
             </article>
 
         </div>
+    </div>
 </div>
-</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const faders = document.querySelectorAll(".fade-in");
+        const sliders = document.querySelectorAll(".slide-in");
+
+        const appearOptions = {
+            threshold: 0.1, // Adjust this value based on your needs
+            rootMargin: "0px 0px -100px 0px" 
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add("appear");
+                    console.log("Element appeared:", entry.target); // Debugging log
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            console.log("Observing element:", fader); // Debugging log
+            appearOnScroll.observe(fader);
+        });
+
+        sliders.forEach(slider => {
+            console.log("Observing element:", slider); // Debugging log
+            appearOnScroll.observe(slider);
+        });
+    });
+</script>
 </Mainlayout>
 
-
 <style>
-    html, body {
-    margin: 0;
-    padding: 0;
-}
-h1, h2 {
-    font-family: "Marine Sikona", sans-serif;
-    margin-bottom: 10px;
-    margin-top: 10px;   
-}
-p {
-    margin-top: 10px;
-    margin-bottom: 10px;
+.fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
 }
 
-img {
-    width: 100%;
-    height: auto;
+.fade-in.appear {
+    opacity: 1;
 }
 
-.none, .visible_desktop {
-    display: none;
+.from-left{
+    grid-column: 2 / 3;
+    transform: translateX(-50%);
 }
 
-.everything_container, .top_aligned_container{
-    display: flex;
-    flex-direction: column;
-    margin: 30px;
+.from-right{
+    grid-column: 3 / 4;
+    transform: translateX(50%);
+
+
 }
 
-/* Define a new class for containers where flex_row should align to the top */
-.top_aligned_container {
-    align-items: flex-start; /* Align content to the start of the container */
+.from-left, .from-right{
+    transition: transform 400ms ease-in;
 }
 
-/* Keep the properties of the box_container */
-.box_container {
-    position: relative;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-}
-/* Apply specific alignment for flex_row inside the top_aligned_container */
-.top_aligned_container .flex_row {
-    justify-content: flex-start; /* Align items to the start of the container horizontally */
-    align-items: flex-start; /* Align items to the start of the container vertically */
-    max-width: 1200px;
-    gap: 100px;
+.from-left.appear, .from-right.appear{
+    transition: transform 400ms ease-in;
+    transform: translateX(0);
 }
 
-
-/* INTRO */
-.intro img {
-    width: 100%;
+.red_thread a{
+    text-decoration: underline;
 }
 
-.intro h1 {
-    font-size: 30px;
-    color: #FCFFF6;
+.red_thread a:hover{
+    color: #F20056;
 }
-
-.intro p {
-    color: #FCFFF6;
-    margin-top: 15px;
-}
-
-#intro_text {
-    position: absolute; /* Position the h1 absolutely within the .intro container */
-    top: 16%;
-    left: 55%;
-    color: #FCFFF6;
-}
-
-/* KUNSTENS VERDEN */
-.kunstens_verden {
-    background-image: url("/om_mig_billeder/background_kunst.svg");
-    background-size: cover; /* Ensure the background image covers the entire container */
-    background-repeat: no-repeat;
-    background-position: center; /* Center the background image */
-    padding-bottom: 60px;
-}
-
-hr{
-        width:100%;
-    }
-
-
-/* LEGENDE TILGANG */
-#hanging_container {
-    position: relative;
-    width: 100%;
-    height: 400px;
-}
-
-@keyframes swing {
-    0% {
-        transform: rotate(3deg); /* Rotate slightly to the right */
-    }
-    50% {
-        transform: rotate(-3deg); /* Rotate slightly to the left */
-    }
-    100% {
-        transform: rotate(3deg); /* Rotate slightly to the right */
-    }
-}
-
-#hanging_container img {
-    animation: swing 3s infinite; /* Apply the swing animation */
-    transform-origin: top center; /* Set the rotation center to the top */
-    position: absolute;
-    height: auto; /* Maintain aspect ratio */
-}
-
-#hoved {
-    width: 70px; /* Adjust the width to your desired size */
-    top: -3%;
-    left: 5%;
-}
-
-#pipaluk {
-    width: 100px;
-    top: -5%;
-    left: 28%;
-}
-
-#art_collage {
-    width: 200px;
-    top: -5%;
-    left: 55%;
-}
-
-/* KREATIVITET FORBINDER GENERATIONER */
-.background_workshop {
-    background-image: url("/om_mig_billeder/workshop_about.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-/* GRID HANGING CONTAINER */
-#grid_hanging {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns layout */
-    gap: 10px;
-}
-
-/* Change the order of elements using grid properties */
-#hanging_container {
-    grid-column: 2; /* Move to the second column */
-    order: 2; /* Specify the order */
-}
-
-#grid_hanging article {
-    grid-column: 1; /* Move to the first column */
-    order: 1; /* Specify the order */
-}
-
-/* Additional styles to maintain layout and design */
-/* Responsive design for smaller screens */
-@media screen and (max-width: 868px) {
-    #grid_hanging {
-        grid-template-columns: 1fr; /* Single column layout on smaller screens */
-    }
-
-    #hanging_container, #grid_hanging article {
-        grid-column: 1; /* Make sure both elements are in the first column */
-        order: initial; /* Reset order for mobile view */
-    }
-}
-
-/* Desktop-specific styles */
-@media screen and (min-width: 868px) {
-    h2 {
-        font-size: 35px;
-    }
-
-    .box_container {
-        height: 600px; /* Specify height with px */
-        
-    }
-
-        /* Increase margin for .everything_container on desktop view */
-        .everything_container, .top_aligned_container {
-        margin-left: 120px; /* Increased margin for desktop view */
-        margin-right: 120px; /* Increased margin for desktop view */
-    }
-
-    /* INTRO DESKTOP */
-    #intro_text {
-        top: 30%;
-    }
-
-    #intro_text h1 {
-        font-size: 45px;
-    }
-
-    #intro_text p {
-        max-width: 300px;
-    }
-
-    .none {
-        display: block;
-        max-width: 450px;
-    }
-
-    /* KUNSTENS REJSE DESKTOP */
-    .flex_row {
-        display: flex;
-        flex-direction: row;
-        justify-content: center; /* Center items vertically */
-        align-items: center; /* Center items horizontally */
-        max-width: 1200px;
-        gap: 100px;
-    }
-
-    /* GENBRUG EN UENDELIG INSPIRATIONSKILDE */
-    .red_thread {
-        position: relative;
-    }
-
-    .red_thread p {
-        max-width: 500px;
-    }
-
-.grid_img_text {
-    display: grid;
-    grid-template-columns: auto auto; /* Set first column to auto to fit the image width */
-    gap: 20px;
-    align-items: start; /* Align items to the top of the grid */
-    max-width: 1200px; /* Limit the maximum width of the grid */
-    margin: 0 auto; /* Center horizontally */
-}
-.box_container.min_rejse{
-    display: flex;
-    flex-direction: column;
-}
-
-.grid_img_text div {
-    display: flex; /* Use flexbox for the image container */
-    justify-content: end; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
-}
-
-.grid_img_text img {
-    max-width: 400px; /* Ensure image doesn't exceed its container */
-    width:100%;
-    height: auto; /* Maintain aspect ratio */
-}
-
-
-    .grid_img_text:first-child {
-        position: relative;
-    }
-
-    /*LEGENDE TILGANG*/
-    #grid_hanging {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    #grid_hanging p {
-        max-width: 600px;
-    }
-
-    /*WORKSHOP */
-    .title_skewered, .title_skewered_workshop {
-        position: absolute;
-        left: -24%;
-        top: -20%;
-        min-width: 600px;
-    }
-
-    .title_skewered_workshop {
-        left: -18%;
-        top: -14%;
-    }
-
-    .visible_mobile {
-        display: none;
-        margin:0;
-    }
-
-    .visible_desktop {
-        display: block;
-        margin: 0;
-    }
-    .visible_desktop h2{
-        min-width: 500px;
-    }
-}
-
 </style>

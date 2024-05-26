@@ -22,7 +22,8 @@ footer {
 
 p,
 h2,
-h3 {
+h3,
+a {
   font-family: "Lato";
   text-decoration: none;
   color: #494242;

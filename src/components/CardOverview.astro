@@ -9,20 +9,22 @@ console.log("classAsString", classAsString);
 ---
 
 <article class={"card " + classAsString}>
-  <img src={data.image} alt="random image" />
-  <div class="overlay">
-    <h1>{data.name}</h1>
-    <p class="price">{data.price} kr.</p>
-    <a href={"../singleview/" + data.slug}>Læs mere..</a>
-  </div>
+  <a href={"../singleview/" + data.slug}>
+    <img src={data.image} alt="random image" />
+    <div class="overlay">
+      <h1>{data.name}</h1>
+      <p class="price">{data.price} kr.</p>
+    </div>
+  </a>
 </article>
+
 <style>
   /* CARD STYLING */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #fafafa;
-    height: 370px;
-    width: 290px;
+    height: 450px;
+    width: 310px;
     border-radius: 10px;
     text-align: left;
     font-family: "Lato";
@@ -40,7 +42,7 @@ console.log("classAsString", classAsString);
 
   .card img {
     width: 100%;
-    height: 192px;
+    height: 320px;
     border-radius: 10px 10px 0 0;
     zoom: 100%;
     object-fit: cover;
@@ -48,7 +50,7 @@ console.log("classAsString", classAsString);
 
   .price {
     color: #494242;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 20px;
   }
 
@@ -57,7 +59,7 @@ console.log("classAsString", classAsString);
   }
 
   .overlay h1 {
-    font-size: 20px;
+    font-size: 19px;
     font-family: "Lato";
     color: #494242;
     font-weight: 600;
@@ -68,20 +70,8 @@ console.log("classAsString", classAsString);
 
   /* CARD BUTTON */
   .card a {
-    border: 0;
-    padding: 10px;
-    color: #494242;
-    text-align: left;
     cursor: pointer;
-    font-size: 13px;
     text-decoration: none;
-    border-radius: 10px;
-    background-color: #ffdded;
-  }
-
-  .card a:hover {
-    background-color: #ffcce6;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   }
 
   /* DARK MODE */
@@ -93,15 +83,5 @@ console.log("classAsString", classAsString);
   body.dark .card h1,
   body.dark .card .price {
     color: #fff;
-  }
-
-  body.dark .card a {
-    background-color: #8aaf9d;
-    color: #fff;
-  }
-
-  body.dark .card a:hover {
-    background-color: #7a9b8b;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   }
 </style>
