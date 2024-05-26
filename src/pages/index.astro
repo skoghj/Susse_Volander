@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/style.css";
 import Pink_knap from "../components/Pink_knap.astro";
+import PinkKnap from "../components/Pink_knap.astro";
 ---
 
 <!DOCTYPE html>
@@ -30,7 +31,7 @@ import Pink_knap from "../components/Pink_knap.astro";
                     <p id="front_image_text">Velkommen til mit digitale galleri! Udforsk en verden af farver, følelser og kreativitet gennem
                         maleri, og oplev unikke værker, der vækker glæde.</p>
                     <div class="middle">
-                        <Pink_knap linknavn="Se shop"></Pink_knap>
+                      <PinkKnap linknavn="/overview" variant="secondary">Se shop</PinkKnap>
                     </div>
                 </div>
             </article>
@@ -44,7 +45,7 @@ import Pink_knap from "../components/Pink_knap.astro";
                 vi skabe et rum for fri udfoldelse!
             </p>
             <div class="spacing">
-              <Pink_knap linknavn="Læs mere"></Pink_knap>
+              <PinkKnap linknavn="/ommig" variant="secondary">Læs mere</PinkKnap>
             </div>
           </article>
             <div class="portrait_container">
@@ -62,7 +63,7 @@ import Pink_knap from "../components/Pink_knap.astro";
                 <h2 class="spacing">Mine workshops</h2>
                 <p class="spacing"> Hos mine workshops, forvandler vi genbrugsmaterialer til kunstværker! Mit engagement i disse workshops begyndte for 15 år siden, da jeg opdagede potentialet i genbrugsmaterialer. Siden da har jeg afholdt workshops, hvor både børn og voksne kan deltage og skabe sammen. </p>
                 <p class="spacing">Hvis det er noget du er interesseret i, kan du klikke videre til min workshop page.</p>
-                <Pink_knap linknavn="Mine workshops"></Pink_knap>
+                <PinkKnap linknavn="/workshop" variant="secondary">Mine workshops</PinkKnap>
               </div>
             </div>
           </div>
@@ -70,11 +71,11 @@ import Pink_knap from "../components/Pink_knap.astro";
 
         <div class="form">
           <div>
-            <h2 class="spacing">Workshop mailing list</h2>
+            <h2 class="spacing">Workshop postliste</h2>
           </div>
           <form class="email_form" name="email-form">
             <div class="input-group">
-              <input class="emailform" type="email" placeholder="Please enter your email" required />
+              <input class="emailform" type="email" placeholder="Indtast din email her" required />
               <button class="email-icon" type="submit"><i class="fa-regular fa-envelope"></i></button>
             </div>
           </form>
