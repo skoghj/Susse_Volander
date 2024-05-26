@@ -21,13 +21,12 @@ import "../styles/style.css";
       <h2>WORKSHOP</h2>
       <br />
       <p>
-        Jeg underviser i mine teknikker, så hvis du ser noget på min hjemmeside du gerne vil lære teknikken på, så er det her du kan lære det. Jeg går
-        ud fra de spørgsmål mange har spurgt mig om: Hvordan kommer man igang med at male, hvordan finder man et motiv, hvordan finder man inspiration
-        og hvordan holder man gang i inspirationen. Disse undervisninger er både for voksne og børn i mit værksted og i folks eget hjem. I denne meget
-        intensive undervisning, bruger eleven sine egne materialer. <br />
+        Jeg underviser i mine teknikker, så hvis du ser noget på min hjemmeside du gerne vil lære teknikken på, så er det her du kan lære det. Jeg går ud fra de spørgsmål mange har spurgt mig om: Hvordan kommer man igang med at male, hvordan finder man et motiv, hvordan finder man inspiration og hvordan holder man gang i inspirationen. Disse undervisninger er både for voksne og børn i mit værksted og i folks eget hjem. I denne meget intensive undervisning, bruger eleven sine egne materialer. <br /><br />
         <div class="workshop_price">
+          <h2>PRISLISTE FOR WORKSHOPS</h2>
+          <p class="note">Bemærk: Alle priser er estimater og kan variere. Kontakt mig for et præcist tilbud.</p><br />
           <p>
-            Pris: <br />2 timer 500kr for en person. <br />
+            2 timer 500kr for en person. <br />
             2 timer 600kr for 2 personer. <br />
             2 timer 700kr for 3 personer. <br />
           </p>
@@ -41,13 +40,9 @@ import "../styles/style.css";
       <div class="background"><img src="/workshop/bgr.webp" alt="papir" /></div>
       <div class="wrap">
         <div class="tidligere_tekst">
-          <h1 class="tidligere_workshop_title">MINE<br />TIDLIGERE<br />WORKSHOPS</h1>
+          <h1 class="tidligere_workshop_title">MINE TIDLIGERE<br />WORKSHOPS</h1>
           <div class="flower_3"><FlowerAnimation variant="third" /></div>
-          <p class="tidligere_bodytekst">
-            I vores tidligere workshops har deltagerne udforsket deres kreative potentiale gennem aktiviteter som skulpturbygning med
-            genbrugsmaterialer, skabelse af tredimensionelle collager, kreative udfoldelser for voksne samt interaktive sanseudstillinger om lys,
-            skygge og fordybelse.
-          </p>
+          <p class="tidligere_bodytekst">I vores tidligere workshops har deltagerne udforsket deres kreative potentiale gennem aktiviteter som skulpturbygning med genbrugsmaterialer, skabelse af tredimensionelle collager, kreative udfoldelser for voksne samt interaktive sanseudstillinger om lys, skygge og fordybelse.</p>
         </div>
         <img class="workshop_1" src="/workshop/mobil.webp" alt="workshop_mobile" />
       </div>
@@ -65,8 +60,7 @@ import "../styles/style.css";
     <div class="kontakt">
       <h2>KONTAKT</h2><br />
       <p>
-        Kontakt mig her, hvis du har spørgsmål ang. workshops, malerier eller andet, <br />eller hvis du gerne vil modtage nyhedsmail omkring Brug
-        Bogen og leg med mig.
+        Kontakt mig her, hvis du har spørgsmål ang. workshops, malerier eller andet, <br />eller hvis du gerne vil modtage nyhedsmail omkring Brug Bogen og leg med mig.
       </p>
     </div>
     <div class="form">
@@ -105,8 +99,8 @@ import "../styles/style.css";
   .title_1,
   .title_2,
   .tidligere_workshop_title {
-    font-size: 40px;
     padding: 0 20px;
+    font-family: "Marine Sikona", sans-serif;
   }
   .title_2 {
     margin-left: 0px;
@@ -118,7 +112,7 @@ import "../styles/style.css";
   }
   .flower_1 {
     top: 61px;
-    left: 119px;
+    left: 137px;
   }
   .flower_2 {
     top: -4px;
@@ -126,9 +120,8 @@ import "../styles/style.css";
   }
   .flower_3 {
     top: -8px;
-    left: 159px;
+    left: 179px;
   }
-  .workshop_susse,
   .workshop_1,
   .kontakt,
   .workshop_2,
@@ -139,8 +132,12 @@ import "../styles/style.css";
   .workshop_susse {
     margin: 40px 0px;
     object-fit: cover;
+    width: 60%;
   }
-
+  .note {
+    font-weight: 700;
+    font-size: 14px;
+  }
   .workshop_1,
   .kontakt {
     padding: 20px 40px;
@@ -155,6 +152,11 @@ import "../styles/style.css";
   .tidligere_bodytekst {
     margin: 0 40px;
     font-size: 16px;
+  }
+  .workshop_tekst h2,
+  .kontakt h2 {
+    font-size: 30px;
+    font-family: "Marine Sikona", sans-serif;
   }
 
   .workshop_price {
@@ -247,8 +249,8 @@ import "../styles/style.css";
       left: 36px;
     }
     .flower_3 {
-      top: -8px;
-      left: 159px;
+      top: 46px;
+      left: 305px;
     }
     .om_workshop {
       display: flex;
@@ -256,7 +258,11 @@ import "../styles/style.css";
       margin-top: 0px;
     }
   }
-
+  @media (min-width: 600px) {
+    .title_2 {
+      margin-left: 216px;
+    }
+  }
   /**********************************************'Tablet */
   @media (min-width: 768px) {
     .page_title h1 {
@@ -269,7 +275,7 @@ import "../styles/style.css";
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
-      margin: 80px 100px 0px 0px;
+      margin: 80px 120px 0px 0px;
     }
 
     .workshop_tekst {
@@ -277,7 +283,7 @@ import "../styles/style.css";
       font-size: 16px;
     }
     .workshop_susse {
-      width: 100%;
+      width: 80%;
       margin: 0px 0px;
       object-fit: contain;
     }
@@ -286,7 +292,7 @@ import "../styles/style.css";
       left: 516px;
     }
     .flower_2 {
-      top: 68px;
+      top: 175px;
       left: 44px;
     }
     .flower_3 {
@@ -400,8 +406,18 @@ import "../styles/style.css";
       object-fit: cover;
     }
     .flower_2 {
-      top: -31px;
-      left: 44px;
+      top: 77px;
+      left: 77px;
+    }
+  }
+  @media (min-width: 1440px) {
+    .flower_2 {
+      top: -33px;
+      left: 104px;
+    }
+    .flower_3 {
+      top: 86px;
+      left: 391px;
     }
   }
 </style>
