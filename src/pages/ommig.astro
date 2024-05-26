@@ -1,336 +1,282 @@
 ---
-import "../styles/style.css";
 import Mainlayout from "../components/layouts/Mainlayout.astro";
-import FlowerAnimation from "../components/FlowerAnimation.astro";
-import ScrollArrow from "../components/ScrollArrow.astro";
+import "../styles/style.css";
 ---
 
 <Mainlayout title="Om mig">
-    <div class="header">
-      <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-      </div>
+<div class="everything_container">
+    <div id="background_intro">
+    <div class="box_container intro">
+        <img src="/om_mig_billeder/intro_om_mig.webp" alt="intro billede">
+        <div id="intro_text">
+            <h1>Kunstneren bag lærredet</h1>
+            <p class="none">Jeg er Susse Volander, en kunstner, der lever og ånder for at udtrykke mig kreativt!</p>
+        </div>
     </div>
-    <button class="go-back-button" onclick="goBackLeft()">Go Back Left</button>
-    <div id="container">
-      <div class="box one">
-          <div class="intro_text">
-              <h1>Kunstneren bag<br>lærredet</h1>
-              <div id="ScrollArrow_container">
-              <ScrollArrow></ScrollArrow>
-              </div>
-          </div>
-          <img id="susse_half" src="/images/susse_eyes.webp" alt="susse half face">  
-      </div>
-      <div class="box_large two">
-          <div class="max_width_text first">
-              <p>Jeg er Susse Volander, en kunstner, der lever og ånder for at udtrykke mig kreativt!</p>
-          </div>
-          <div class="max_width_text second">
-              <p> Min rejse ind i kunstens verden begyndte, da jeg som 7-årig tegnede løs hos min farmor. Hun købte mig min første kasse med tegnekul og papir i en boghandel i Aarhus, og siden da har jeg været solgt til kunstens magiske univers.</p>
-          </div>
-      </div>
-      <div class="box three">
-          <div id="tema_text">
-              <h1>Genbrug og kreativitet</h1>
-              <hr id="tema_line">
-              <p>Min kunstneriske stil har altid en rød tråd, der binder det hele sammen. Jeg maler primært for mig selv og finder inspiration i de genbrugsmaterialer, som andre har kasseret. Et legetøjsgris uden ben eller et puslespil med manglende brikker kan give mig nye idéer og liv til mine værker. </p>
-              <p>Når det kommer til kreative blokeringer, er jeg heldig ikke at opleve dem, da der er så mange ideer der kører i mit hoved der bare skal UD. Jeg hører tit folk sige, at de hader mandage, fordi de skal tilbage på arbejde; for mig er det helt modsat. Jeg elsker mit arbejde så meget, at jeg glæder mig til mandag morgen, hvor jeg kan male igen!</p>
-              <img id="hanging_art" src="/images/hanging_art_collage.webp" alt="hanging art">
-              <img id="pipaluk_hanging" src="/images/webpp/pipaluk_hanging_around.webp" alt="hanging pipaluk">
-              <img id="hoved_uden_piner" src="/images/hoved_uden_piner.webp" alt="hanging hoved uden piner">
+    <div class="box_container kunstens_verden">
+        <article class="spacing flex_row">
+            <div>
+                <h2>MIN REJSE IND I KUNSTENS VERDEN</h2>
+                <p>Da jeg var 7 år gammel, tegnede jeg løs på alt, også i skolen. Jeg husker tydeligt, at lærerne sagde: "Du kan ikke regne, men du kan fandme tegne", og denne bemærkning blev hængende i baghovedet!</p>
+                <p>Omkring det tidspunkt tog min farmor min hånd og ledte mig til en boghandler i Århus til at give mig noget helt speciel; en kasse med tegnekul. </p>
+                <p>tegnekul! et ord, som jeg stadig synes er fantastisk.</p>
+                <p>Siden da har jeg været solgt. At udtrykke mig selv kreativt er blevet ligesom fodder for mig, hvor jeg ville dø hvis jeg ikke kunne male!</p>
             </div>
-      </div>
-      <div class="box three"></div>
-      <div class="box four"></div>
+            <div>
+                <img class="margin-top" src="/om_mig_billeder/multiple_paintings.webp" alt="paintings">
+            </div>
+        </article>
     </div>
-    
-  <script>
-      document.getElementById('container').onscroll = function() { 
-          myFunction(); 
-          fadeBackground();
-      };
-  
-      function myFunction() {
-          var container = document.getElementById('container');
-          var winScroll = container.scrollLeft;
-          var width = container.scrollWidth - container.clientWidth;
-          var scrolled = (winScroll / width) * 100;
-          document.getElementById("myBar").style.width = scrolled + "%";
-      }
-  
-      function fadeBackground() {
-          var container = document.getElementById('container');
-          var winScroll = container.scrollLeft;
-  
-          var fadeElement = document.querySelector('.box_large.two');
-          var nextElement = document.querySelector('.box_large.three');
-          var fadeStart = fadeElement.offsetLeft + (fadeElement.clientWidth * 0.25); // Start fading earlier
-          var fadeEnd = fadeElement.offsetLeft + (fadeElement.clientWidth * 0.75); // End fading earlier
-  
-          if (winScroll >= fadeStart && winScroll <= fadeEnd) {
-              var scrolled = (winScroll - fadeStart) / (fadeEnd - fadeStart);
-              var opacity = Math.max(0, 1 - scrolled);
-              fadeElement.style.opacity = opacity;
-          } else if (winScroll < fadeStart) {
-              fadeElement.style.opacity = 1;
-          } else if (winScroll > fadeEnd) {
-              fadeElement.style.opacity = 0;
-          }
-      }
-  
-      function goBackLeft() {
-          var container = document.getElementById('container');
-          container.scrollLeft = 0;
-      }
-  </script>
-  </Mainlayout>
+</div>
+<div class="box_container inspiration_source">
+    <h2 class="margin-bottom spacing center">GENBRUG: MIN UENDELIGE <span class="last-word">INSPIRATIONSKILDE</span></h2>
+    <article class="spacing flex_row">
+        <article class="margin-top">
+            <p>Der er en rød tråd i hele mine malerier, og jeg inspirerer mig selv ud fra hvad der foregår omkring mig og ud fra de genbrugte materialer, der havner i genbrug. Jeg får alt det som genbrug ikke kunne sælge, et legetøjsgris der mangler et ben, eller et puslespil der mangler brikker. Det inspirerer mig SÅ meget, og det er det jeg laver workshop fra. Genbrug er en kæmpe, lækker suppe jeg slurker op!</p>
+            <p>Når det kommer til kreative blokeringer, er jeg heldig ikke at opleve dem, da der er så mange ideer der kører i mit hoved der bare skal UD!</p>
+        </article>
+        <div class="malerier_container">
+            <img src="/om_mig_billeder/varmer_fuglen.webp" alt="fugl maleri">
+            <img src="/om_mig_billeder/maleri2.webp" alt="fugl maleri">
+        </div>
+    </article>
+</div>
+
+    <div class="box_container">
+        <article class="spacing">
+            <h2>LEGENDE TILGANG MED GENBRUG</h2>         
+        </article>
+        <hr>
+        <div id="hanging_container">
+            <img id="hoved" src="/om_mig_billeder/hoved_uden_piner.webp" alt="hoved uden piner">
+            <img id="pipaluk" src="/om_mig_billeder/pipaluk_hanging_around.webp" alt="pipaluk hanging">
+            <img id="art_collage" src="/om_mig_billeder/hanging_art_collage.webp" alt="hanging art">
+        </div>
+        <article class="spacing">
+            <p>Når man er kunstner på den måde som jeg er, undrede jeg mig om alt det forbrug. Altså, alt det halløj med at bare købe, købe, købe.</p>
+            <p>så for 15 år siden, da jeg skulle smide noget ud og hente et eller andet, så jeg simpelthen så mange sjove ting der gav mig ideer til, hvad de kunne bruges til.</p>
+            <p>Så der tog jeg mit campingvogn til dronningemølle og de dimser jeg fandt med, og startede et workshop af de ting jeg fandt. Det startede af med at det var børn der var interesserede, og så begyndte forældre langsomt at deltage med!
+            </p>
+        </article>
+    </div>
+    <div class="box_container background_workshop">
+      <article class="spacing">
+        <h2 class="margin-bottom">Når kreativiteten forbinder generationer</h2>
+        <img src="/om_mig_billeder/workshop_wagon.webp" alt="workshop wagon">
+        <p>Hele oplevelsen med mine workshops er virkelig speciel for mig. Under en fri workshop, hvor vi brugte naturens materialer som blade og sten, havde jeg et øjeblik, der virkelig gav mig et "wow!"-øjeblik.</p>
+        <p> En lille pige, super begejstret for at være der, fik sine forældre til at deltage. Til at begynde med sad forældrene stille, men da de begyndte at deltage, skabte de nogle fantastiske ting sammen.</p>
+        <p>At se forældre og børn skabe noget sammen, der pludselig falder på plads er virkelig inspirerende. Børnenes entusiasme og kreativitet giver mig en masse energi og inspiration - som for eksempel ordet "tudsesuppe"!</p>
+        <p>At arrangere disse workshops er en ægte win-win situation for mig. så kom endelig, og lad kreativiteten flyde! Tjek mine workshops ud og vær med til at skabe nogle rigtige fede ting!</p>
+        </article>  
+    </div>
+</div>
+</Mainlayout>
 
 
 <style>
- /* CSS */
-body {
-  margin: 0;
-  overflow: hidden; /* Prevent vertical scroll */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+h1, h2{
+    font-family: "Marine Sikona", sans-serif;
 }
 
-.box, .box_large {
-  width: 100vw;
-  height: 90vh;
-  display: inline-block;
-  position: relative;
-}
-
-.box_large {
-    width: 2400px;
-}
-
-.box div, .box_large div {
-  width: 100vw;
-  height: 100vh;
-  font-size: 96px;
-  color: #FFF;
-  position: absolute;
-  font-weight: bold;
-}
-
-.box_large div {
+img{
+    width: 100%;
     height: auto;
-    background-color: rgba(255, 255, 255, 0.87); /* White with 87% opacity */
-    padding: 20px; /* Optional: Add padding for spacing inside the box */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 
-.box_large.two, .box_large.three {
-  /* Set a specific height */
-  min-height: 500px;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("/images/webpp/Susse_garden.webp");
+.spacing{
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    /* padding-top: 20px; */
+}
+.spacing p{
+    margin-top: 15px;
 }
 
-.box_large.three, .box.three {
- background-image: none;
- width: 2500px;
+.none{
+    display: none;
+}
+.everything_container {
+    display: flex;
+    flex-direction: column;
 }
 
-#container {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
+.box_container {
+    width: 100vw; /* 100% of the viewport width */
+    position: relative; /* Make the container a positioning context */
 }
 
-.one, .two, .three, .four { background-color: #FCFFF6; }
-
-.header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  background-color: #f1f1f1;
+/*INTRO */
+.intro img {
+    width: 100%;
+}
+.intro h1 {
+    font-size: 30px;
+    color: #FCFFF6;
 }
 
-.progress-container {
-  width: 100%;
-  height: 8px;
-  background: #ccc;
+.intro p{
+    color: #FCFFF6;
+    margin-top: 15px;
+}
+#intro_text{
+    position: absolute; /* Position the h1 absolutely within the .intro container */
+    top: 16%; 
+    left: 55%; 
+    color: #FCFFF6;
 }
 
-.progress-bar {
-  height: 8px;
-  background: #04AA6D;
-  width: 0%;
+/*KUNSTENS VERDEN */
+#background_intro{
+    background-image: url("/om_mig_billeder/background_kunst.svg");
+    background-size: fill;
 }
 
-.go-back-button {
-  position: fixed;
-  bottom: 50px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: #04AA6D;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  z-index: 100;
+.malerier_container {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 70%; /* Set the desired width */
+    margin: auto; /* Center horizontally */
 }
 
-.go-back-button:hover {
-  background-color: #028a5e;
+
+.malerier_container img {
+    width: 100%; /* Make both images fill their container */
+    height: auto;   
+    margin: auto;
 }
 
-/* Intro Section */
-#intro img {
-  position: absolute;
-  top: 40%;
-  right: 0;
-  transform: translateY(-40%);
-  width: auto;
-  opacity: 0;
-  z-index: 1; /* Ensure the intro image is above the parallax image */
+.malerier_container img:last-child {
+    position: absolute;
+    top: 55%;
+    right: 100%; /* Position the top image to the left of its container */
+    transform: translateX(50%); /* Center the top image horizontally */
+    width: 45%; /* Set the width of the top image */
+    height: auto; /* Maintain aspect ratio */
+}
+.margin-top{
+    margin-top: 40px;
 }
 
-.intro_text h1 {
-  line-height: 50px;
-  margin: 20px;
-  opacity: 0; /* Initially set opacity to 0 to hide the text */
-  animation: fadeIn 1s ease forwards; /* Apply the fadeIn animation */
+.margin-bottom{
+    margin-bottom: 30px;
 }
 
-#susse_half {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  max-height: 100%; /* Ensure image doesn't exceed the height of its container */
-  height: 80%;
-  object-fit: contain; /* Maintain aspect ratio without stretching */
-  opacity: 0; /* Initially set opacity to 0 to hide the image */
-  animation: fadeIn 1s ease forwards; /* Apply the fadeIn animation */
+
+/*LEGENDE TILGANG */
+
+#hanging_container{
+    position: relative;
+    width:100%;
+    height: 300px;
 }
 
-#ScrollArrow_container {
-  margin-top: -90px;
-  margin-left: 10px;
-  opacity: 0; /* Initially set opacity to 0 to hide the scroll arrow */
-  animation: fadeIn 1.5s ease forwards 1s; /* Apply the fadeIn animation with a delay of 0.5s */
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0; /* Start with opacity 0 */
-  }
-  to {
-    opacity: 1; /* Fade in to opacity 1 */
-  }
-}
-
-.max_width_text {
-  line-height: normal;
-  white-space: wrap;
-  margin: 10px;
-  max-width: 400px;
-  background-color: white;
-}
-
-.first {
-  margin-left: 20%;
-  margin-top: 4%;
-}
-
-.second {
-  margin-left: 35%;
-  margin-top: 16%;
-}
-
-#tema_text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-top: 30px;
-  margin-left: 600px;
-  position: absolute;
-}
-
-#tema_text h1 {
-  text-align: right;
-}
-
-#tema_text p {
-  max-width: 350px;
-  white-space: wrap;
-  margin-top: 15px;
-}
-
-#tema_line {
-  width: 1200px;
-  height: 2px;
-  color: #F20056;
-  margin: 10px 0; /* Space between line and text */
-}
 @keyframes swing {
-  0% {
-    transform: rotate(0deg);
-    transform-origin: top center; /* Set the rotation pivot point at the top center */
-  }
-  50% {
-    transform: rotate(5deg);
-    transform-origin: top center; /* Maintain the pivot point */
-  }
-  100% {
-    transform: rotate(0deg);
-    transform-origin: top center; /* Maintain the pivot point */
-  }
-}
-
-#hanging_art, #pipaluk_hanging {
-  position: absolute;
-  top: 65px;
-  left: 53%;
-  width: 250px;
-  height: auto;
-  animation: swing 3s infinite; /* Apply the swing animation */
-}
-
-#pipaluk_hanging{
-    width: 120px;
-    top: 55px;
-    left: 40%;
-}
-
-
-/* Media query for smaller screens */
-@media screen and (max-width: 1224px) {
-    #hanging_art {
-        left: 270px;
+    0% {
+        transform: rotate(3deg); /* Rotate slightly to the right */
     }
-    #pipaluk_hanging{
-        left: 70px;
-}
-
-}
-
-@media screen and (max-width: 898px) {
-    #hanging_art {
-        left: 100px; /* Adjust based on viewport width */
+    50% {
+        transform: rotate(-3deg); /* Rotate slightly to the left */
     }
-    #pipaluk_hanging{
-        left: -150px;
-}
-    
-}
-
-@media screen and (max-width: 680px) {
-    #hanging_art {
-        left: -150px; /* Adjust based on viewport width */
+    100% {
+        transform: rotate(3deg); /* Rotate slightly to the right */
     }
-    #pipaluk_hanging{
-        left: -350px;
-}
 }
 
-  </style>
+#hanging_container img {
+    animation: swing 3s infinite; /* Apply the swing animation */
+    transform-origin: top center; /* Set the rotation center to the top */
+}
+
+
+#hanging_container img {
+    position: absolute;
+    height: auto; /* Maintain aspect ratio */
+}
+
+#hoved {
+width: 70px; /* Adjust the width to your desired size */
+top: 0;
+left: 5%;
+}
+
+#pipaluk {
+width: 100px;
+top: -5%;
+left: 28%;
+}
+
+#art_collage{
+    width: 200px;
+    top: -5%;
+    left: 55%;
+}
+
+
+/* KREATIVITET FORBINDER GENERATIONER*/
+.background_workshop{
+    background-image: url("/om_mig_billeder/workshop_about.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+@media screen and (min-width: 768px) {
+
+    /*INTRO DESKTOP*/
+    #intro_text{
+        top: 30%;
+    }
+    #intro_text h1{
+        font-size: 45px;
+    }
+
+    #intro_text p{
+        max-width: 300px;
+    }
+    .none{
+        display: block;
+        max-width: 450px;
+    }
+
+    /*KUNSTENS REJSE DESKTOP */
+    .flex_row{
+        display: flex;
+        flex-direction: row;
+        margin:auto;
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        max-width: 1200px;
+        gap: 100px;
+    }
+    /*GENBRUG EN UENDELIG INSPIRATIONS KILDE */
+    h2 {
+    position: relative; /* Make the h2 a positioning context */
+}
+
+h2 .last-word {
+    display: block; /* Make the span a block element to force it to a new line */
+    position: absolute; /* Position it absolutely relative to the h2 */
+    left: 12.60%; /* Align it to the right */
+    top: 70%; /* Move it below the h2 */
+    white-space: nowrap; /* Prevent the text from wrapping */
+}
+
+#malerier_container{
+    order: 1;
+}
+
+
+}
+
+
+</style>
