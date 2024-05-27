@@ -34,7 +34,7 @@ const { paintings } = Astro.props;
       <div class="card-wrapper">
           <!-- Venstre side -->
               <div class="img-showcase">
-                <img src={paintings.image} alt="" />
+                <img src={paintings.image} alt="{paintings.productdescription}" />
               </div>
       </div>
     </div>
@@ -52,6 +52,9 @@ const { paintings } = Astro.props;
           </div>
         </div>
       </div>
+
+
+      
       <button type="button" class="icon-button">LÆG I <i class="fa-solid fa-bag-shopping"></i></button>
       <div>
         <button class="accordion ac-1">Beskrivelse</button>
@@ -411,6 +414,8 @@ const { paintings } = Astro.props;
 </style>
 
 <script>
+
+  
   var acc = document.getElementsByClassName("accordion");
 
   for (var i = 0; i < acc.length; i++) {
