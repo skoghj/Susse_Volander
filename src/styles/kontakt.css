@@ -78,7 +78,7 @@ h1 {
 .showcase img {
   width: 100%;
   height: auto;
-  filter: brightness(75%) contrast(100%) grayscale(60%) opacity(0.3);
+  filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
 }
 
 .centered {
