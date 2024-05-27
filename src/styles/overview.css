@@ -70,12 +70,19 @@
     left: 300px;
   }
 }
-
 @media only screen and (max-width: 768px) {
   .cards_list {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     margin: 20px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .cards_list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 40px;
   }
 
   .start-text2 p {
@@ -84,7 +91,7 @@
   }
 
   .flower_1 {
-    left: 300px;
+    left: 340px;
   }
 }
 
