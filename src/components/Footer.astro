@@ -12,23 +12,23 @@
         <ul>
           <li><b>Mail:</b> Volanderart@gmail.com</li>
           <li><b>Tlf nr:</b> +45 23 24 25 26</li>
-          <div class="some">
-            <b>SoMe:</b>
-            <a href="https://www.instagram.com/sussevolander/" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
-            <a href="https://www.facebook.com/susse.volander" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          </div>
         </ul>
+        <div class="some">
+          <b>SoMe:</b>
+          <a href="https://www.instagram.com/sussevolander/" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://www.facebook.com/susse.volander" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
       </div>
     </div>
-    <ul class="footer-nav-list">
       <div class="column1">
+        <ul class="footer-nav-list">
         <li><a href="/overview/">SHOP</a></li>
         <li><a href="/galleri/">GALLERI</a></li>
         <li><a href="/workshop/">WORKSHOP</a></li>
         <li><a href="/ommig/">OM MIG</a></li>
         <li><a href="/kontakt/">KONTAKT</a></li>
+      </ul>
       </div>
-    </ul>
   </div>
 </footer>
 
@@ -55,7 +55,8 @@
   h3,
   a,
   li,
-  ul {
+  ul,
+  b {
     font-family: "Lato";
     text-decoration: none;
     color: #494242;
@@ -83,9 +84,9 @@
   }
   .footer-nav-list {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-decoration: none;
-    gap: 70px;
     margin: 25px;
   }
 

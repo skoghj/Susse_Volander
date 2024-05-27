@@ -94,25 +94,6 @@ hr {
   height: 400px;
 }
 
-@keyframes swing {
-  0% {
-    transform: rotate(3deg); /* Rotate slightly to the right */
-  }
-  50% {
-    transform: rotate(-3deg); /* Rotate slightly to the left */
-  }
-  100% {
-    transform: rotate(3deg); /* Rotate slightly to the right */
-  }
-}
-
-.hanging_container img {
-  animation: swing 3s infinite; /* Apply the swing animation */
-  transform-origin: top center; /* Set the rotation center to the top */
-  position: absolute;
-  height: auto; /* Maintain aspect ratio */
-}
-
 #hoved {
   width: 70px; /* Adjust the width to your desired size */
   top: -3%;
