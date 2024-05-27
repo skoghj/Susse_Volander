@@ -266,6 +266,8 @@ const { paintings } = Astro.props;
     background-color: #fcbddd;
   }
 
+
+  
   /* ACCORDION */
   .accordion {
     background-color: #ecf0e4;
@@ -431,9 +433,26 @@ document.addEventListener("DOMContentLoaded", function () {
     cartCount.textContent = items;
     localStorage.setItem("cartItems", items);
     addKnap.innerHTML = 'TILFØJET TIL KURVEN';
-    addKnap.querySelector('.fa-bag-shopping').style.display = 'none';
+    const bagIcon = addKnap.querySelector('.fa-bag-shopping');
+    if (bagIcon) {
+      bagIcon.style.display = 'none';
+    }
+    
+    // Fjern hide klassen efter 2 sekunder for at fade knappen tilbage
+    setTimeout(function() {
+      addKnap.innerHTML = '<span>LÆG I </span><i class="fa fa-bag-shopping"></i>';
+      const bagIcon = addKnap.querySelector('.fa-bag-shopping');
+      if (bagIcon) {
+        bagIcon.style.display = 'inline';
+      }
+      addKnap.classList.remove('hide');
+    }, 2000);
+    
+    // Tilføj hide klassen for at fade knappen ud
+    addKnap.classList.add('hide');
   }
 });
+
 
 // Accordian
   var acc = document.getElementsByClassName("accordion");
