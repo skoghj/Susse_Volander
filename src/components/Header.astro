@@ -79,10 +79,10 @@
   }
 
   body.dark {
-    background-color: #494242;
+    background-color: #10180d;
   }
   body.dark .navbar {
-    background-color: #3b3434;
+    background-color: #1b2d24;
   } /* #9b59b6 */
 
   body.dark h1,
@@ -201,15 +201,14 @@
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const cartCount = document.getElementById("cart-count");
-  let items = localStorage.getItem("cartItems");
+  document.addEventListener("DOMContentLoaded", function () {
+    const cartCount = document.getElementById("cart-count");
+    let items = localStorage.getItem("cartItems");
 
-  if (items) {
-    cartCount.textContent = items;
-  }
-});
-
+    if (items) {
+      cartCount.textContent = items;
+    }
+  });
 
   const checkbox = document.getElementById("checkbox") as HTMLInputElement;
 
