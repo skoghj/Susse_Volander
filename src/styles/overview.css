@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: start;
+  max-width: 1700px;
   margin: 40px;
   gap: 45px;
 }
@@ -32,6 +33,7 @@
   font-family: "Lato";
   font-weight: 600;
   font-size: 15px;
+  margin-bottom: 30px;
 }
 
 .start-text2 {
@@ -46,6 +48,10 @@
 
 .flower_1 {
   position: absolute;
+}
+
+.spacing {
+  margin: 40px;
 }
 
 /* MEDIA QUERIES */
