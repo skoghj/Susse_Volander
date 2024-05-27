@@ -1,7 +1,7 @@
 ---
 import PinkKnap from "../components/Pink_knap.astro";
 import IndexSlide from "../components/IndexSlide.astro";
-import ScrollArrow from "../components/ScrollArrow.astro";
+
 ---
 <div class="front_gallery_container">
     <article class="front_gallery_text">
@@ -20,7 +20,6 @@ import ScrollArrow from "../components/ScrollArrow.astro";
 
 
 body.dark .front_gallery_container {
-  filter: grayscale(20%) invert(80%) hue-rotate(120deg);
 
 }
 body.dark .front_gallery_container h2{
@@ -35,24 +34,18 @@ body.dark .front_gallery_container h2{
 .spacing {
     margin: 15px 0;
 }
-.front_gallery_container{
-  background-image: url("/images/neutral_background.svg");
-  background-repeat: no-repeat;
-  background-size:cover;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
 
 .front_gallery_text{
     margin-top: 90px;
     margin: 0 33px;
 }
+.front_gallery_container{
+  position: relative;
+}
 
   .slide {
       padding-left: 10px;
     }
-
-
 @media screen and (min-width: 768px) {
     .front_gallery_text{
         text-align: center;
