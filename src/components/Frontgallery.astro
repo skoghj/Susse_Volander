@@ -1,5 +1,7 @@
 ---
 import PinkKnap from "../components/Pink_knap.astro";
+import IndexSlide from "../components/IndexSlide.astro";
+import ScrollArrow from "../components/ScrollArrow.astro";
 ---
 <div class="front_gallery_container">
     <article class="front_gallery_text">
@@ -8,22 +10,11 @@ import PinkKnap from "../components/Pink_knap.astro";
         </p>
         <PinkKnap linknavn="/galleri" variant="secondary">Se galleri</PinkKnap>
     </article>
-   <div class="carrousel_gallery1">
-    <body>
-      <input type="radio" name="position" checked />
-      <input type="radio" name="position" />
-      <input type="radio" name="position" />
-      <input type="radio" name="position" />
-      <input type="radio" name="position" />
-      <main id="carousel">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <main></main>
+    <div class="slide">
+      <IndexSlide></IndexSlide>
     </div>
-  
+   
+</div>
         <style>
           /*carousel (kode lånt fra: https://freefrontend.com/css-carousels)*/
 
@@ -49,6 +40,7 @@ body.dark .front_gallery_container h2{
   background-repeat: no-repeat;
   background-size:cover;
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .front_gallery_text{
@@ -56,12 +48,25 @@ body.dark .front_gallery_container h2{
     margin: 0 33px;
 }
 
+  .slide {
+      padding-left: 10px;
+    }
+
+
 @media screen and (min-width: 768px) {
     .front_gallery_text{
         text-align: center;
         max-width: 950px;
         margin: 120px 50px 0 50px;
     }
+
+    .slide {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+      padding-left: 10px;
+  }
 }
 @media screen and (min-width: 1088px) {
     .front_gallery_text{
@@ -72,16 +77,16 @@ body.dark .front_gallery_container h2{
 }
 
 
-          .carrousel_gallery1 {
+          /* .carrousel_gallery1 {
             height: 500px;
             display: grid;
             grid-template-rows: 380px 10px;
             grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
             align-items: start;
             justify-items:  ;
-          }
+          } */
   
-          main#carousel {
+          /* main#carousel {
             grid-row: 1 / 2;
             grid-column: 1 / 8;
             width: 100vw;
@@ -174,8 +179,5 @@ body.dark .front_gallery_container h2{
           }
           input:nth-of-type(5):checked ~ main#carousel {
             --position: 5;
-          }
+          } */
         </style>
-      </main>
-    </body>
-  </div>

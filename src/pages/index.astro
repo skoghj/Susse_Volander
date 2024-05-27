@@ -1,10 +1,9 @@
 ---
-import Frontgallery from "../components/Frontgallery.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/style.css";
-import Pink_knap from "../components/Pink_knap.astro";
 import PinkKnap from "../components/Pink_knap.astro";
+import Frontgallery from "../components/Frontgallery.astro";
 ---
 
 <!DOCTYPE html>
@@ -47,6 +46,7 @@ import PinkKnap from "../components/Pink_knap.astro";
             <div class="spacing">
               <PinkKnap linknavn="/ommig" variant="secondary">Læs mere</PinkKnap>
             </div>
+
           </article>
             <div class="portrait_container">
                 <img id="big_flower" src="/images/flower.svg" alt="big flower">
@@ -55,6 +55,7 @@ import PinkKnap from "../components/Pink_knap.astro";
             </div>
         </article>
         <Frontgallery></Frontgallery>
+
         <article class="container">
           <div class="image-container">
             <img id="front_workshop_img" src="/images/workshop_background_front.png" alt="workshop front image">
@@ -92,6 +93,8 @@ import PinkKnap from "../components/Pink_knap.astro";
 body.dark .middle h2, body.dark .middle p {
   color: white;
 }
+
+/*SLIDE GALLERI */
     * {
   margin: 0;
   padding: 0;
@@ -103,6 +106,7 @@ img {
   height: 100%;
   object-fit: cover; /* Ensure the image covers the container */
 }
+
 
 .intro h1 {
   margin: auto;

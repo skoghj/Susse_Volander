@@ -1,0 +1,81 @@
+---
+import ScrollArrow from "./ScrollArrow.astro";
+
+
+---
+<div class="scroller">
+    <ScrollArrow></ScrollArrow>
+</div>
+<div class="horizontal_slider">
+    <div class="slider_container">
+      <div class="item">
+        <img src="/images/webpp/De_er_for_store_til_legehuset.webp" alt="img1" />
+      </div>
+      <div class="item">
+        <img src="/images/webpp/Den_ene_har_et_plaster_den_anden_har_to_patter.webp" alt="img2" />
+      </div>
+      <div class="item">
+        <img src="/images/webpp/Den_sidste_fastnet_telefonist..webp" alt="img3" />
+      </div>
+      <div class="item">
+        <img src="/images/webpp/Det_er_kun_damerne_der_ved_hvad_de_har_under_kjolerne..webp" alt="img4" />
+      </div>
+      <div class="item">
+        <img src="/images/webpp/Far_danser_med_træsko_på.webp" alt="img5" />
+      </div>
+      <div class="item">
+        <img src="/images/webpp/elefant.webp" alt="img6" />
+      </div>
+     
+    </div>
+</div>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .horizontal_slider {
+      display: block;
+      width: 100%;
+      overflow-x: scroll;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    /*this is for chrome/firefox/opera and safari*/
+    .horizontal_slider::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .slider_container {
+      display: block;
+      white-space: nowrap;
+    }
+    .item {
+      display: inline-block;
+      margin-right: 12px;
+    }
+    .item img {
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+  
+    .item img:hover {
+      transform: scale(1.2);
+    }
+
+    @media screen and (min-width: 768px) {
+        .horizontal_slider {
+      width: 60%;
+        }
+        .scroller{
+    margin-top: auto;
+    margin-bottom: 140px;
+    }
+    }
+    
+    
+  </style>
+
+  
+  
