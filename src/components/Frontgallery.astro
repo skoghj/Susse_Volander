@@ -27,6 +27,15 @@ import PinkKnap from "../components/Pink_knap.astro";
         <style>
           /*carousel (kode lånt fra: https://freefrontend.com/css-carousels)*/
 
+
+body.dark .front_gallery_container {
+  filter: grayscale(20%) invert(80%) hue-rotate(120deg);
+
+}
+body.dark .front_gallery_container h2{
+  filter: none;
+}
+
 .h3_text {
   margin-top: 30px;
   margin-bottom: 10px;
