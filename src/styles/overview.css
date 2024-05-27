@@ -4,8 +4,9 @@
   display: none;
 }
 
-h1 {
+.title {
   font-weight: 400;
+  text-align: left;
 }
 
 .cards_list {

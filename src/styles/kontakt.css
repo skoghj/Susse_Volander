@@ -2,10 +2,8 @@
 
 h1 {
   margin: 50px;
-  font-size: 60px;
   padding: 20px 0;
   text-align: left; /* Added for better positioning */
-  font-family: "Marine-Sikona", sans-serif;
   font-weight: 400;
 }
 
