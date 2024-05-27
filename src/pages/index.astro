@@ -54,7 +54,9 @@ import Frontgallery from "../components/Frontgallery.astro";
                 <img src="/images/susse_portrait.png" alt="susse_portrait">
             </div>
         </article>
+        <div class="container_background">
         <Frontgallery></Frontgallery>
+        <div class="background"><img src="/images/neutral_background.svg" alt="papir" /></div>
 
         <article class="container">
           <div class="image-container">
@@ -69,6 +71,7 @@ import Frontgallery from "../components/Frontgallery.astro";
             </div>
           </div>
         </article>
+      </div>
 
         <div class="form">
           <div>
@@ -94,6 +97,10 @@ body.dark .middle h2, body.dark .middle p {
   color: white;
 }
 
+body.dark .background {
+    /*filter: grayscale(20%) invert(80%) hue-rotate(120deg);*/
+    filter: grayscale(100%) brightness(30%) opacity(0.8);
+  }
 /*SLIDE GALLERI */
     * {
   margin: 0;
@@ -112,6 +119,33 @@ img {
   margin: auto;
   font-size: 45px;
 }
+.container_background{
+position: relative;
+width: 100%;
+padding-top: 75px;
+}
+
+    /* .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+  } */
+
+  .background img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height:100%;
+      z-index: -1;
+    }
+
+
 
 .container {
   position: relative;
