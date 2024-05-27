@@ -272,18 +272,12 @@ import "../styles/style.css";
       margin-left: 200px;
     }
     .om_workshop {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin: 80px 120px 0px 0px;
+      display: flex;
+      flex-flow: column wrap;
     }
 
-    .workshop_tekst {
-      margin: 50px 0px;
-      font-size: 16px;
-    }
     .workshop_susse {
-      width: 80%;
+      width: 55%;
       margin: 0px 0px;
       object-fit: contain;
     }
@@ -393,6 +387,24 @@ import "../styles/style.css";
     }
     .illust_susse {
       flex-shrink: 0; /* Illustrationen beholder sin størrelse, når skærmen bliver mindre */
+    }
+  }
+
+  @media (min-width: 800px) {
+    .om_workshop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 80px 120px 0px 0px;
+    }
+    .workshop_susse {
+      width: 75%;
+      margin: 0px 0px;
+      object-fit: contain;
+    }
+    .workshop_tekst {
+      margin: 50px 0px;
+      font-size: 16px;
     }
   }
   /*********************************************************'laptop */
