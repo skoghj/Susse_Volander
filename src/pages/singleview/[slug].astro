@@ -192,6 +192,7 @@ const { paintings } = Astro.props;
     margin-bottom: 20px;
   }
 
+
   /* GALLERI */
 
   img {
@@ -222,7 +223,7 @@ const { paintings } = Astro.props;
     font-size: 16px;
     color: #fff;
     max-width: 111px;
-    background-color: #ffb700;
+    background-color: #f39c12;
     padding: 2px 15px;
   }
 
@@ -414,23 +415,27 @@ const { paintings } = Astro.props;
 </style>
 
 <script>
-let items = 0;
-
+// Knap animation og antal i kurv
 document.addEventListener("DOMContentLoaded", function () {
   const addKnap = document.querySelector(".icon-button");
   const cartCount = document.getElementById("cart-count");
 
+  // Hent antallet af varer fra Local Storage, hvis det eksisterer
+  let items = localStorage.getItem("cartItems") ? parseInt(localStorage.getItem("cartItems")) : 0;
+  cartCount.textContent = items;
+
   addKnap.addEventListener("click", addToCart);
 
   function addToCart() {
-  items++;
-  cartCount.textContent = items;
-  localStorage.setItem("cartItems", items);
-}
-
+    items++;
+    cartCount.textContent = items;
+    localStorage.setItem("cartItems", items);
+    addKnap.innerHTML = 'TILFØJET TIL KURVEN';
+    addKnap.querySelector('.fa-bag-shopping').style.display = 'none';
+  }
 });
 
-
+// Accordian
   var acc = document.getElementsByClassName("accordion");
 
   for (var i = 0; i < acc.length; i++) {
