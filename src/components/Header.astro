@@ -14,7 +14,7 @@
       <a href="/workshop/">WORKSHOP</a>
       <a href="/ommig/">OM MIG</a>
       <a href="/kontakt/">KONTAKT</a>
-      <i class="fa-solid fa-bag-shopping kurv"></i>
+      <i class="fa-solid fa-bag-shopping kurv"><span id="cart-count">0</span></i>
       <center>
         <div>
           <input type="checkbox" class="checkbox" id="checkbox" />
@@ -201,6 +201,16 @@
 </style>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cartCount = document.getElementById("cart-count");
+  let items = localStorage.getItem("cartItems");
+
+  if (items) {
+    cartCount.textContent = items;
+  }
+});
+
+
   const checkbox = document.getElementById("checkbox") as HTMLInputElement;
 
   // Event listener for checkbox change
