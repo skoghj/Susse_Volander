@@ -56,7 +56,7 @@ import Frontgallery from "../components/Frontgallery.astro";
         </article>
         <div class="container_background">
         <Frontgallery></Frontgallery>
-        <div class="background"><img src="/images/neutral_background.svg" alt="papir" /></div>
+        <div class="background_neutral"><img src="/images/neutral_background.svg" alt="papir" /></div>
 
         <article class="container">
           <div class="image-container">
@@ -97,8 +97,8 @@ body.dark .middle h2, body.dark .middle p {
   color: white;
 }
 
-body.dark .background {
-    /*filter: grayscale(20%) invert(80%) hue-rotate(120deg);*/
+body.dark .background_neutral {
+    /* filter: grayscale(20%) invert(80%) hue-rotate(120deg); */
     filter: grayscale(100%) brightness(30%) opacity(0.8);
   }
 /*SLIDE GALLERI */
@@ -111,7 +111,6 @@ body.dark .background {
 img {
   width: auto; /* Adjust the width of the image */
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the container */
 }
 
 
@@ -125,7 +124,7 @@ width: 100%;
 padding-top: 75px;
 }
 
-    /* .background {
+    .background_neutral {
     position: absolute;
     top: 0;
     left: 0;
@@ -134,9 +133,9 @@ padding-top: 75px;
     z-index: -1;
     padding: 0;
     margin: 0;
-  } */
+  }
 
-  .background img {
+  .background_neutral img {
       position: absolute;
       bottom: 0;
       right: 0;
@@ -317,10 +316,17 @@ margin: auto 33px;
     line-height: 40px;
     text-align: center;
   }
+  .front_workshop_img{
+  width: auto;
+  height: 100%;
+}
 
 @media screen and (min-width: 768px) {
   #frontpage_img {
   width: 100%; /* Adjust the width of the image for mobile view */
+}
+.front_workshop_img img{
+  width: 100%;
 }
 .container {
   position: relative;
@@ -353,12 +359,18 @@ text-align: center;
 margin: auto 15px;
 justify-content: center;
 }
+.front_workshop_img img{
+  width: 100%;
+}
 
 }
 
 @media screen and (min-width: 1200px) {
 .front_om_mig {
   margin: auto 19%;
+}
+.front_workshop_img{
+  width: 100%;
 }
 }
 </style>
