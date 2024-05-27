@@ -108,7 +108,9 @@ h1 {
 }
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 500px) {
+
+/*MOBILE*/
+@media only screen and (max-width: 425px) {
   h1 {
     position: static; /* Changed from absolute to static for better flow */
     margin: 20px; /* Adjusted margins */
@@ -207,7 +209,8 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 768px) {
+/*TABLET*/
+@media only screen and (max-width: 760px) {
   .illustration2 {
     position: absolute;
     top: 135px;
@@ -260,6 +263,53 @@ h1 {
     position: absolute;
     left: 285px;
     top: 115px;
+  }
+}
+
+/*DESKTOP*/
+@media only screen and (max-width: 1024px) {
+  .flower_1 {
+    position: absolute;
+    left: 285px;
+    top: 115px;
+  }
+
+  .illustration2 {
+    position: absolute;
+    top: 135px;
+    left: 10px;
+  }
+
+  .illustration2 img {
+    height: auto;
+    width: 240px;
+  }
+
+  .centered {
+    padding: 40px;
+    text-align: left;
+    font-size: 14px;
+    margin: 20px;
+  }
+
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: fit-content;
+    margin-bottom: 20px; /* Adjust as needed for spacing */
+  }
+
+  .showcase img {
+    width: 100%;
+    height: auto;
+    filter: brightness(75%) contrast(100%) grayscale(60%) opacity(0.3);
+  }
+
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
