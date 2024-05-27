@@ -6,10 +6,10 @@
 .cards_list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: start;
   margin: 40px;
-  gap: 60px;
+  gap: 45px;
 }
 
 .start-text1 {
