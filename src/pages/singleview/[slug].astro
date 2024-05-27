@@ -414,8 +414,23 @@ const { paintings } = Astro.props;
 </style>
 
 <script>
+let items = 0;
 
-  
+document.addEventListener("DOMContentLoaded", function () {
+  const addKnap = document.querySelector(".icon-button");
+  const cartCount = document.getElementById("cart-count");
+
+  addKnap.addEventListener("click", addToCart);
+
+  function addToCart() {
+  items++;
+  cartCount.textContent = items;
+  localStorage.setItem("cartItems", items);
+}
+
+});
+
+
   var acc = document.getElementsByClassName("accordion");
 
   for (var i = 0; i < acc.length; i++) {
