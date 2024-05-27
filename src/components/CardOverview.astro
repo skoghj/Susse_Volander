@@ -14,6 +14,7 @@ console.log("classAsString", classAsString);
     <div class="overlay">
       <h1>{data.name}</h1>
       <p class="price">{data.price} kr.</p>
+      <a href={"../singleview/" + data.slug}><span class="seemore">Se mere</span></a>
     </div>
   </a>
 </article>
@@ -22,8 +23,8 @@ console.log("classAsString", classAsString);
   /* CARD STYLING */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: #fafafa;
-    height: 450px;
+    background-color: #f7f7f7;
+    height: 490px;
     width: 310px;
     border-radius: 10px;
     text-align: left;
@@ -72,6 +73,25 @@ console.log("classAsString", classAsString);
   .card a {
     cursor: pointer;
     text-decoration: none;
+  }
+
+  .seemore {
+    background-color: #8aaf9d;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.6s;
+  }
+
+  .seemore:hover {
+    background-color: #688a7a;
+    box-shadow: 0 3px 6px 0 rgb(69, 89, 79);
+  }
+
+  .seemore:active {
+    box-shadow: 0 3px 5px 0 rgba(69, 89, 79);
   }
 
   /* DARK MODE */
