@@ -122,11 +122,11 @@ hr {
 }
 
 /* GRID HANGING CONTAINER */
-#grid_hanging {
+/* #grid_hanging {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns layout */
+  grid-template-columns: 1fr 1fr; 
   gap: 10px;
-}
+} */
 
 /* Change the order of elements using grid properties */
 .hanging_container {

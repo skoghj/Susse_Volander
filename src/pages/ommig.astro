@@ -50,7 +50,7 @@ import "../styles/ommig.css";
     </article>
     <hr>
     <div id="grid_hanging">
-        <div class="hanging_container slide-in from-left fade-in">
+        <div class="hanging_container slide-in from-left">
             <img id="hoved" class="swing" src="/om_mig_billeder/hoved_uden_piner.webp" alt="hoved uden piner">
             <img id="pipaluk" class="swing" src="/om_mig_billeder/pipaluk_hanging_around.webp" alt="pipaluk hanging">
             <img id="art_collage" class="swing" src="/om_mig_billeder/hanging_art_collage.webp" alt="hanging art">
@@ -102,24 +102,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (entry.target.classList.contains("swing")) {
                     entry.target.style.animation = "swing 2.7s ease-in-out forwards";
                 }
-                console.log("Element appeared:", entry.target); // Debugging log
+                console.log("Element appeared:", entry.target); 
                 appearOnScroll.unobserve(entry.target);
             }
         });
     }, appearOptions);
 
     faders.forEach(fader => {
-        console.log("Observing element:", fader); // Debugging log
+        console.log("Observing element:", fader);
         appearOnScroll.observe(fader);
     });
 
     sliders.forEach(slider => {
-        console.log("Observing element:", slider); // Debugging log
+        console.log("Observing element:", slider); 
         appearOnScroll.observe(slider);
     });
 
     swingers.forEach(swinger => {
-        console.log("Observing element:", swinger); // Debugging log
+        console.log("Observing element:", swinger);
         appearOnScroll.observe(swinger);
     });
 });
@@ -160,21 +160,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 @keyframes swing {
   0% {
-    transform: rotate(10deg); /* Rotate significantly to the right */
+    transform: rotate(10deg); 
   }
   25% {
-    transform: rotate(-10deg); /* Rotate significantly to the left */
+    transform: rotate(-10deg); 
   }
   50% {
-    transform: rotate(10deg); /* Rotate significantly to the right */
+    transform: rotate(10deg);
   }
   75% {
-    transform: rotate(-5deg); /* Rotate moderately to the left */
+    transform: rotate(-5deg);
   }
   100% {
-    transform: rotate(0deg); /* Rotate back to center */
+    transform: rotate(0deg);
   }
-}
+} */
 
 .hanging_container img {
   /* animation: swing 4s ease-in-out forwards; */
@@ -191,3 +191,4 @@ document.addEventListener("DOMContentLoaded", () => {
     color: #F20056;
 }
 </style>
+
