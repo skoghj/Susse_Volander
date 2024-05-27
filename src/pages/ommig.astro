@@ -44,18 +44,18 @@ import "../styles/ommig.css";
         </div>
     </div>
     
-<div class="box_container">
+<div class="box_container fade-in">
     <article>
         <h2>LEGENDE TILGANG MED GENBRUG</h2>         
     </article>
     <hr>
     <div id="grid_hanging">
-        <div class="hanging_container slide-in from-right">
-            <img id="hoved" src="/om_mig_billeder/hoved_uden_piner.webp" alt="hoved uden piner">
-            <img id="pipaluk" src="/om_mig_billeder/pipaluk_hanging_around.webp" alt="pipaluk hanging">
-            <img id="art_collage" src="/om_mig_billeder/hanging_art_collage.webp" alt="hanging art">
+        <div class="hanging_container slide-in from-left fade-in">
+            <img id="hoved" class="swing" src="/om_mig_billeder/hoved_uden_piner.webp" alt="hoved uden piner">
+            <img id="pipaluk" class="swing" src="/om_mig_billeder/pipaluk_hanging_around.webp" alt="pipaluk hanging">
+            <img id="art_collage" class="swing" src="/om_mig_billeder/hanging_art_collage.webp" alt="hanging art">
         </div>
-        <article>
+        <article class="fade-in">
             <p>Når man er kunstner på den måde som jeg er, undrede jeg mig om alt det forbrug. Altså, alt det halløj med at bare købe, købe, købe.</p>
             <p>Så for 15 år siden, da jeg skulle smide noget ud og hente et eller andet, så jeg simpelthen så mange sjove ting der gav mig ideer til, hvad de kunne bruges til.</p>
             <p>Så der tog jeg mit campingvogn til dronningemølle og de dimser jeg fandt med, og startede et workshop af de ting jeg fandt. Det startede af med at det var børn der var interesserede, og så begyndte forældre langsomt at deltage med!</p>
@@ -83,37 +83,47 @@ import "../styles/ommig.css";
     </div>
 </div>
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const faders = document.querySelectorAll(".fade-in");
-        const sliders = document.querySelectorAll(".slide-in");
+document.addEventListener("DOMContentLoaded", () => {
+    const faders = document.querySelectorAll(".fade-in");
+    const sliders = document.querySelectorAll(".slide-in");
+    const swingers = document.querySelectorAll(".swing");
 
-        const appearOptions = {
-            threshold: 0.1, // Adjust this value based on your needs
-            rootMargin: "0px 0px -100px 0px" 
-        };
+    const appearOptions = {
+        threshold: 0.1, // Adjust this value based on your needs
+        rootMargin: "0px 0px -100px 0px" 
+    };
 
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add("appear");
-                    console.log("Element appeared:", entry.target); // Debugging log
-                    appearOnScroll.unobserve(entry.target);
+    const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add("appear");
+                if (entry.target.classList.contains("swing")) {
+                    entry.target.style.animation = "swing 2.7s ease-in-out forwards";
                 }
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            console.log("Observing element:", fader); // Debugging log
-            appearOnScroll.observe(fader);
+                console.log("Element appeared:", entry.target); // Debugging log
+                appearOnScroll.unobserve(entry.target);
+            }
         });
+    }, appearOptions);
 
-        sliders.forEach(slider => {
-            console.log("Observing element:", slider); // Debugging log
-            appearOnScroll.observe(slider);
-        });
+    faders.forEach(fader => {
+        console.log("Observing element:", fader); // Debugging log
+        appearOnScroll.observe(fader);
     });
+
+    sliders.forEach(slider => {
+        console.log("Observing element:", slider); // Debugging log
+        appearOnScroll.observe(slider);
+    });
+
+    swingers.forEach(swinger => {
+        console.log("Observing element:", swinger); // Debugging log
+        appearOnScroll.observe(swinger);
+    });
+});
+
 </script>
 </Mainlayout>
 
@@ -146,6 +156,31 @@ import "../styles/ommig.css";
 .from-left.appear, .from-right.appear{
     transition: transform 400ms ease-in;
     transform: translateX(0);
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(10deg); /* Rotate significantly to the right */
+  }
+  25% {
+    transform: rotate(-10deg); /* Rotate significantly to the left */
+  }
+  50% {
+    transform: rotate(10deg); /* Rotate significantly to the right */
+  }
+  75% {
+    transform: rotate(-5deg); /* Rotate moderately to the left */
+  }
+  100% {
+    transform: rotate(0deg); /* Rotate back to center */
+  }
+}
+
+.hanging_container img {
+  /* animation: swing 4s ease-in-out forwards; */
+  transform-origin: top center; /* Set the rotation center to the top */
+  position: absolute;
+  height: auto; /* Maintain aspect ratio */
 }
 
 .red_thread a{
