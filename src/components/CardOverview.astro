@@ -22,9 +22,12 @@ console.log("classAsString", classAsString);
 <style>
   /* CARD STYLING */
   .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow:
+      rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     background-color: #fff;
-    height: 565px;
+    height: 480px;
     width: 300px;
     border-radius: 10px;
     text-align: left;
@@ -36,16 +39,19 @@ console.log("classAsString", classAsString);
   }
 
   .card:hover {
-    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow:
+      rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     transform: scale(1.05);
     cursor: pointer;
   }
 
   .card img {
     width: 100%;
-    height: 395px;
+    height: 300px;
     border-radius: 10px 10px 0 0;
-    zoom: 100%;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -5px;
     object-fit: cover;
   }
 
