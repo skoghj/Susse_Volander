@@ -3,7 +3,6 @@ import CardOverview from "../components/CardOverview.astro";
 import OverviewLayout from "../components/layouts/OverviewLayout.astro";
 import FlowerAnimation from "../components/FlowerAnimation.astro";
 import Buttons from "../components/Buttons.astro";
-import "../styles/overview.css";
 import "../styles/style.css";
 
 const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paintings", {
@@ -16,11 +15,11 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
 ---
 
 <OverviewLayout title="Webshop">
-  <div class="start-text1 slide-in">
+  <div class="start-text1">
     <h1 class="title">WEBSHOP</h1>
     <div class="flower_1"><FlowerAnimation variant="primary" /></div>
   </div>
-  <div class="start-text2 slide-in">
+  <div class="start-text2">
     <p>
       Velkommen til min webshop! Træd ind i en verden af unikke <br /> kunstværker, skabt med kærlighed og passion. Udforsk en samling <br /> af malerier,
       der fanger øjet og berører sjælen. Hvert stykke er en <br />
@@ -28,7 +27,7 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
     </p>
   </div>
 
-  <div class="buttons-container slide-in">
+  <div>
     <Buttons category="Alle" />
     <Buttons category="Lærred" />
     <Buttons category="Plakat" />
@@ -36,12 +35,10 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
     <Buttons category="Bog" />
   </div>
 
-  <section class="cards_list slide-in">
+  <section class="cards_list">
     {
-      data.map((data, overview) => {
-        const className = `item_${(overview % 3) + 1} slide-in`;
+      data.map((data) => {
         return (
-          <div class={className}>
             <CardOverview data={data} />
           </div>
         );
@@ -52,82 +49,129 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
 </OverviewLayout>
 
 <script>
-  /// Add event listener to slide in animation for cards ///
-  document.addEventListener("DOMContentLoaded", function () {
-    const faders = document.querySelectorAll(".cards_list");
-    const sliders = document.querySelectorAll(".slide-in");
+  /// Add event listeners to buttons for active state ///
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => button.addEventListener("click", handleButtonClick));
 
-    const appearOptions = {
-      threshold: 0, // Set to 0 to trigger the animation as soon as any part of the element becomes visible
-      rootMargin: "0px 0px -100px 0px", // Adjust the negative margin in the vertical direction to start the animation earlier
-    };
+  function handleButtonClick(event) {
+    buttons.forEach((button) => button.classList.remove("active"));
+    event.target.classList.add("active");
+  }
 
-    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("appear");
-          appearOnScroll.unobserve(entry.target);
-        }
-      });
-    }, appearOptions);
+  /// Add event listeners to buttons for filtering cards ///
+  buttons.forEach((button) => button.addEventListener("click", filtrer));
 
-    faders.forEach((fader) => {
-      appearOnScroll.observe(fader);
-    });
-    sliders.forEach((slider) => {
-      appearOnScroll.observe(slider);
-    });
-
-    /// Add event listeners to buttons for active state ///
-    const buttons = document.querySelectorAll("button");
-    buttons.forEach((button) => button.addEventListener("click", handleButtonClick));
-
-    function handleButtonClick(event) {
-      buttons.forEach((button) => button.classList.remove("active"));
-      event.target.classList.add("active");
+  function filtrer(e) {
+    document.querySelectorAll(".card").forEach((element) => element.classList.add("hide"));
+    const filter = e.target.textContent.trim().toLowerCase();
+    switch (filter) {
+      case "lærred":
+        document.querySelectorAll(".lærred").forEach((element) => element.classList.remove("hide"));
+        break;
+      case "plakat":
+        document.querySelectorAll(".plakat").forEach((element) => element.classList.remove("hide"));
+        break;
+      case "tryk":
+        document.querySelectorAll(".tryk").forEach((element) => element.classList.remove("hide"));
+        break;
+      case "bog":
+        document.querySelectorAll(".bog").forEach((element) => element.classList.remove("hide"));
+        break;
+      default:
+        document.querySelectorAll(".card").forEach((element) => element.classList.remove("hide"));
+        break;
     }
-
-    /// Add event listeners to buttons for filtering cards ///
-    buttons.forEach((button) => button.addEventListener("click", filtrer));
-
-    function filtrer(e) {
-      document.querySelectorAll(".card").forEach((element) => element.classList.add("hide"));
-      const filter = e.target.textContent.trim().toLowerCase();
-      switch (filter) {
-        case "lærred":
-          document.querySelectorAll(".lærred").forEach((element) => element.classList.remove("hide"));
-          break;
-        case "plakat":
-          document.querySelectorAll(".plakat").forEach((element) => element.classList.remove("hide"));
-          break;
-        case "tryk":
-          document.querySelectorAll(".tryk").forEach((element) => element.classList.remove("hide"));
-          break;
-        case "bog":
-          document.querySelectorAll(".bog").forEach((element) => element.classList.remove("hide"));
-          break;
-        default:
-          document.querySelectorAll(".card").forEach((element) => element.classList.remove("hide"));
-          break;
-      }
-    }
-  });
+  }
 </script>
 
 <style>
-  /*ANIMATION*/
-  .slide-in {
-    opacity: 0;
-    transform: translateY(20px); /* or any other initial position */
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
+
+/* GENERAL */
+
+.hide {
+  display: none;
+}
+.cards_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  max-width: 1700px;
+  margin: 40px;
+  gap: 45px;
+}
+
+.start-text1 {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.start-text1 {
+  display: flex;
+  gap: 15px;
+}
+
+.start-text1 img {
+  width: 38px;
+  height: 38px;
+}
+
+.start-text2 p {
+  text-align: left;
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.start-text2 {
+  margin-left: 40px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.flower_1 {
+  left: 340px;
+}
+
+.flower_1 {
+  position: absolute;
+}
+
+.spacing {
+  margin: 40px;
+}
+
+/* MEDIA QUERIES */
+
+/*MOBILE*/
+@media only screen and (max-width: 768px) {
+  .cards_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .start-text2 p {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
   }
 
-  .slide-in.appear {
-    opacity: 1;
-    transform: translateY(0);
+  .flower_1 {
+    left: 290px;
+    top: 70px;
   }
+}
+
+/* DARK MODE */
+body.dark {
+  background-color: #10180d;
+}
+
+body.dark p,
+body.dark h1,
+body.dark .kurv {
+  color: #fcfff6;
+}
+
 </style>
