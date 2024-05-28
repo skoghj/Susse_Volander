@@ -26,7 +26,7 @@ h3,
 a {
   font-family: "Lato";
   text-decoration: none;
-  color: #494242;
+  color: /*#494242;*/ #233f1c;
 }
 
 p {
@@ -36,7 +36,7 @@ p {
 
 h1 {
   font-family: "Marine Sikona", sans-serif;
-  color: #5c604d;
+  color: /*#5c604d;*/ #233f1c;
   font-size: 60px;
 }
 
