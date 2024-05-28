@@ -3,7 +3,9 @@
 ---
 
 <header>
+  <div class="pos_fixed">
   <a href="#" class="burger" id="burgerIcon"><i class="fa-solid fa-bars"></i></a>
+  </div>
   <div class="navbar" id="myNavbar">
     <div class="logo">
       <a href="/"><img src="/webp/logo_header.webp" alt="logo" /></a>
@@ -15,9 +17,7 @@
       <a href="/ommig/">OM MIG</a>
       <a href="/kontakt/">KONTAKT</a>
 
-
       <i class="fa-solid fa-bag-shopping kurv"><span id="cart-count">0</span></i>
-
 
       <center>
         <div>
@@ -156,6 +156,7 @@
     color: #191717;
     border: 1px solid #191717;
   }
+
   @media screen and (max-width: 780px) {
     header {
       gap: 0;
@@ -166,7 +167,7 @@
     }
 
     .burger {
-      background-color: #ecf0e4;
+      background-color: #95bb72;
     }
     body.dark .burger {
       background-color: #1b2d24;
@@ -182,6 +183,8 @@
       font-size: 26px;
       padding-left: 20px;
       padding-top: 20px;
+      z-index: 2;
+      width: 100%;
     }
     .logo {
       margin-top: 20px;
@@ -201,15 +204,16 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: auto;
+      height: 100%;
       align-items: center;
       justify-content: space-evenly;
       text-align: center;
       z-index: 1;
+      position: fixed;
     }
     .navbar {
       display: none;
-      background-color: #ecf0e4;
+      background-color: #95bb72;
       /*padding-right: 60px;
       padding-bottom: 80px;*/
     }

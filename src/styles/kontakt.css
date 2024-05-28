@@ -108,33 +108,28 @@ h1 {
 
 /* MEDIA QUERIES */
 
-/*MOBILE*/
-@media only screen and (max-width: 425px) {
-  h1 {
-    position: static; /* Changed from absolute to static for better flow */
-    margin: 20px; /* Adjusted margins */
-    text-align: left; /* Ensure centering on small screens */
-    font-size: 48px; /* Adjust font size for better readability */
-  }
-
+@media only screen and (max-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-  }
-
-  .text {
-    margin: 40px;
-  }
-
-  .container2 {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+  }
+
+  .flower_1 {
+    position: absolute;
+    left: 260px;
+    top: 90px;
+  }
+
+  .centered {
+    padding: 20px;
+    text-align: left;
+    max-width: 400px;
+    margin-left: 40px;
   }
 
   .showcase {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,170 +140,55 @@ h1 {
   .showcase img {
     width: 100%;
     height: auto;
+    filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
   }
 
-  .centered {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80%;
+  .container2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    padding: 40px;
-    text-align: left;
-    font-size: 14px;
+  }
+
+  .text {
+    margin: 20px;
+  }
+
+  .flower_1 {
+    position: absolute;
+    left: 285px;
+    top: 115px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flower_1 {
+    position: absolute;
+    left: 200px;
+    top: 90px;
   }
 
   .centered p {
     text-align: left;
-    line-height: 1.5;
-    max-width: 800px;
-    font-size: 13px;
+    font-size: 12.5px;
+  }
+
+  .h2_text {
+    font-size: 18px;
+  }
+
+  .h3_text {
+    font-size: 16px;
   }
 
   .centered h2 {
-    font-size: 20px;
-  }
-
-  .illustration {
-    display: flex;
-    justify-content: left;
-  }
-
-  .illustration img {
-    height: auto;
-    width: 385px;
-  }
-
-  .illustration2 {
-    display: flex;
-    justify-content: left;
-    position: absolute;
-    top: 135px;
-    left: 10px;
-  }
-
-  .illustration2 img {
-    height: auto;
-    width: 240px;
-  }
-
-  h1 {
-    font-size: 30px;
-    margin-bottom: 40px;
-  }
-
-  .flower_1 {
-    position: absolute;
-    left: 260px;
-    top: 90px;
-  }
-}
-
-/*TABLET*/
-@media only screen and (max-width: 760px) {
-  .illustration2 {
-    position: absolute;
-    top: 135px;
-    left: 10px;
-  }
-
-  .illustration2 img {
-    height: auto;
-    width: 240px;
-  }
-
-  .flower_1 {
-    position: absolute;
-    left: 260px;
-    top: 90px;
-  }
-
-  .centered {
-    padding: 40px;
-    text-align: left;
-    font-size: 14px;
-    margin: 20px;
-  }
-
-  .showcase {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: fit-content;
-    margin-bottom: 20px; /* Adjust as needed for spacing */
-  }
-
-  .showcase img {
-    width: 100%;
-    height: auto;
-    filter: brightness(75%) contrast(100%) grayscale(60%) opacity(0.3);
-  }
-
-  .container2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .text {
-    margin: 20px;
-  }
-
-  .flower_1 {
-    position: absolute;
-    left: 285px;
-    top: 115px;
-  }
-}
-
-/*DESKTOP*/
-@media only screen and (max-width: 1024px) {
-  .flower_1 {
-    position: absolute;
-    left: 285px;
-    top: 115px;
-  }
-
-  .illustration2 {
-    position: absolute;
-    top: 135px;
-    left: 10px;
-  }
-
-  .illustration2 img {
-    height: auto;
-    width: 240px;
-  }
-
-  .centered {
-    padding: 40px;
-    text-align: left;
-    font-size: 14px;
-    margin: 20px;
-  }
-
-  .showcase {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: fit-content;
-    margin-bottom: 20px; /* Adjust as needed for spacing */
-  }
-
-  .showcase img {
-    width: 100%;
-    height: auto;
-    filter: brightness(75%) contrast(100%) grayscale(60%) opacity(0.3);
-  }
-
-  .container2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-bottom: 5px;
   }
 }
 
