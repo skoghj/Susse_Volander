@@ -7,7 +7,7 @@ const { category } = Astro.props;
 <style>
   button {
     border: 0;
-    background-color: #ffff;
+    background-color: #dcedb9;
     font-family: "Lato";
     font-size: 15px;
     color: #494242;
@@ -17,17 +17,16 @@ const { category } = Astro.props;
     margin-bottom: 10px;
     margin-left: 40px;
     transition: 0.6s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
   }
 
   button:hover {
-    box-shadow: 0 4px 8px 0 rgb(185, 164, 175);
-    background-color: #fdd9ec;
+    background-color: #b6c795;
     cursor: pointer;
   }
 
-  button:active {
-    box-shadow: 0 3px 5px 0 rgba(185, 164, 175);
+  .active {
+    background-color: #b6c795;
   }
 
   /*DARK MODE*/
