@@ -3,21 +3,20 @@ import WorkshopLayout from "../components/layouts/WorkshopLayout.astro";
 import Kontaktform from "../components/Kontaktform.astro";
 import FlowerAnimation from "../components/FlowerAnimation.astro";
 import WorkshopSlide from "../components/WorkshopSlide.astro";
-import ScrollArrow from "../components/ScrollArrow.astro";
 import "../styles/style.css";
 ---
 
 <WorkshopLayout title="Workshop">
-  <section class="page_title">
+  <section class="page_title fade-in">
     <h1 class="title_1">ART WORKSHOP</h1>
     <div class="flower_1"><FlowerAnimation variant="primary" /></div>
     <h1 class="title_2">CREATIVE ZONE</h1>
   </section>
 
-  <section class="om_workshop">
+  <section class="om_workshop fade-in">
     <div class="flower_2"><FlowerAnimation variant="secondary" /></div>
     <img class="workshop_susse" src="/workshop/workshopsusse-medium.webp" alt="Susse Volander" />
-    <article class="workshop_tekst">
+    <article class="workshop_tekst slide-in from-right">
       <h2>WORKSHOP</h2>
       <br />
       <p class="tekst_workshop">
@@ -35,7 +34,7 @@ import "../styles/style.css";
     </article>
   </section>
 
-  <section class="tidligere_workshop">
+  <section class="tidligere_workshop fade-in">
     <article class="workshop">
       <div class="background"><img src="/workshop/bgr.webp" alt="papir" /></div>
       <div class="wrap">
@@ -44,11 +43,11 @@ import "../styles/style.css";
           <div class="flower_3"><FlowerAnimation variant="third" /></div>
           <p class="tidligere_bodytekst">I vores tidligere workshops har deltagerne udforsket deres kreative potentiale gennem aktiviteter som skulpturbygning med genbrugsmaterialer, skabelse af tredimensionelle collager, kreative udfoldelser for voksne samt interaktive sanseudstillinger om lys, skygge og fordybelse.</p>
         </div>
-        <img class="workshop_1" src="/workshop/mobil.webp" alt="workshop_mobile" />
+        <img class="workshop_1 slide-in from-left" src="/workshop/mobil.webp" alt="workshop_mobile" />
       </div>
       <div class="wrap_2">
-        <img class="workshop_2" src="/workshop/kort.webp" alt="workshop" />
-        <img class="workshop_3" src="/workshop/workshop2.webp" alt="workshop" />
+        <img class="workshop_2 slide-in from-left" src="/workshop/kort.webp" alt="workshop" />
+        <img class="workshop_3 slide-in from-right" src="/workshop/workshop2.webp" alt="workshop" />
       </div>
     </article>
 
@@ -57,7 +56,7 @@ import "../styles/style.css";
     </div>
   </section>
 
-  <section class="kontaktform">
+  <section class="kontaktform fade-in">
     <div class="kontakt">
       <h2>KONTAKT</h2><br />
       <p>
@@ -134,10 +133,11 @@ import "../styles/style.css";
   }
 
   .workshop_susse {
-    margin/top: 40px;
+    margin-top: 40px;
     object-fit: cover;
     width: 80%;
   }
+
   .note {
     font-weight: 700;
     font-size: 14px;
@@ -233,6 +233,35 @@ import "../styles/style.css";
     z-index: -1;
     display: flex;
     justify-content: flex-end;
+  }
+  .fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+  }
+
+  .fade-in.appear {
+    opacity: 1;
+  }
+
+  .from-left {
+    grid-column: 1/2;
+    transform: translateX(-15%);
+  }
+
+  .from-right {
+    grid-column: 2 / 3;
+    transform: translateX(15%);
+  }
+
+  .from-left,
+  .from-right {
+    transition: transform 0.1s ease-in;
+  }
+
+  .from-left.appear,
+  .from-right.appear {
+    transition: transform 0.2s ease-in;
+    transform: translateX(0);
   }
 
   @media (min-width: 425px) {
@@ -459,3 +488,33 @@ import "../styles/style.css";
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faders = document.querySelectorAll(".fade-in");
+    const sliders = document.querySelectorAll(".slide-in");
+
+    const appearOptions = {
+      threshold: 0, // 요소가 50% 뷰포트에 나타날 때 트리거
+      rootMargin: "0px 0px -250px 0px",
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add("appear");
+          appearOnScroll.unobserve(entry.target); // 요소가 나타난 후 옵저버 해제
+        }
+      });
+    }, appearOptions); // 여기서 `options` 대신 `appearOptions` 사용
+
+    faders.forEach((fader) => {
+      appearOnScroll.observe(fader);
+    });
+    sliders.forEach((slider) => {
+      appearOnScroll.observe(slider);
+    });
+  });
+</script>
