@@ -12,11 +12,10 @@
 .cards_list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: start;
-  max-width: 1700px;
-  margin: 40px;
-  gap: 45px;
+  margin: 40px; /* Center the container horizontally */
+  gap: 77.5px;
+  left: -10px; /* Adjust this value to move the container left */
+  position: relative;
 }
 
 .start-text1 {
