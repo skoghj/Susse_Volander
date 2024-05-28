@@ -4,8 +4,9 @@
   display: none;
 }
 
-h1 {
-  font-family: "Marine Sikona";
+.title {
+  font-weight: 400;
+  text-align: left;
 }
 
 .cards_list {
@@ -20,7 +21,7 @@ h1 {
 
 .start-text1 {
   margin-left: 30px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .start-text1 {
@@ -48,7 +49,8 @@ h1 {
 }
 
 .flower_1 {
-  left: 340px;
+  left: 335px;
+  top: 145px;
 }
 
 .flower_1 {
