@@ -3,6 +3,8 @@ import CardOverview from "../components/CardOverview.astro";
 import OverviewLayout from "../components/layouts/OverviewLayout.astro";
 import FlowerAnimation from "../components/FlowerAnimation.astro";
 import Buttons from "../components/Buttons.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+import "../styles/overview.css";
 import "../styles/style.css";
 
 const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paintings", {
@@ -18,6 +20,7 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
   <div class="start-text1">
     <h1 class="title">WEBSHOP</h1>
     <div class="flower_1"><FlowerAnimation variant="primary" /></div>
+    <ScrollToTop />
   </div>
   <div class="start-text2">
     <p>
@@ -27,7 +30,7 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
     </p>
   </div>
 
-  <div>
+  <div class="buttons">
     <Buttons category="Alle" />
     <Buttons category="Lærred" />
     <Buttons category="Plakat" />
@@ -49,6 +52,48 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
 </OverviewLayout>
 
 <script>
+
+
+  /// Add event listeners to buttons for filtering cards ///
+  document.addEventListener("DOMContentLoaded", function () {
+    // Add event listeners to buttons
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => button.addEventListener("click", (e) => filtrer(e)));
+
+    function filtrer(e) {
+      // Hide all cards
+      console.log(document.querySelectorAll(".card"));
+      document.querySelectorAll(".card").forEach((element) => element.classList.add("hide"));
+      console.log("Button clicked:", e.target.textContent);
+
+      // Filter cards
+      const filter = e.target.textContent.trim().toLowerCase();
+      console.log("Cleaned filter", filter);
+      switch (filter) {
+        case "lærred":
+          console.log("Filtering for Lærred");
+          document.querySelectorAll(".lærred").forEach((element) => element.classList.remove("hide"));
+          break;
+        case "plakat":
+          console.log("Filtering for Plakat");
+          document.querySelectorAll(".plakat").forEach((element) => element.classList.remove("hide"));
+          break;
+        case "tryk":
+          console.log("Filtering for Tryk");
+          document.querySelectorAll(".tryk").forEach((element) => element.classList.remove("hide"));
+          break;
+        case "bog":
+          console.log("Filtering for Bog");
+          document.querySelectorAll(".bog").forEach((element) => element.classList.remove("hide"));
+          break;
+        default:
+          console.log("Filtering for all");
+          document.querySelectorAll(".card").forEach((element) => element.classList.remove("hide"));
+          break;
+      }
+    }
+  })
+  
   /// Add event listeners to buttons for active state ///
   const buttons = document.querySelectorAll("button");
   buttons.forEach((button) => button.addEventListener("click", handleButtonClick));
@@ -57,121 +102,4 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
     buttons.forEach((button) => button.classList.remove("active"));
     event.target.classList.add("active");
   }
-
-  /// Add event listeners to buttons for filtering cards ///
-  buttons.forEach((button) => button.addEventListener("click", filtrer));
-
-  function filtrer(e) {
-    document.querySelectorAll(".card").forEach((element) => element.classList.add("hide"));
-    const filter = e.target.textContent.trim().toLowerCase();
-    switch (filter) {
-      case "lærred":
-        document.querySelectorAll(".lærred").forEach((element) => element.classList.remove("hide"));
-        break;
-      case "plakat":
-        document.querySelectorAll(".plakat").forEach((element) => element.classList.remove("hide"));
-        break;
-      case "tryk":
-        document.querySelectorAll(".tryk").forEach((element) => element.classList.remove("hide"));
-        break;
-      case "bog":
-        document.querySelectorAll(".bog").forEach((element) => element.classList.remove("hide"));
-        break;
-      default:
-        document.querySelectorAll(".card").forEach((element) => element.classList.remove("hide"));
-        break;
-    }
-  }
 </script>
-
-<style>
-
-/* GENERAL */
-
-.hide {
-  display: none;
-}
-.cards_list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: start;
-  max-width: 1700px;
-  margin: 40px;
-  gap: 45px;
-}
-
-.start-text1 {
-  margin-left: 30px;
-  margin-top: 20px;
-}
-
-.start-text1 {
-  display: flex;
-  gap: 15px;
-}
-
-.start-text1 img {
-  width: 38px;
-  height: 38px;
-}
-
-.start-text2 p {
-  text-align: left;
-  font-family: "Lato";
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 30px;
-}
-
-.start-text2 {
-  margin-left: 40px;
-  margin-bottom: 20px;
-  margin-top: 5px;
-}
-
-.flower_1 {
-  left: 340px;
-}
-
-.flower_1 {
-  position: absolute;
-}
-
-.spacing {
-  margin: 40px;
-}
-
-/* MEDIA QUERIES */
-
-/*MOBILE*/
-@media only screen and (max-width: 768px) {
-  .cards_list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .start-text2 p {
-    font-size: 13px;
-    line-height: 20px;
-    font-weight: 400;
-  }
-
-  .flower_1 {
-    left: 290px;
-    top: 70px;
-  }
-}
-
-/* DARK MODE */
-body.dark {
-  background-color: #10180d;
-}
-
-body.dark p,
-body.dark h1,
-body.dark .kurv {
-  color: #fcfff6;
-}
-
-</style>
