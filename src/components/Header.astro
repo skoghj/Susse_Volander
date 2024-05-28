@@ -157,6 +157,10 @@
     border: 1px solid #191717;
   }
 
+  .navbar_menu a.active {
+    color: #f20056; /* Farve til den aktive side */
+}
+
   @media screen and (max-width: 780px) {
     header {
       gap: 0;
@@ -210,6 +214,9 @@
       text-align: center;
       z-index: 1;
     }
+
+
+
     .navbar {
       display: none;
       background-color: #95bb72;
@@ -224,6 +231,7 @@
 </style>
 
 <script>
+    // Kurv ikon - registerer antal fra singleview og gemmer m. localStorage 
   document.addEventListener("DOMContentLoaded", function () {
     const cartCount = document.getElementById("cart-count");
     let items = localStorage.getItem("cartItems");
@@ -259,12 +267,30 @@
     document.body.classList.remove("dark");
     checkbox.checked = false;
   }
-  //////////////////burgermenu//////////////////
 
+  // Active link
+
+  //////////////////burgermenu//////////////////
+  
   document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("burgerIcon").addEventListener("click", function () {
-      var navbar = document.getElementById("myNavbar");
-      navbar.classList.toggle("show");
+    // Identificer den aktive side
+    var currentPage = window.location.pathname;
+
+    // Find alle links i både burgermenuen og desktop-menuen
+    var navLinks = document.querySelectorAll(".navbar_menu a");
+
+    // Loop igennem links og tilføj "active" klasse til det aktive link
+    navLinks.forEach(function (link) {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
     });
-  });
+
+    // Burgermenu toggle
+    document.getElementById("burgerIcon").addEventListener("click", function () {
+        var navbar = document.getElementById("myNavbar");
+        navbar.classList.toggle("show");
+    });
+});
+
 </script>

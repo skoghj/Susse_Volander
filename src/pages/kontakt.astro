@@ -11,14 +11,16 @@ import "../styles/style.css";
     <h1 class="title">KONTAKT</h1>
     <div class="flower_1"><FlowerAnimation variant="primary" /></div>
   </div>
-  <div class="container">
-    <div class="illustration_container">
-      <div class="illustration slide-in">
-        <img src="../images/sus_graphic.webp" alt="illustration" />
-      </div>
+  <div class="illustration_container">
+    <div class="illustration slide-in">
+      <img src="../images/sus_graphic.webp" alt="illustration" />
     </div>
+  </div>
 
-    <div class="text slide-in">
+  <!-- Text -->
+
+  <div class="text_container slide-in">
+    <div class="text">
       <h2>Forbind med kunsten</h2>
       <p>
         Mit navn er Susse Volander, og jeg er den kreative sjæl bag hvert eneste unikke maleri her på min website. Det glæder mig, at du er
@@ -34,6 +36,7 @@ import "../styles/style.css";
       <SomeIcons />
     </div>
   </div>
+
   <div class="container2 slide-in">
     <Form />
     <div class="showcase">
@@ -47,259 +50,237 @@ import "../styles/style.css";
           egen kunstoplevelse.
         </p>
       </div>
+
+      <style>
+        /* GENERAL */
+        h1 {
+          margin: 50px;
+          padding: 20px 0;
+          text-align: left; /* Added for better positioning */
+          font-weight: 400;
+        }
+
+        .flower_1 {
+          left: 330px;
+          top: 180px;
+        }
+
+        .flower_1 {
+          position: absolute;
+        }
+
+        /* CONTAINER */
+        .illustration_container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          font-family: "Lato";
+          color: #494242;
+        }
+
+        .text_container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+          padding: 50px;
+          margin-left: 50px;
+          gap: 20px;
+        }
+
+        .illustration {
+          display: flex;
+          justify-content: left;
+        }
+
+        .illustration img {
+          width: 100%;
+          object-fit: cover;
+        }
+
+        /* CONTAINER2 */
+        .container2 {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          font-family: "Lato";
+          color: #494242;
+        }
+
+        .showcase {
+          position: relative;
+          margin-bottom: 40px;
+        }
+
+        .showcase img {
+          width: 100%;
+          height: auto;
+          filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
+        }
+
+        .centered {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+          padding: 60px;
+          text-align: left;
+          max-width: 600px;
+          margin-left: 60px;
+        }
+
+        .centered p {
+          text-align: left;
+          line-height: 1.5;
+          max-width: 800px;
+        }
+
+        .centered h2 {
+          margin-bottom: 15px;
+        }
+
+        .centered h3 {
+          margin-bottom: 12px;
+        }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 1080px) {
+          .illustration_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+          }
+
+          .flower_1 {
+            position: absolute;
+            left: 260px;
+            top: 90px;
+          }
+
+          .centered {
+            padding: 70px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: 10px;
+          }
+        }
+
+        .showcase {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 40px; /* Adjust as needed for spacing */
+        }
+
+        .showcase img {
+          width: 700px;
+          height: auto;
+          filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
+        }
+
+        .container2 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .text_container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: left;
+          margin: 20px;
+        }
+
+        .flower_1 {
+          position: absolute;
+          left: 300px;
+          top: 150px;
+        }
+
+        .centered p {
+          text-align: left;
+          font-size: 16px;
+          line-height: 1.2;
+        }
+
+        .h2_text {
+          font-size: 22px;
+        }
+
+        .h3_text {
+          font-size: 18px;
+        }
+
+        .centered h2 {
+          margin-bottom: 5px;
+        }
+
+        h1 {
+          margin: 20px;
+        }
+
+        /* DARK MODE */
+
+        body.dark {
+          background-color: #10180d;
+        }
+
+        body.dark p,
+        body.dark h1,
+        body.dark h2,
+        body.dark h3 {
+          color: #fff;
+        }
+
+        body.dark .showcase img {
+          filter: grayscale(100%) brightness(30%) opacity(0.4);
+        }
+
+        /* ANIMATION */
+        .slide-in {
+          opacity: 0;
+          transform: translateX(100px);
+          transition:
+            opacity 0.6s ease-out,
+            transform 0.6s ease-out;
+        }
+
+        .appear {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      </style>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const sliders = document.querySelectorAll(".slide-in");
+
+          const appearOptions = {
+            threshold: 0.25,
+            rootMargin: "0px 0px -50px 0px",
+          };
+
+          const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              } else {
+                entry.target.classList.add("appear");
+                appearOnScroll.unobserve(entry.target);
+              }
+            });
+          }, appearOptions);
+
+          sliders.forEach((slider) => {
+            appearOnScroll.observe(slider);
+          });
+        });
+      </script>
     </div>
   </div>
 </KontaktLayout>
-
-<style>
-  /* GENERAL */
-
-  h1 {
-    margin: 50px;
-    padding: 20px 0;
-    text-align: left; /* Added for better positioning */
-    font-weight: 400;
-  }
-
-  .flower_1 {
-    left: 330px;
-    top: 180px;
-  }
-
-  .flower_1 {
-    position: absolute;
-  }
-
-  /* CONTAINER */
-
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    font-family: "Lato";
-    color: #494242;
-  }
-
-  .text {
-    display: flex;
-    flex-direction: column;
-    max-width: 580px;
-    gap: 20px;
-  }
-
-  .illustration {
-    display: flex;
-    justify-content: left;
-  }
-
-  .illustration img {
-    width: 80%;
-    object-fit: cover;
-  }
-
-  .illustration2 {
-    position: absolute;
-    top: 246px;
-    left: 45px;
-    width: 50%;
-    height: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding: 55px;
-  }
-
-  .illustration2 img {
-    width: 375px;
-    height: auto;
-  }
-
-  .container2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    font-family: "Lato";
-    color: #494242;
-  }
-
-  .showcase {
-    position: relative;
-    margin-bottom: 40px;
-  }
-
-  .showcase img {
-    width: 100%;
-    height: auto;
-    filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
-  }
-
-  .centered {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding: 65px;
-  }
-
-  .centered p {
-    text-align: left;
-    line-height: 1.5;
-    max-width: 800px;
-  }
-
-  .centered h2 {
-    margin-bottom: 15px;
-  }
-
-  .centered h3 {
-    margin-bottom: 12px;
-  }
-
-  /* MEDIA QUERIES */
-
-  @media only screen and (max-width: 768px) {
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .flower_1 {
-      position: absolute;
-      left: 260px;
-      top: 90px;
-    }
-
-    .centered {
-      padding: 20px;
-      text-align: left;
-      max-width: 400px;
-      margin-left: 40px;
-    }
-
-    .showcase {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-width: fit-content;
-      margin-bottom: 20px; /* Adjust as needed for spacing */
-    }
-
-    .showcase img {
-      width: 100%;
-      height: auto;
-      filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
-    }
-
-    .container2 {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .text {
-      margin: 20px;
-    }
-
-    .flower_1 {
-      position: absolute;
-      left: 285px;
-      top: 115px;
-    }
-  }
-
-  @media only screen and (max-width: 480px) {
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .flower_1 {
-      position: absolute;
-      left: 200px;
-      top: 90px;
-    }
-
-    .centered p {
-      text-align: left;
-      font-size: 12.5px;
-    }
-
-    .h2_text {
-      font-size: 18px;
-    }
-
-    .h3_text {
-      font-size: 16px;
-    }
-
-    .centered h2 {
-      margin-bottom: 5px;
-    }
-  }
-
-  /* DARK MODE */
-
-  body.dark {
-    background-color: #10180d;
-  }
-
-  body.dark p,
-  body.dark h1,
-  body.dark h2,
-  body.dark h3 {
-    color: #fff;
-  }
-
-  body.dark .showcase img {
-    filter: grayscale(100%) brightness(30%) opacity(0.4);
-  }
-
-  /* ANIMATION */
-  .slide-in {
-    opacity: 0;
-    transform: translateX(100px);
-    transition:
-      opacity 0.6s ease-out,
-      transform 0.6s ease-out;
-  }
-
-  .appear {
-    opacity: 1;
-    transform: translateX(0);
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sliders = document.querySelectorAll(".slide-in");
-
-    const appearOptions = {
-      threshold: 0.25,
-      rootMargin: "0px 0px -50px 0px",
-    };
-
-    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("appear");
-          appearOnScroll.unobserve(entry.target);
-        }
-      });
-    }, appearOptions);
-
-    sliders.forEach((slider) => {
-      appearOnScroll.observe(slider);
-    });
-  });
-</script>
