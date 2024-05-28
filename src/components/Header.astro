@@ -3,7 +3,9 @@
 ---
 
 <header>
+  <div class="pos_fixed">
   <a href="#" class="burger" id="burgerIcon"><i class="fa-solid fa-bars"></i></a>
+  </div>
   <div class="navbar" id="myNavbar">
     <div class="logo">
       <a href="/"><img src="/webp/logo_header.webp" alt="logo" /></a>
@@ -181,6 +183,8 @@
       font-size: 26px;
       padding-left: 20px;
       padding-top: 20px;
+      z-index: 2;
+      width: 100%;
     }
     .logo {
       margin-top: 20px;
@@ -200,11 +204,12 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: auto;
+      height: 100%;
       align-items: center;
       justify-content: space-evenly;
       text-align: center;
       z-index: 1;
+      position: fixed;
     }
     .navbar {
       display: none;
