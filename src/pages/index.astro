@@ -54,7 +54,9 @@ import Frontgallery from "../components/Frontgallery.astro";
                 <img src="/images/susse_portrait.png" alt="susse_portrait">
             </div>
         </article>
+        <div class="container_background">
         <Frontgallery></Frontgallery>
+        <div class="background_neutral"><img src="/images/neutral_background.svg" alt="papir" /></div>
 
         <article class="container">
           <div class="image-container">
@@ -69,6 +71,7 @@ import Frontgallery from "../components/Frontgallery.astro";
             </div>
           </div>
         </article>
+      </div>
 
         <div class="form">
           <div>
@@ -90,10 +93,14 @@ import Frontgallery from "../components/Frontgallery.astro";
 
 <style>
 
-body.dark .middle h2, body.dark .middle p {
+body.dark .middle h2, body.dark .middle p, body.dark .form h2 {
   color: white;
 }
 
+body.dark .background_neutral {
+    /* filter: grayscale(20%) invert(80%) hue-rotate(120deg); */
+    filter: grayscale(100%) brightness(30%) opacity(0.4);
+  }
 /*SLIDE GALLERI */
     * {
   margin: 0;
@@ -104,7 +111,6 @@ body.dark .middle h2, body.dark .middle p {
 img {
   width: auto; /* Adjust the width of the image */
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the container */
 }
 
 
@@ -112,6 +118,33 @@ img {
   margin: auto;
   font-size: 45px;
 }
+.container_background{
+position: relative;
+width: 100%;
+padding-top: 75px;
+}
+
+    .background_neutral {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+  }
+
+  .background_neutral img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height:100%;
+      z-index: -1;
+    }
+
+
 
 .container {
   position: relative;
@@ -283,10 +316,17 @@ margin: auto 33px;
     line-height: 40px;
     text-align: center;
   }
+  .front_workshop_img{
+  width: auto;
+  height: 100%;
+}
 
 @media screen and (min-width: 768px) {
   #frontpage_img {
   width: 100%; /* Adjust the width of the image for mobile view */
+}
+.front_workshop_img img{
+  width: 100%;
 }
 .container {
   position: relative;
@@ -319,12 +359,18 @@ text-align: center;
 margin: auto 15px;
 justify-content: center;
 }
+.front_workshop_img img{
+  width: 100%;
+}
 
 }
 
 @media screen and (min-width: 1200px) {
 .front_om_mig {
   margin: auto 19%;
+}
+.front_workshop_img{
+  width: 100%;
 }
 }
 </style>
