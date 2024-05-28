@@ -43,11 +43,7 @@ import "../styles/style.css";
           <div class="flower_3"><FlowerAnimation variant="third" /></div>
           <p class="tidligere_bodytekst">I vores tidligere workshops har deltagerne udforsket deres kreative potentiale gennem aktiviteter som skulpturbygning med genbrugsmaterialer, skabelse af tredimensionelle collager, kreative udfoldelser for voksne samt interaktive sanseudstillinger om lys, skygge og fordybelse.</p>
         </div>
-        <picture>
-          <source media="(min-width:650px)" srcset="/workshop/mobil.webp" />
-          <source media="(min-width:450px)" srcset="/workshop/mobil.webp" />
-          <img class="workshop_1 slide-in from-left" src="/workshop/mobil.webp" width="290" height="370" alt="workshop_mobile" />
-        </picture>
+        <img class="workshop_1 slide-in from-left" src="/workshop/mobil.webp" width="290" height="370" alt="workshop_mobile" />
       </div>
       <div class="wrap_2">
         <img class="workshop_2 slide-in from-left" src="/workshop/kort.webp" width="470" height="250" alt="workshop" />
@@ -249,7 +245,7 @@ import "../styles/style.css";
   }
 
   .from-left {
-    grid-column: 1/2;
+    grid-column: 1 / 2;
     transform: translateX(-15%);
   }
 
