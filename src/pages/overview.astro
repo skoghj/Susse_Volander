@@ -47,6 +47,7 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
 </OverviewLayout>
 
 <script>
+  // Function to handle the active state for the filtering-buttons
   document.addEventListener("DOMContentLoaded", (event) => {
     // Function to handle the active state
     function handleButtonClick(event) {
@@ -63,6 +64,7 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
     buttons.forEach((button) => button.addEventListener("click", handleButtonClick));
   });
 
+  // Function to filter cards
   document.addEventListener("DOMContentLoaded", function () {
     // Add event listeners to buttons
     const buttons = document.querySelectorAll("button");
