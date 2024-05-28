@@ -150,7 +150,7 @@ const { paintings } = Astro.props;
 
   ul.breadcrumb li {
     display: inline;
-    color: #494242;
+    color: #233f1c;
     text-decoration: none;
     font-size: 14px;
     font-family: "Lato";
@@ -160,12 +160,12 @@ const { paintings } = Astro.props;
   /* SLASH SYMBOL (/) */
   ul.breadcrumb li + li:before {
     padding: 3px;
-    color: #494242;
+    color: #233f1c;
     content: "/\00a0";
   }
 
   ul.breadcrumb li a {
-    color: #494242;
+    color: #233f1c2;
     text-decoration: none;
   }
 
@@ -241,13 +241,13 @@ const { paintings } = Astro.props;
   }
 
   .normal-price {
-    color: #8d8787;
+    color: #233f1c;
     text-decoration: line-through;
   }
 
   /* KNAP */
   .icon-button {
-    background-color: #494242;
+    background-color: #233f1c;
     color: #fcfff6;
     border: none;
     padding: 12px 20px;
@@ -265,7 +265,7 @@ const { paintings } = Astro.props;
   }
 
   .icon-button:hover {
-    color: #494242;
+    color: #233f1c;
     background-color: #fcbddd;
   }
 
@@ -274,7 +274,7 @@ const { paintings } = Astro.props;
   /* ACCORDION */
   .accordion {
     background-color: #ecf0e4;
-    color: #494242;
+    color: #233f1c;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -336,7 +336,7 @@ const { paintings } = Astro.props;
   }
 
   hr {
-    color: #494242;
+    color: #233f1c;
     width: 100%;
   }
 
@@ -359,7 +359,7 @@ const { paintings } = Astro.props;
     padding-inline-start: 2em;
     position: relative;
     font-family: "Lato";
-    color: #494242;
+    color: #233f1c;
   }
 
   .line_section li::before {
@@ -458,12 +458,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Accordian
-  var acc = document.getElementsByClassName("accordion");
+  let acc = document.getElementsByClassName("accordion");
 
-  for (var i = 0; i < acc.length; i++) {
+  for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
       this.classList.toggle("active");
-      var panel = this.nextElementSibling;
+      let panel = this.nextElementSibling;
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
         panel.style.paddingTop = null;
