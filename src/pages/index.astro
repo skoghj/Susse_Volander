@@ -37,7 +37,11 @@ import Mainlayout from "../components/layouts/Mainlayout.astro";
     <div class="portrait_container">
         <img id="big_flower" src="/images/flower.svg" alt="big flower">
         <img id="small_flower" src="/images/flower.svg" alt="small flower">
-        <img src="/images/susse_portrait.webp" height="400" width="400" alt="susse_portrait">
+        <picture>
+        <source media="(min-width:650px)" srcset="/images/susse_portrait.webp">
+        <source media="(min-width:450px)" srcset="/images/susse_portrait.webp">
+        <img src="/images/susse_portrait.webp" alt="Flowers" style="width:auto;">
+        </picture>
     </div>
 </article>
 <div class="container_background">
