@@ -36,6 +36,7 @@ img {
   position: relative;
 }
 .container_background {
+  background-image: url("/images/background_neut.svg");
   position: relative;
   width: 100%;
   padding-top: 175px;
