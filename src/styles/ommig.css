@@ -19,7 +19,6 @@ img {
   height: auto;
 }
 
-.none,
 .visible_desktop {
   display: none;
 }
@@ -32,9 +31,6 @@ img {
 }
 
 /* Define a new class for containers where flex_row should align to the top */
-.top_aligned_container {
-  align-items: flex-start; /* Align content to the start of the container */
-}
 
 /* Keep the properties of the box_container */
 .box_container {
@@ -42,36 +38,35 @@ img {
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
 }
 /* Apply specific alignment for flex_row inside the top_aligned_container */
 .top_aligned_container .flex_row {
   justify-content: flex-start; /* Align items to the start of the container horizontally */
-  align-items: flex-start; /* Align items to the start of the container vertically */
   max-width: 1200px;
   gap: 100px;
 }
 
 /* INTRO */
-.intro img {
-  width: 100%;
+.intro {
+  height: 600px;
 }
 
 .intro h1 {
-  font-size: 25px;
   color: #fcfff6;
+  margin-left: 15px;
+  margin-top: 40px;
 }
 
 .intro p {
   color: #fcfff6;
   margin-top: 15px;
+  margin-left: 15px;
+  max-width: 400px;
 }
-
-#intro_text {
-  position: absolute; /* Position the h1 absolutely within the .intro container */
-  top: 15%;
-  left: 50%;
-  color: #fcfff6;
+.intro {
+  background-image: url("/om_mig_billeder/intro_background_minilight.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* KUNSTENS VERDEN */
@@ -117,19 +112,12 @@ hr {
 
 /* KREATIVITET FORBINDER GENERATIONER */
 .background_workshop {
-  background-image: url("/om_mig_billeder/workshop_about.svg");
+  background-image: url("/om_mig_billeder/workshop_ommig_light.svg");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 130px;
   padding-bottom: 60px;
 }
-
-/* GRID HANGING CONTAINER */
-/* #grid_hanging {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 10px;
-} */
 
 /* Change the order of elements using grid properties */
 .hanging_container {
@@ -161,9 +149,20 @@ hr {
   h2 {
     font-size: 35px;
   }
+  .intro h1 {
+    margin: 0;
+  }
 
   .box_container {
     height: 600px; /* Specify height with px */
+    justify-content: center; /* Center content vertically */
+  }
+
+  #intro_text {
+    position: absolute; /* Position the h1 absolutely within the .intro container */
+    top: 15%;
+    left: 50%;
+    color: #fcfff6;
   }
 
   /* Increase margin for .everything_container on desktop view */
@@ -175,11 +174,18 @@ hr {
 
   /* INTRO DESKTOP */
   #intro_text {
-    top: 37%;
+    top: 30%;
   }
 
-  #intro_text h1 {
-    font-size: 45px;
+  .intro p {
+    margin-left: 0;
+    max-width: 500px;
+  }
+  .intro {
+    background-image: url("/om_mig_billeder/susse_ommig_light.webp");
+  }
+  body.dark .intro {
+    background-image: url("/om_mig_billeder/susse_ommig.webp");
   }
 
   .none {
@@ -247,14 +253,14 @@ hr {
   .title_skewered,
   .title_skewered_workshop {
     position: absolute;
-    left: -24%;
-    top: -20%;
+    left: -21%;
+    top: -16%;
     min-width: 600px;
   }
 
   .title_skewered_workshop {
-    left: -18%;
-    top: -14%;
+    left: -34%;
+    top: -12%;
   }
 
   .background_workshop {

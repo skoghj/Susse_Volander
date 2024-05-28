@@ -7,9 +7,8 @@ import "../styles/ommig.css";
 <Mainlayout title="Om mig">
 <div class="kunstens_verden">
         <div class=" box_container intro">
-            <!-- <img id="susse_ommig" src="/om_mig_billeder/background_intro_light.webp" alt="intro billede"> -->
             <div id="intro_text">
-                <h1 class="fade-in">KUNSTNEREN BAG LÆRREDET</h1>
+                <h1 class="fade-in">KUNSTNEREN <br> BAG LÆRREDET</h1>
                 <p class="none fade-in">Jeg er Susse Volander, en kunstner, der lever og ånder for at udtrykke mig kreativt!</p>
             </div>
         </div>
@@ -140,9 +139,13 @@ import "../styles/ommig.css";
     body.dark .kunstens_verden{
         background-image: url("/om_mig_billeder/dark_background_kunst.svg");
     }
+    body.dark .intro{
+        background-image: url("/om_mig_billeder/susse_ommig_minidark.webp");
+    }
+
 
     body.dark .background_workshop{
-        background-image: url("/om_mig_billeder/dark_w-shop.svg");
+        background-image: url("/om_mig_billeder/workshop_ommig_dark.svg");
     }
 
     
@@ -159,10 +162,6 @@ import "../styles/ommig.css";
 .from-left{
     grid-column: 2 / 3;
     transform: translateX(-50%);
-}
-.intro{
-    background-image: url("/om_mig_billeder/background_intro_light.webp");
-    background-repeat: no-repeat;
 }
 .from-right{
     grid-column: 3 / 4;
