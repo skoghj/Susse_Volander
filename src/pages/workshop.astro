@@ -2,7 +2,7 @@
 import WorkshopLayout from "../components/layouts/WorkshopLayout.astro";
 import Kontaktform from "../components/Kontaktform.astro";
 import FlowerAnimation from "../components/FlowerAnimation.astro";
-import WorkshopSlider from "../components/WorkshopSlide.astro";
+import WorkshopSlide from "../components/WorkshopSlide.astro";
 import ScrollArrow from "../components/ScrollArrow.astro";
 import "../styles/style.css";
 ---
@@ -51,11 +51,12 @@ import "../styles/style.css";
         <img class="workshop_3" src="/workshop/workshop2.webp" alt="workshop" />
       </div>
     </article>
+
     <div class="slide">
-      <ScrollArrow />
-      <WorkshopSlider />
+      <WorkshopSlide />
     </div>
   </section>
+
   <section class="kontaktform">
     <div class="kontakt">
       <h2>KONTAKT</h2><br />
@@ -204,7 +205,8 @@ import "../styles/style.css";
   }
 
   .slide {
-    display: flex;
+    /*display: flex;
+    flex-direction: column;*/
     justify-content: center;
     width: 100%;
     margin: 0 auto;
@@ -327,7 +329,7 @@ import "../styles/style.css";
     }
 
     .wrap {
-      margin: 100px 100px 40px 100px;
+      margin: 100px 120px 40px 120px;
     }
     .wrap_2 {
       margin: 0 100px;
@@ -380,7 +382,6 @@ import "../styles/style.css";
     }
     .slide {
       padding-top: 50px;
-      padding-left: 100px;
     }
     .kontakt {
       margin: 100px 100px 0 100px;
@@ -430,7 +431,7 @@ import "../styles/style.css";
     }
     .workshop_2,
     .workshop_3 {
-      max-width: 70%;
+      max-width: 74%;
       object-fit: cover;
     }
     .flower_2 {
@@ -446,6 +447,15 @@ import "../styles/style.css";
     .flower_3 {
       top: 86px;
       left: 391px;
+    }
+    .workshop_2,
+    .workshop_3 {
+      max-width: 78%;
+    }
+  }
+  @media (min-width: 2560px) {
+    .slide {
+      width: 76%;
     }
   }
 </style>
