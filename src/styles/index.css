@@ -2,21 +2,26 @@ body.dark .middle h2,
 body.dark .middle p,
 body.dark .form h2,
 body.dark .white-box p,
-body.dark .white-box h2 {
+body.dark .white-box h2,
+body.dark .front_gallery_text h2,
+body.dark .front_gallery_text p {
   color: white;
 }
 body.dark #front_workshop_img img {
   display: none;
+}
+body.dark .container_background {
+  background-image: url("/images/dark_mode_green.svg");
+}
+
+body.dark .front_gallery_container h2 {
+  filter: none;
 }
 
 body.dark .white-box {
   background-color: rgba(40, 45, 40, 0.9);
 }
 
-body.dark .background_neutral {
-  /* filter: grayscale(20%) invert(80%) hue-rotate(120deg); */
-  filter: grayscale(100%) brightness(30%) opacity(0.4);
-}
 /*SLIDE GALLERI */
 * {
   margin: 0;
@@ -36,30 +41,11 @@ img {
   position: relative;
 }
 .container_background {
-  background-image: url("/images/background_neut.svg");
+  background-image: url("/images/lighter_green.svg");
+  background-repeat: no-repeat;
   position: relative;
   width: 100%;
   padding-top: 175px;
-}
-
-.background_neutral {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  padding: 0;
-  margin: 0;
-}
-
-.background_neutral img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 
 .container {
@@ -166,6 +152,39 @@ img {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+}
+/*FRONTPAGE GALLERY*/
+.h3_text {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.spacing {
+  margin: 15px 0;
+}
+
+.front_gallery_text {
+  margin-top: 90px;
+  margin: 0 33px;
+}
+.front_gallery_container {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .front_gallery_text {
+    text-align: center;
+    max-width: 950px;
+    margin: 120px 50px 0 50px;
+  }
+}
+@media screen and (min-width: 1088px) {
+  .front_gallery_text {
+    text-align: center;
+    max-width: 950px;
+    margin: 120px auto 0;
+  }
 }
 
 /*//////KONTAKT FORMULAR //////////*/

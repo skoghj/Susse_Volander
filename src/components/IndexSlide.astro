@@ -1,85 +1,205 @@
 ---
-import ScrollArrow from "./ScrollArrow.astro";
-
 
 ---
-<div class="scroller">
-    <ScrollArrow></ScrollArrow>
-</div>
-<div class="horizontal_slider">
-    <div class="slider_container">
-      <div class="item">
-        <img src="/images/webpp/De_er_for_store_til_legehuset.webp" alt="img1" />
+
+<div class="gallery-wrap">
+    <i class="fa-solid fa-circle-chevron-left" id="backBtn"></i>
+    <div class="gallery">
+      <div>
+        <span><img src="/images/webpp/De_er_for_store_til_legehuset.webp" alt="stor for legehuset maleri" /> </span>
+        <span><img src="/images/webpp/Den_sidste_fastnet_telefonist..webp" alt="sidste fastnet maleri" /> </span>
+        <span><img src="/images/webpp/Det_er_kun_damerne_der_ved_hvad_de_har_under_kjolerne..webp" alt="kun damerne ved maleri" /> </span>
+        <span><img src="/images/webpp/elefant.webp" alt="elefantish maleri" /> </span>
+        <span><img src="/images/webpp/Far_danser_med_træsko_på.webp" alt="far danser maleri" /> </span>
+
       </div>
-      <div class="item">
-        <img src="/images/webpp/Den_ene_har_et_plaster_den_anden_har_to_patter.webp" alt="img2" />
-      </div>
-      <div class="item">
-        <img src="/images/webpp/Den_sidste_fastnet_telefonist..webp" alt="img3" />
-      </div>
-      <div class="item">
-        <img src="/images/webpp/Det_er_kun_damerne_der_ved_hvad_de_har_under_kjolerne..webp" alt="img4" />
-      </div>
-      <div class="item">
-        <img src="/images/webpp/Far_danser_med_træsko_på.webp" alt="img5" />
-      </div>
-      <div class="item">
-        <img src="/images/webpp/elefant.webp" alt="img6" />
-      </div>
-     
     </div>
-</div>
+    <i class="fa-solid fa-circle-chevron-right" id="nexBtn"></i>
+  </div>
   
   <style>
     * {
       margin: 0;
       padding: 0;
     }
-    .scroller{
-        display: none;
-    }
-    .horizontal_slider {
-      display: block;
-      width: 100%;
+    .gallery {
+      width: 900px;
+      display: flex;
       overflow-x: scroll;
-      padding: 20px;
-      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-    /*this is for chrome/firefox/opera and safari*/
-    .horizontal_slider::-webkit-scrollbar {
+    .gallery div {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-gap: 20px;
+      padding: 10px;
+      flex: none;
+    }
+    .gallery div img {
+      width: 100%;
+    }
+    .gallery::-webkit-scrollbar {
       display: none;
     }
+    #backBtn,
+    #nexBtn {
+      font-size: 50px;
+      cursor: pointer;
+      margin: 30px;
+      color: #10180d;
+    }
+    .gallery div img:hover {
+      filter: grayscale(0);
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+    .gallery-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10% auto;
+    }
+    body.dark #backBtn,
+    body.dark #nexBtn {
+      color: #10180d;
+    }
+    body.dark #backBtn:hover,
+    body.dark #nexBtn:hover {
+      color: #7f8880;
+    }
+    @media (min-width: 320px) {
+      .gallery {
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+      .gallery div {
+        flex-wrap: nowrap;
+      }
   
-    .slider_container {
-      display: block;
-      white-space: nowrap;
+      .gallery div img {
+        width: 200px;
+      }
+      #backBtn,
+      #nexBtn {
+        font-size: 30px;
+        cursor: pointer;
+        margin: 20px;
+      }
     }
-    .item {
-      display: inline-block;
-      margin-right: 12px;
+    @media (min-width: 375px) {
+      .gallery {
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+      .gallery div {
+        flex-wrap: nowrap;
+      }
+  
+      .gallery div img {
+        width: 310px;
+      }
+      #backBtn,
+      #nexBtn {
+        font-size: 30px;
+        cursor: pointer;
+        margin: 20px;
+      }
     }
-    .item img {
-      width: 300px;
-      transition: transform 0.3s ease;
+    @media (min-width: 768px) {
+      .gallery-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 30px;
+      }
+      .gallery div img {
+        width: 290px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .gallery-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 20px;
+      }
+      .gallery div img {
+        width: 300px;
+      }
+      #backBtn,
+      #nexBtn {
+        font-size: 40px;
+        cursor: pointer;
+        margin: 20px;
+      }
     }
   
-    .item img:hover {
-      transform: scale(1.2);
+    @media (min-width: 1440px) {
+      .gallery-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 20px;
+      }
+      .gallery div img {
+        width: 320px;
+      }
+  
+      #backBtn, #nexBtn {
+        font-size: 50px;
+        cursor: pointer;
+        margin: 30px;
+        color: #233f1c;
+      }
     }
-
-    @media screen and (min-width: 768px) {
-        .horizontal_slider {
-      width: 60%;
-        }
-        .scroller{
-    display: block;
-    margin-top: auto;
-    margin-bottom: 140px;
+    @media (min-width: 2560px) {
+      .gallery-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px 20px;
+      }
+  
+      .gallery div img {
+        width: 500px;
+      }
     }
-    }
-    
-    
   </style>
-
   
+  <script>
+    let scrollContainer = document.querySelector<HTMLElement>(".gallery");
+    let backBtn = document.getElementById("backBtn") as HTMLElement;
+    let nextBtn = document.getElementById("nexBtn") as HTMLElement;
+  
+    scrollContainer.addEventListener("wheel", (evt) => {
+      evt.preventDefault();
+      let wheelEvent = evt as WheelEvent;
+      scrollContainer.scrollLeft += wheelEvent.deltaY;
+      scrollContainer.style.scrollBehavior = "auto";
+    });
+  
+    backBtn.addEventListener("click", () => {
+      let item = document.querySelector<HTMLElement>(".gallery div span img");
+      let itemWidth = item ? item.clientWidth + 20 : 0; // Legger til margen
+      let scrollAmount = Math.max(0, scrollContainer.scrollLeft - itemWidth);
+      scrollContainer.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    });
+  
+    nextBtn.addEventListener("click", () => {
+      let item = document.querySelector<HTMLElement>(".gallery div span img");
+      let itemWidth = item ? item.clientWidth + 20 : 0; // Legger til margen
+      let maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      let scrollAmount = Math.min(maxScroll, scrollContainer.scrollLeft + itemWidth);
+      scrollContainer.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    });
+  </script>
   
