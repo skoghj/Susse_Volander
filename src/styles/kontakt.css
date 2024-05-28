@@ -1,19 +1,16 @@
 /* GENERAL */
 
 h1 {
-  margin: 50px;
+  margin: 60px;
   padding: 20px 0;
   text-align: left; /* Added for better positioning */
   font-weight: 400;
 }
 
 .flower_1 {
-  left: 330px;
-  top: 180px;
-}
-
-.flower_1 {
   position: absolute;
+  left: 342px;
+  top: 181px;
 }
 
 /* CONTAINER */
@@ -21,8 +18,6 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  font-family: "Lato";
-  color: #494242;
 }
 
 .text {
@@ -64,58 +59,66 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  font-family: "Lato";
-  color: #494242;
 }
 
 .showcase {
   position: relative;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .showcase img {
   width: 100%;
   height: auto;
+  max-width: 600px; /* Adjust this value to make the image larger */
   filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
 }
 
 .centered {
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: 40%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center properly */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
-  padding: 35px;
-  text-align: left;
-  max-width: 550px;
-  margin-left: 100px;
+  align-items: center; /* Center align the content */
+  max-width: 90%; /* Ensure it doesn't exceed the viewport width */
+  width: calc(100% - 70px); /* Subtract padding to maintain alignment */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .centered p {
   text-align: left;
   line-height: 1.5;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .centered h2 {
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .centered h3 {
   margin-bottom: 12px;
+  text-align: left;
+}
+
+.spacing {
+  margin: 30px;
 }
 
 /* MEDIA QUERIES */
 
 /* TABLET */
 @media only screen and (max-width: 1080px) {
-  /*CONTAINER*/
   .illustration_container {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center; /* Center align the items */
+    gap: 20px; /* Add some gap for better spacing */
   }
 
   .illustration img {
@@ -145,18 +148,12 @@ h1 {
     max-width: 950px;
   }
 
-  /*CONTAINER2*/
-  .centered {
-    padding: 25px;
-    text-align: left;
-    max-width: 550px;
-    margin-left: 5px;
-  }
-
-  .centered p {
-    text-align: left;
-    font-size: 16px;
-    line-height: 1.2;
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center align the items */
+    gap: 20px; /* Add some gap for better spacing */
   }
 
   .showcase {
@@ -167,19 +164,91 @@ h1 {
   }
 
   .showcase img {
-    width: 400px;
+    width: 100%;
+    max-width: 600px; /* Increase the max-width to make the image larger */
     height: auto;
     filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
+  }
+
+  .centered {
+    padding: 25px;
+    text-align: center; /* Center align the text */
+    max-width: 90%; /* Ensure it doesn't exceed the viewport width */
+    width: calc(100% - 50px); /* Subtract padding to maintain alignment */
+    margin-left: 0; /* Remove left margin for better centering */
+    top: 35%;
+  }
+
+  .centered p {
+    text-align: center; /* Center align the text */
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .centered h2 {
+    margin-bottom: 5px;
+  }
+}
+
+/* MOBILE */
+@media only screen and (max-width: 700px) {
+  .text {
+    margin: 40px;
+    max-width: 950px;
+  }
+
+  .h2_text {
+    font-size: 22px;
+  }
+
+  .h3_text {
+    font-size: 18px;
+  }
+
+  h1 {
+    margin: 20px;
   }
 
   .container2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Center align the items */
+    gap: 20px; /* Add some gap for better spacing */
   }
 
-  .centered h2 {
-    margin-bottom: 5px;
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px; /* Adjust as needed for spacing */
+  }
+
+  .showcase img {
+    width: 100%;
+    max-width: 600px; /* Increase the max-width to make the image larger */
+    height: auto;
+    filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
+  }
+
+  .centered {
+    text-align: center; /* Center align the text */
+    max-width: 300%; /* Ensure it doesn't exceed the viewport width */
+    width: calc(100% - 50px); /* Subtract padding to maintain alignment */
+    top: 39.5%;
+    left: 48%;
+  }
+
+  .centered p {
+    text-align: center; /* Center align the text */
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .flower_1 {
+    position: absolute;
+    left: 255px;
+    top: 95px;
   }
 }
 

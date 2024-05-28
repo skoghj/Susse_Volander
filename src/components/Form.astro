@@ -1,7 +1,3 @@
----
-
----
-
 <div class="form">
   <form>
     <input type="text" id="name" name="name" placeholder="Dit navn" required />
@@ -15,23 +11,27 @@
 
 <style>
   /* FORMS */
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
   form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-    margin: 50px;
+    margin: 60px;
     font-family: "Hind Madurai";
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     background-color: #e9e9e9;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-
-  form label {
-    font-weight: bold;
-    color: #494242;
+    box-sizing: border-box;
   }
 
   form input,
@@ -39,6 +39,8 @@
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .button-container {
@@ -60,9 +62,9 @@
 
   @media only screen and (max-width: 1080px) {
     form {
-      width: 70%;
-      margin-top: 40px;
-      resize: vertical;
+      width: 90%;
+      margin: 20px;
+      padding: 20px;
     }
 
     form input,
@@ -71,8 +73,16 @@
     }
   }
 
-  /*DARK MODE*/
+  @media only screen and (max-width: 600px) {
+    form {
+      width: 95%;
+      margin: 10px;
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+  }
 
+  /* DARK MODE */
   body.dark form {
     background-color: #384b46;
   }
