@@ -4,6 +4,8 @@ import "../styles/index.css";
 import PinkKnap from "../components/Pink_knap.astro";
 import Frontgallery from "../components/Frontgallery.astro";
 import Mainlayout from "../components/layouts/Mainlayout.astro";
+import WorkshopSlide from "../components/WorkshopSlide.astro";
+import IndexSlide from "../components/IndexSlide.astro";
 
 ---
 
@@ -45,8 +47,17 @@ import Mainlayout from "../components/layouts/Mainlayout.astro";
     </div>
 </article>
 <div class="container_background">
-<Frontgallery></Frontgallery>
-<div class="background_neutral"><img src="/images/neutral_background.svg" alt="papir" /></div>
+  <div class="front_gallery_container">
+    <article class="front_gallery_text">
+        <h2 class="spacing">Tidligere værker</h2>
+        <p class="spacing">Kære venner, tag et ømt kig tilbage på disse nøje udvalgte værker fra min tidligere skabninger! Hvert maleri er som et vindue ind i min kunstneriske rejse, en eksplosion af liv og farve, der fanger et unikt øjeblik der udfolder sig på lærredet.
+        </p>
+        <PinkKnap variant="secondary" linknavn="/galleri" variant="secondary">Se galleri</PinkKnap>
+        <IndexSlide></IndexSlide>
+    </article>
+    <div class="slide">
+    </div>
+</div>
 
 <article class="container">
   <div class="image-container">
@@ -56,7 +67,7 @@ import Mainlayout from "../components/layouts/Mainlayout.astro";
         <h2 class="spacing">Mine workshops</h2>
         <p class="spacing"> Hos mine workshops, forvandler vi genbrugsmaterialer til kunstværker! Mit engagement i disse workshops begyndte for 15 år siden, da jeg opdagede potentialet i genbrugsmaterialer. Siden da har jeg afholdt workshops, hvor både børn og voksne kan deltage og skabe sammen. </p>
         <p class="spacing">Hvis det er noget du er interesseret i, kan du klikke videre til min workshop page.</p>
-        <PinkKnap linknavn="/workshop" variant="secondary">Mine workshops</PinkKnap>
+        <PinkKnap linknavn="/workshop"  variant="secondary">Mine workshops</PinkKnap>
       </div>
     </div>
   </div>
