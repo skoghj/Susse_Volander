@@ -4,7 +4,7 @@
 
 <header>
   <div class="pos_fixed">
-  <a href="#" class="burger" id="burgerIcon"><i class="fa-solid fa-bars"></i></a>
+    <a href="#" class="burger" id="burgerIcon"><i class="fa-solid fa-bars"></i></a>
   </div>
   <div class="navbar" id="myNavbar">
     <div class="logo">
@@ -159,7 +159,7 @@
 
   .navbar_menu a.active {
     color: #f20056; /* Farve til den aktive side */
-}
+  }
 
   @media screen and (max-width: 780px) {
     header {
@@ -216,8 +216,6 @@
       position: relative;
     }
 
-
-
     .navbar {
       display: none;
       background-color: #95bb72;
@@ -232,7 +230,7 @@
 </style>
 
 <script>
-    // Kurv ikon - registerer antal fra singleview og gemmer m. localStorage 
+  // Kurv ikon - registerer antal fra singleview og gemmer m. localStorage
   document.addEventListener("DOMContentLoaded", function () {
     const cartCount = document.getElementById("cart-count");
     let items = localStorage.getItem("cartItems");
@@ -272,7 +270,7 @@
   // Active link
 
   //////////////////burgermenu//////////////////
-  
+
   document.addEventListener("DOMContentLoaded", function () {
     // Identificer den aktive side
     var currentPage = window.location.pathname;
@@ -282,16 +280,15 @@
 
     // Loop igennem links og tilføj "active" klasse til det aktive link
     navLinks.forEach(function (link) {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-        }
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
     });
 
     // Burgermenu toggle
     document.getElementById("burgerIcon").addEventListener("click", function () {
-        var navbar = document.getElementById("myNavbar");
-        navbar.classList.toggle("show");
+      var navbar = document.getElementById("myNavbar");
+      navbar.classList.toggle("show");
     });
-});
-
+  });
 </script>
