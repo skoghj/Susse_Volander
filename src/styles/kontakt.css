@@ -147,7 +147,7 @@ h1 {
 
   /*CONTAINER2*/
   .centered {
-    padding: 55px;
+    padding: 25px;
     text-align: left;
     max-width: 550px;
     margin-left: 5px;
@@ -167,7 +167,7 @@ h1 {
   }
 
   .showcase img {
-    width: 700px;
+    width: 400px;
     height: auto;
     filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
   }
@@ -180,72 +180,6 @@ h1 {
 
   .centered h2 {
     margin-bottom: 5px;
-  }
-}
-
-/* MOBILE */
-@media only screen and (min-width: 425px) {
-  /*CONTAINER*/
-  .illustration_container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .flower_1 {
-    left: 230px;
-    top: 90px;
-  }
-
-  .h2_text {
-    font-size: 22px;
-  }
-
-  .h3_text {
-    font-size: 18px;
-  }
-
-  h1 {
-    margin: 20px;
-  }
-
-  .text {
-    margin: 40px;
-    max-width: 950px;
-  }
-
-  /*CONTAINER2*/
-  .centered {
-    padding: 30px;
-    text-align: left;
-    max-width: 550px;
-    margin-left: 5px;
-  }
-
-  .centered p {
-    text-align: left;
-    font-size: 12px;
-  }
-
-  .centered h2 {
-    font-size: 16px;
-  }
-
-  .centered h3 {
-    font-size: 14px;
-  }
-
-  .showcase {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px; /* Adjust as needed for spacing */
-  }
-
-  .showcase img {
-    width: 400px;
-    height: auto;
-    filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
   }
 }
 
