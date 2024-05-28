@@ -10,7 +10,7 @@ import Mainlayout from "../components/layouts/Mainlayout.astro";
 <Mainlayout title="Forside">
   <div class="container">
     <article class="intro">
-        <img id="frontpage_img" src="/images/webpp/frontpage_background.webp" alt="Your Image" class="image">
+        <img id="frontpage_img" height="750" width="1600" src="/images/webpp/frontpage_background.webp" alt="Your Image">
         <div class="front_pos_text fade-in">
             <h1 id="susse_volander_title">VOLANDER ART</h1>
             <p id="front_image_text">Velkommen til mit digitale galleri! Udforsk en verden af farver, følelser og kreativitet gennem
@@ -37,7 +37,11 @@ import Mainlayout from "../components/layouts/Mainlayout.astro";
     <div class="portrait_container">
         <img id="big_flower" src="/images/flower.svg" alt="big flower">
         <img id="small_flower" src="/images/flower.svg" alt="small flower">
-        <img src="/images/susse_portrait.png" alt="susse_portrait">
+        <picture>
+        <source media="(min-width:650px)" srcset="/images/susse_portrait.webp">
+        <source media="(min-width:450px)" srcset="/images/susse_portrait.webp">
+        <img src="/images/susse_portrait.webp" alt="Flowers" style="width:auto;">
+        </picture>
     </div>
 </article>
 <div class="container_background">
@@ -46,7 +50,7 @@ import Mainlayout from "../components/layouts/Mainlayout.astro";
 
 <article class="container">
   <div class="image-container">
-    <img id="front_workshop_img" src="/images/workshop_background_front.png" alt="workshop front image">
+    <img id="front_workshop_img" src="/images/workshop_forside.webp" height="500" width="1600" alt="workshop front image">
     <div class="text-container">
       <div class="white-box">
         <h2 class="spacing">Mine workshops</h2>
@@ -76,7 +80,7 @@ import Mainlayout from "../components/layouts/Mainlayout.astro";
     const sliders = document.querySelectorAll(".slide-in");
 
     const appearOptions = {
-      threshold: 0, // 요소가 50% 뷰포트에 나타날 때 트리거
+      threshold: 0, 
       rootMargin: "0px 0px -250px 0px",
     };
 
@@ -86,16 +90,13 @@ import Mainlayout from "../components/layouts/Mainlayout.astro";
           return;
         } else {
           entry.target.classList.add("appear");
-          appearOnScroll.unobserve(entry.target); // 요소가 나타난 후 옵저버 해제
+          appearOnScroll.unobserve(entry.target); 
         }
       });
-    }, appearOptions); // 여기서 `options` 대신 `appearOptions` 사용
+    }, appearOptions); 
 
     faders.forEach((fader) => {
       appearOnScroll.observe(fader);
-    });
-    sliders.forEach((slider) => {
-      appearOnScroll.observe(slider);
     });
   });
 
@@ -110,27 +111,5 @@ import Mainlayout from "../components/layouts/Mainlayout.astro";
 .fade-in.appear {
   opacity: 1;
 }
-
-.from-left {
-  grid-column: 2 / 3;
-  transform: translateX(-50%);
-}
-
-.from-right {
-  grid-column: 3 / 4;
-  transform: translateX(50%);
-}
-
-.from-left,
-.from-right {
-  transition: transform 400ms ease-in;
-}
-
-.from-left.appear,
-.from-right.appear {
-  transition: transform 400ms ease-in;
-  transform: translateX(0);
-}
-
 </style>
 

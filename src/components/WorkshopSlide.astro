@@ -18,36 +18,7 @@
   </div>
   <i class="fa-solid fa-circle-chevron-right" id="nexBtn"></i>
 </div>
-<!--<div class="horizontal_slider">
-    <i class="fa-solid fa-circle-chevron-left" id="backBtn"></i>
-  <div class="slider_container">
-    <div class="item">
-      <img src="/workshop/item_1.webp" alt="img1" />
-    </div>
-    <div class="item">
-      <img src="/workshop/item_2.webp" alt="img2" />
-    </div>
-    <div class="item">
-      <img src="/workshop/item_3.webp" alt="img3" />
-    </div>
-    <div class="item">
-      <img src="/workshop/item_4.webp" alt="img4" />
-    </div>
-    <div class="item">
-      <img src="/workshop/item_5.webp" alt="img5" />
-    </div>
-    <div class="item">
-      <img src="/workshop/item_6.webp" alt="img6" />
-    </div>
-    <div class="item">
-      <img src="/workshop/item_7.webp" alt="img7" />
-    </div>
-    <div class="item">
-      <img src="/workshop/item_8.webp" alt="img8" />
-    </div>
-  </div>
-  <i class="fa-solid fa-circle-chevron-right" id="nexBtn"></i>
-</div> -->
+
 <style>
   * {
     margin: 0;
@@ -57,6 +28,7 @@
     width: 900px;
     display: flex;
     overflow-x: scroll;
+    scroll-behavior: smooth;
   }
   .gallery div {
     width: 100%;
@@ -77,6 +49,7 @@
     font-size: 50px;
     cursor: pointer;
     margin: 30px;
+    color: #233f1c;
   }
   .gallery div img:hover {
     filter: grayscale(0);
@@ -88,6 +61,10 @@
     align-items: center;
     justify-content: center;
     margin: 10% auto;
+  }
+  body.dark #backBtn,
+  body.dark #nexBtn {
+    color: #fff;
   }
 
   @media (min-width: 320px) {
@@ -189,37 +166,6 @@
       width: 500px;
     }
   }
-  /*
-  .horizontal_slider {
-    display: flex;
-    width: 100%;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    padding: 20px;
-    margin: 10px;
-    box-sizing: border-box;
-  }
-  /*this is for chrome/firefox/opera and safari
-  .horizontal_slider::-webkit-scrollbar {
-    display: none;
-  }
-
-  .slider_container {
-    display: block;
-    white-space: nowrap;
-  }
-  .item {
-    display: inline-block;
-    margin-right: 12px;
-  }
-  .item img {
-    width: 300px;
-    transition: transform 0.3s ease;
-  }
-
-  /*.item img:hover {
-    transform: scale(1.2);
-  }*/
 </style>
 
 <script>

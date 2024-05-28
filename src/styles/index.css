@@ -32,10 +32,13 @@ img {
 .intro h1 {
   margin: auto;
 }
+.intro {
+  position: relative;
+}
 .container_background {
   position: relative;
   width: 100%;
-  padding-top: 75px;
+  padding-top: 175px;
 }
 
 .background_neutral {
