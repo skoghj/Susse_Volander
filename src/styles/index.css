@@ -1,0 +1,271 @@
+body.dark .middle h2,
+body.dark .middle p,
+body.dark .form h2,
+body.dark .white-box p,
+body.dark .white-box h2 {
+  color: white;
+}
+body.dark #front_workshop_img img {
+  display: none;
+}
+
+body.dark .white-box {
+  background-color: rgba(40, 45, 40, 0.9);
+}
+
+body.dark .background_neutral {
+  /* filter: grayscale(20%) invert(80%) hue-rotate(120deg); */
+  filter: grayscale(100%) brightness(30%) opacity(0.4);
+}
+/*SLIDE GALLERI */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: auto; /* Adjust the width of the image */
+  height: 100%;
+}
+
+.intro h1 {
+  margin: auto;
+}
+.container_background {
+  position: relative;
+  width: 100%;
+  padding-top: 75px;
+}
+
+.background_neutral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+}
+
+.background_neutral img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  width: 150%; /* Adjust the width of the container */
+  height: 100%; /* Ensure the container covers the height of the viewport */
+  overflow: hidden; /* Hide overflow */
+}
+
+.front_pos_text {
+  position: absolute;
+  top: 45%;
+  left: 2%;
+  transform: translate(-2%, -50%);
+  margin: 0 33px;
+}
+
+#susse_volander_title,
+#front_image_text {
+  margin-bottom: 10px;
+  color: #fcfff6;
+}
+#front_image_text {
+  max-width: 450px;
+}
+
+.middle {
+  margin: auto;
+}
+.h3_text {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#frontpage_img {
+  width: 160%; /* Adjust the width of the image for mobile view */
+  height: auto;
+}
+.spacing {
+  margin: 15px 0;
+}
+.container {
+  width: 100%; /* Set width to 100% for mobile view */
+  overflow: hidden; /* Hide overflow on mobile devices */
+}
+
+.front_om_mig {
+  margin: auto 33px;
+}
+
+.portrait_container {
+  position: relative;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+#big_flower {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  left: 83%;
+  top: 5%;
+}
+
+#small_flower {
+  position: absolute;
+  width: 60px;
+  height: auto;
+  left: 0%;
+  top: 80%;
+}
+
+@keyframes rock {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+#big_flower,
+#small_flower {
+  animation: rock 3s ease-in-out infinite alternate; /* Adjust the animation duration and timing function as needed */
+}
+
+.image-container {
+  position: relative;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translate(-2%, -50%);
+}
+
+.white-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+}
+
+/*//////KONTAKT FORMULAR //////////*/
+.form {
+  margin: 15px auto;
+  color: #bad0bf;
+  margin: 15px 33px;
+  display: flex;
+  justify-content: center;
+}
+.form p {
+  padding-top: 10px;
+}
+
+.email_form {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+}
+
+.emailform {
+  width: calc(100% - 40px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.email-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background-color: #969696;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.email-icon:hover {
+  background-color: #8aaf9d;
+}
+
+.email-icon i {
+  color: #fff;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+
+/*FADE IN*/
+
+@media screen and (min-width: 768px) {
+  #frontpage_img {
+    width: 100%; /* Adjust the width of the image for mobile view */
+  }
+  .front_workshop_img img {
+    width: 100%;
+  }
+  .container {
+    position: relative;
+    width: 100%; /* Adjust the width of the container */
+    height: 100%; /* Ensure the container covers the height of the viewport */
+    overflow: hidden; /* Hide overflow */
+  }
+  .front_pos_text {
+    top: 35%;
+    left: 7%;
+    margin: 0 0;
+  }
+  .front_om_mig {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto 6%;
+  }
+
+  .white-box {
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+  }
+  .white-box h2 {
+    margin-bottom: 15px;
+  }
+  .email_form {
+    text-align: center;
+    margin: auto 15px;
+    justify-content: center;
+  }
+  .front_workshop_img img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .front_om_mig {
+    margin: auto 19%;
+  }
+  .front_workshop_img {
+    width: 100%;
+  }
+}

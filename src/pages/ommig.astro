@@ -84,48 +84,48 @@ import "../styles/ommig.css";
     </div>
 </div>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const faders = document.querySelectorAll(".fade-in");
-    const sliders = document.querySelectorAll(".slide-in");
-    const swingers = document.querySelectorAll(".swing");
-
-    const appearOptions = {
-        threshold: 0.1, // Adjust this value based on your needs
-        rootMargin: "0px 0px -100px 0px" 
-    };
-
-    const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add("appear");
-                if (entry.target.classList.contains("swing")) {
-                    entry.target.style.animation = "swing 2.7s ease-in-out forwards";
+    document.addEventListener("DOMContentLoaded", () => {
+        const faders = document.querySelectorAll(".fade-in");
+        const sliders = document.querySelectorAll(".slide-in");
+        const swingers = document.querySelectorAll(".swing");
+    
+        const appearOptions = {
+            threshold: 0.1, // Adjust this value based on your needs
+            rootMargin: "0px 0px -100px 0px" 
+        };
+    
+        const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add("appear");
+                    if (entry.target.classList.contains("swing")) {
+                        entry.target.style.animation = "swing 2.7s ease-in-out forwards";
+                    }
+                    console.log("Element appeared:", entry.target); 
+                    appearOnScroll.unobserve(entry.target);
                 }
-                console.log("Element appeared:", entry.target); 
-                appearOnScroll.unobserve(entry.target);
-            }
+            });
+        }, appearOptions);
+    
+        faders.forEach(fader => {
+            console.log("Observing element:", fader);
+            appearOnScroll.observe(fader);
         });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        console.log("Observing element:", fader);
-        appearOnScroll.observe(fader);
+    
+        sliders.forEach(slider => {
+            console.log("Observing element:", slider); 
+            appearOnScroll.observe(slider);
+        });
+    
+        swingers.forEach(swinger => {
+            console.log("Observing element:", swinger);
+            appearOnScroll.observe(swinger);
+        });
     });
-
-    sliders.forEach(slider => {
-        console.log("Observing element:", slider); 
-        appearOnScroll.observe(slider);
-    });
-
-    swingers.forEach(swinger => {
-        console.log("Observing element:", swinger);
-        appearOnScroll.observe(swinger);
-    });
-});
-
-</script>
+    
+    </script>
 </Mainlayout>
 
 <style>
