@@ -33,7 +33,7 @@ h1 {
 }
 
 .illustration img {
-  max-width: 600px;
+  max-width: 480px;
   object-fit: cover;
 }
 
@@ -104,7 +104,7 @@ h1 {
   }
 
   .illustration img {
-    max-width: 90%;
+    max-width: 480px;
     height: auto;
   }
 
@@ -207,7 +207,7 @@ h1 {
   }
 
   .showcase img {
-    max-width: 600px; /* Increase the max-width to make the image larger */
+    max-width: 410px; /* Increase the max-width to make the image larger */
     height: auto;
     filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
   }
@@ -216,7 +216,7 @@ h1 {
     text-align: center; /* Center align the text */
     max-width: 300%; /* Ensure it doesn't exceed the viewport width */
     width: calc(100% - 50px); /* Subtract padding to maintain alignment */
-    top: 39.5%;
+    top: 45%;
     left: 48%;
   }
 
