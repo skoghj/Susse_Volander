@@ -88,10 +88,6 @@ h1 {
   text-align: left;
 }
 
-.spacing {
-  margin: 30px;
-}
-
 /* MEDIA QUERIES */
 
 /* TABLET */
@@ -197,6 +193,11 @@ h1 {
     justify-content: center;
     align-items: center; /* Center align the items */
     gap: 20px; /* Add some gap for better spacing */
+  }
+
+  .illustration img {
+    max-width: 365px;
+    height: auto;
   }
 
   .showcase {
