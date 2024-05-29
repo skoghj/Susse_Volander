@@ -1,5 +1,5 @@
 ---
-import GalleryLayout from "../components/layouts/GalleryLayout.astro";
+import Mainlayout from "../components/layouts/Mainlayout.astro";
 import GalleryCards from "../components/GalleryCards.astro";
 import "../styles/style.css";
 
@@ -12,7 +12,7 @@ const data = await fetch("https://kzwdodzkuyregkxdogsp.supabase.co/rest/v1/Susse
 console.log(data);
 ---
 
-<GalleryLayout title="Galleri">
+<Mainlayout title="Galleri">
   <main>
     <article class="intro">
       <img class="gallery_title_img" src="/gallery/gallery_head.webp" alt="Susses signature" width="768" height="291.84" />
@@ -37,7 +37,7 @@ console.log(data);
       </article>
     </section>
   </main>
-</GalleryLayout>
+</Mainlayout>
 <style>
   /***********************************************mobil*/
 
