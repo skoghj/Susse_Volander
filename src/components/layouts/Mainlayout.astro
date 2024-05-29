@@ -1,41 +1,41 @@
 ---
 import ScrollToTop from "../ScrollToTop.astro";
 import Header from "../Header.astro";
-import Footer from "../Footer.astro"
+import Footer from "../Footer.astro";
 const { title } = Astro.props;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="da">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex,nofollow">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
     <title>{title}</title>
-    <link rel="stylesheet" href="layout.css">
-    <link href="https://fonts.cdnfonts.com/css/marine-sikona" rel="stylesheet">
+    <link rel="stylesheet" href="layout.css" />
+    <link href="https://fonts.cdnfonts.com/css/marine-sikona" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
-</head>
+  </head>
 
-<body>
-    <Header></Header>
+  <body>
+    <Header />
     <main>
-<slot></slot>
+      <slot />
     </main>
-    <Footer></Footer>
-    <ScrollToTop></ScrollToTop>
-</body>
-
+    <Footer />
+    <ScrollToTop />
+  </body>
 </html>
 <style>
-body {
+  body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
   }
 
-  main{
+  main {
     overflow-x: hidden;
   }
 </style>
