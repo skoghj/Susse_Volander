@@ -95,15 +95,15 @@ import "../styles/style.css";
     flex-direction: column;
     flex-wrap: wrap;
     position: relative;
-    margin: 20px;
-    padding-top: 60px;
+    margin-top: 40px;
+    margin-left: 15px;
   }
   .title_1,
   .title_2,
   .tidligere_workshop_title {
     padding: 0 20px;
     font-family: "Marine Sikona", sans-serif;
-    font-size: 40px;
+    font-size: 45px;
   }
 
   .title_2 {
@@ -115,12 +115,12 @@ import "../styles/style.css";
     position: absolute;
   }
   .flower_1 {
-    top: 61px;
+    top: 5px;
     left: 137px;
   }
   .flower_2 {
-    top: -4px;
-    left: 27px;
+    top: 5px;
+    left: 44px;
   }
   .flower_3 {
     top: -8px;
@@ -269,7 +269,7 @@ import "../styles/style.css";
     .title_1,
     .title_2,
     .tidligere_workshop_title {
-      font-size: 40px;
+      font-size: 48px;
       padding: 0 20px;
     }
     .workshop_tekst,
@@ -281,16 +281,16 @@ import "../styles/style.css";
       margin-left: 0px;
     }
     .flower_1 {
-      top: 30px;
-      left: 333px;
+      top: 6px;
+      left: 142px;
     }
     .flower_2 {
-      top: 0;
-      left: 36px;
+      top: 6px;
+      left: 62px;
     }
     .flower_3 {
-      top: 46px;
-      left: 305px;
+      top: -7px;
+      left: 191px;
     }
     .om_workshop {
       display: flex;
@@ -299,7 +299,7 @@ import "../styles/style.css";
     }
   }
   @media (min-width: 600px) {
-    .page_title {
+    .page_title h1 {
       font-size: 60px;
     }
     .title_2 {
@@ -313,9 +313,6 @@ import "../styles/style.css";
   }
   /**********************************************'Tablet */
   @media (min-width: 768px) {
-    .page_title h1 {
-      font-size: 60px;
-    }
     .title_2 {
       margin-left: 200px;
     }
@@ -330,12 +327,12 @@ import "../styles/style.css";
       object-fit: contain;
     }
     .flower_1 {
-      top: 74px;
+      top: 17px;
       left: 516px;
     }
     .flower_2 {
-      top: 175px;
-      left: 44px;
+      top: -31px;
+      left: 82px;
     }
     .flower_3 {
       top: 9px;
@@ -345,7 +342,7 @@ import "../styles/style.css";
       justify-self: flex-end;
       grid-column: 1 / 2;
       object-fit: cover;
-      max-width: 80%;
+      max-width: 100%;
       height: auto;
       padding: 0;
     }
@@ -456,6 +453,10 @@ import "../styles/style.css";
   }
   /*********************************************************'laptop */
   @media (min-width: 1024px) {
+    .page_title {
+      margin: 60px;
+      padding: 20px 0;
+    }
     .workshop_1 {
       max-width: 50%;
     }
@@ -464,9 +465,13 @@ import "../styles/style.css";
       max-width: 74%;
       object-fit: cover;
     }
+    .flower_1 {
+      top: 36px;
+      left: 516px;
+    }
     .flower_2 {
-      top: 77px;
-      left: 77px;
+      top: 120px;
+      left: 58px;
     }
   }
   @media (min-width: 1440px) {
@@ -486,6 +491,10 @@ import "../styles/style.css";
   @media (min-width: 2560px) {
     .slide {
       width: 76%;
+    }
+    .flower_2 {
+      top: -30px;
+      left: 192px;
     }
   }
 </style>
