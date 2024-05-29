@@ -202,7 +202,6 @@ h1 {
   .centered {
     text-align: center; /* Center align the text */
     max-width: 100%; /* Ensure it doesn't exceed the viewport width */
-    margin: 20px;
     padding: 60px;
     top: 45%;
     left: 48%;
