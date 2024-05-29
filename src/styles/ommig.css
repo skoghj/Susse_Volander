@@ -68,9 +68,6 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
 }
-body.dark .intro {
-  background-image: url("/om_mig_billeder/susse_ommig_minidark.webp");
-}
 
 /* KUNSTENS VERDEN */
 .kunstens_verden {
