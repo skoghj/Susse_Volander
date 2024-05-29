@@ -1,7 +1,6 @@
 ---
 
 ---
-
 <header>
   <div class="pos_fixed">
     <a href="#" class="burger" id="burgerIcon"><i class="fa-solid fa-bars"></i></a>
@@ -40,7 +39,7 @@
     gap: 10px;
     width: 100%;
     height: auto;
-    position: relative;
+    z-index: 101;
   }
   .navbar {
     display: flex;
@@ -89,7 +88,7 @@
   }
   body.dark .navbar {
     background-color: #1b2d24;
-  } /* #9b59b6 */
+  }
 
   body.dark h1,
   body.dark a,
@@ -160,12 +159,17 @@
   }
 
   .navbar_menu a.active {
-    color: #f20056; /* Farve til den aktive side */
+    color: #f20056;
   }
 
   @media screen and (max-width: 780px) {
     header {
-      gap: 0;
+      position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+    .pos_fixed{
+      position: relative;
     }
     .navbar {
       display: none;
@@ -174,6 +178,7 @@
 
     .burger {
       background-color: #95bb72;
+      position: sticky; top: 0px;
     }
     body.dark .burger {
       background-color: #1b2d24;
@@ -215,14 +220,12 @@
       justify-content: space-evenly;
       text-align: center;
       z-index: 1;
-      position: relative;
+      position: fixed;
     }
 
     .navbar {
       display: none;
       background-color: #95bb72;
-      /*padding-right: 60px;
-      padding-bottom: 80px;*/
     }
     a {
       text-decoration: none;

@@ -68,10 +68,13 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
 }
+body.dark .intro {
+  background-image: url("/om_mig_billeder/susse_ommig_minidark.webp");
+}
 
 /* KUNSTENS VERDEN */
 .kunstens_verden {
-  background-image: url("/om_mig_billeder/background_kunst.svg");
+  background-image: url("/om_mig_billeder/kunst_light.svg");
   background-size: cover; /* Ensure the background image covers the entire container */
   background-repeat: no-repeat;
   background-position: center; /* Center the background image */
