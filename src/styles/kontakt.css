@@ -164,18 +164,15 @@ h1 {
   }
 
   .centered p {
-    text-align: center;
     font-size: 16px;
     line-height: 1.2;
   }
 
   .centered h2 {
-    text-align: center;
     margin-bottom: 5px;
   }
 
   .centered h3 {
-    text-align: center;
     margin-bottom: 5px;
   }
 }
