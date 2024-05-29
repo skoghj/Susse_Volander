@@ -1,4 +1,9 @@
 /* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 h1 {
   margin: 60px;
@@ -86,6 +91,15 @@ h1 {
 .centered h3 {
   margin-bottom: 12px;
   text-align: left;
+}
+
+.showcase {
+  background-image: url("/images/paint_effect.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  padding-bottom: 0;
 }
 
 /* MEDIA QUERIES */
@@ -201,16 +215,7 @@ h1 {
   }
 
   .showcase {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 60px; /* Adjust as needed for spacing */
-  }
-
-  .showcase img {
-    max-width: 410px; /* Increase the max-width to make the image larger */
-    height: auto;
-    filter: brightness(40%) contrast(100%) grayscale(60%) opacity(0.3);
+    background-size: 100%;
   }
 
   .centered {
@@ -246,8 +251,8 @@ body.dark h3 {
   color: #fff;
 }
 
-body.dark .showcase img {
-  filter: grayscale(100%) brightness(30%) opacity(0.4);
+body.dark .showcase {
+  background-image: url("/images/paint_effect_dark.svg");
 }
 
 /* ANIMATION */
