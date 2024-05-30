@@ -6,7 +6,8 @@ export async function getStaticPaths() {
   const url = "https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paintings";
   const options = {
     headers: {
-      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxdXdha3NydnVhaWxyYnd6ZXFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MDgyNzEsImV4cCI6MjAzMTE4NDI3MX0.TAN2h-nqq62fwRfrJesymEvsWNpJv_HsJnaiA0kzups",
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxdXdha3NydnVhaWxyYnd6ZXFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MDgyNzEsImV4cCI6MjAzMTE4NDI3MX0.TAN2h-nqq62fwRfrJesymEvsWNpJv_HsJnaiA0kzups",
     },
   };
   const response = await fetch(url, options);
@@ -21,7 +22,7 @@ export async function getStaticPaths() {
 const { paintings } = Astro.props;
 ---
 
-<SingleviewLayout title="SINGLEVIEW">
+<SingleviewLayout title="Singleview">
   <div class="container">
     <div class="gallery">
       <div class="breadcrumb-nav">
@@ -32,10 +33,10 @@ const { paintings } = Astro.props;
         </ul>
       </div>
       <div class="card-wrapper">
-          <!-- Venstre side -->
-              <div class="img-showcase">
-                <img src={paintings.image} alt="{paintings.productdescription}" />
-              </div>
+        <!-- Venstre side -->
+        <div class="img-showcase">
+          <img src={paintings.image} alt="{paintings.productdescription}" />
+        </div>
       </div>
     </div>
     <!-- Højre side -->
@@ -53,8 +54,6 @@ const { paintings } = Astro.props;
         </div>
       </div>
 
-
-      
       <button type="button" class="icon-button">LÆG I <i class="fa-solid fa-bag-shopping"></i></button>
       <div>
         <button class="accordion ac-1">Beskrivelse</button>
@@ -71,13 +70,13 @@ const { paintings } = Astro.props;
         </div>
       </div>
       <div class="line_section">
-        <hr class="line_1">
+        <hr class="line_1" />
         <ul class="line-list">
           <li>På lager</li>
           <li>Levering 1-4 arbejdsdage</li>
           <li>Gratis fragt over 800 kr.</li>
         </ul>
-        <hr class="line_2">
+        <hr class="line_2" />
       </div>
     </div>
   </div>
@@ -93,9 +92,8 @@ const { paintings } = Astro.props;
     margin: 2rem;
   }
 
-
   /* DARKDMODE */
-  
+
   body.dark,
   body.dark .navbar {
     background-color: #10180d;
@@ -113,16 +111,15 @@ const { paintings } = Astro.props;
     color: #fff;
   }
 
-
   body.dark .icon-button,
-  body.dark hr{
+  body.dark hr {
     background-color: #384b46;
   }
- body.dark .icon-button:hover{
+  body.dark .icon-button:hover {
     background-color: #7f8880;
   }
-  
- body.dark .accordion {
+
+  body.dark .accordion {
     background-color: #384b46;
     color: #fff;
   }
@@ -136,7 +133,6 @@ const { paintings } = Astro.props;
   body.dark .panel p {
     color: #211f1f;
   }
-
 
   /* BREADCRUMB */
   .breadcrumb-nav {
@@ -178,7 +174,7 @@ const { paintings } = Astro.props;
     flex-direction: column;
   }
 
-.gallery,
+  .gallery,
   .content {
     max-width: 100%;
   }
@@ -193,7 +189,6 @@ const { paintings } = Astro.props;
     margin-bottom: 20px;
   }
 
-
   /* GALLERI */
 
   img {
@@ -201,7 +196,6 @@ const { paintings } = Astro.props;
     display: block;
     border: 1px solid #d1d7c6;
   }
-
 
   /* PRODUCT CONTENT */
   .price {
@@ -227,7 +221,7 @@ const { paintings } = Astro.props;
     max-width: 111px;
     background-color: #f39c12;
     padding: 2px 15px;
-  font-weight: 600;
+    font-weight: 600;
   }
 
   .prices {
@@ -269,11 +263,9 @@ const { paintings } = Astro.props;
     background-color: #fcbddd;
   }
 
-
-  
   /* ACCORDION */
   .accordion {
-    background-color: #ddead1 ;
+    background-color: #ddead1;
     color: #233f1c;
     cursor: pointer;
     padding: 18px;
@@ -283,7 +275,7 @@ const { paintings } = Astro.props;
     outline: none;
     font-size: 16px;
     transition: 0.4s;
-    border-bottom: 2px solid #bdc9b1 ;
+    border-bottom: 2px solid #bdc9b1;
     font-family: "Lato";
   }
 
@@ -313,7 +305,9 @@ const { paintings } = Astro.props;
     background-color: #fff;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    transition:
+      max-height 0.4s ease-out,
+      padding 0.4s ease-out;
     max-width: 400px;
   }
 
@@ -375,7 +369,7 @@ const { paintings } = Astro.props;
   }
 
   /******** DESKTOP FORMAT ********/
-  @media only screen and (min-width: 992px){
+  @media only screen and (min-width: 992px) {
     .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -396,14 +390,14 @@ const { paintings } = Astro.props;
     }
 
     .card-wrapper {
-  max-width: 360px;
-}
+      max-width: 360px;
+    }
 
     .title {
-  font-size: 35px;
-  margin-right: 10px; /* Tilføjer mellemrum mellem titel og rabat */
-  margin-bottom: 40px;
-}
+      font-size: 35px;
+      margin-right: 10px; /* Tilføjer mellemrum mellem titel og rabat */
+      margin-bottom: 40px;
+    }
 
     .icon-button {
       width: 400px;
@@ -420,44 +414,43 @@ const { paintings } = Astro.props;
 </style>
 
 <script>
-// Knap animation og antal i kurv
-document.addEventListener("DOMContentLoaded", function () {
-  const addKnap = document.querySelector(".icon-button");
-  const cartCount = document.getElementById("cart-count");
+  // Knap animation og antal i kurv
+  document.addEventListener("DOMContentLoaded", function () {
+    const addKnap = document.querySelector(".icon-button");
+    const cartCount = document.getElementById("cart-count");
 
-  // Hent antallet af varer fra Local Storage, hvis det eksisterer
-  let items = localStorage.getItem("cartItems") ? parseInt(localStorage.getItem("cartItems")) : 0;
-  cartCount.textContent = items;
-
-  addKnap.addEventListener("click", addToCart);
-
-  function addToCart() {
-    items++;
+    // Hent antallet af varer fra Local Storage, hvis det eksisterer
+    let items = localStorage.getItem("cartItems") ? parseInt(localStorage.getItem("cartItems")) : 0;
     cartCount.textContent = items;
-    localStorage.setItem("cartItems", items);
-    addKnap.innerHTML = 'TILFØJET TIL KURVEN';
-    const bagIcon = addKnap.querySelector('.fa-bag-shopping');
-    if (bagIcon) {
-      bagIcon.style.display = 'none';
-    }
-    
-    // Fjern hide klassen efter 2 sekunder for at fade knappen tilbage
-    setTimeout(function() {
-      addKnap.innerHTML = '<span>LÆG I </span><i class="fa fa-bag-shopping"></i>';
-      const bagIcon = addKnap.querySelector('.fa-bag-shopping');
+
+    addKnap.addEventListener("click", addToCart);
+
+    function addToCart() {
+      items++;
+      cartCount.textContent = items;
+      localStorage.setItem("cartItems", items);
+      addKnap.innerHTML = "TILFØJET TIL KURVEN";
+      const bagIcon = addKnap.querySelector(".fa-bag-shopping");
       if (bagIcon) {
-        bagIcon.style.display = 'inline';
+        bagIcon.style.display = "none";
       }
-      addKnap.classList.remove('hide');
-    }, 2000);
-    
-    // Tilføj hide klassen for at fade knappen ud
-    addKnap.classList.add('hide');
-  }
-});
 
+      // Fjern hide klassen efter 2 sekunder for at fade knappen tilbage
+      setTimeout(function () {
+        addKnap.innerHTML = '<span>LÆG I </span><i class="fa fa-bag-shopping"></i>';
+        const bagIcon = addKnap.querySelector(".fa-bag-shopping");
+        if (bagIcon) {
+          bagIcon.style.display = "inline";
+        }
+        addKnap.classList.remove("hide");
+      }, 2000);
 
-// Accordian
+      // Tilføj hide klassen for at fade knappen ud
+      addKnap.classList.add("hide");
+    }
+  });
+
+  // Accordian
   let acc = document.getElementsByClassName("accordion");
 
   for (let i = 0; i < acc.length; i++) {
