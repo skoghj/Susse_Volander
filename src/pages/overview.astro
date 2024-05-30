@@ -93,13 +93,12 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
       }
     }
   })
-  
   /// Add event listeners to buttons for active state ///
-  const buttons = document.querySelectorAll("button");
-  buttons.forEach((button) => button.addEventListener("click", handleButtonClick));
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => button.addEventListener("click", handleButtonClick));
 
-  function handleButtonClick(event) {
-    buttons.forEach((button) => button.classList.remove("active"));
-    event.target.classList.add("active");
-  }
+function handleButtonClick(event) {
+  buttons.forEach((button) => button.classList.remove("active"));
+  event.target.classList.add("active");
+}
 </script>
