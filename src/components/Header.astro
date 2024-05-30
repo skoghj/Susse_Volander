@@ -1,6 +1,7 @@
 ---
 
 ---
+
 <header>
   <div class="pos_fixed">
     <a href="#" class="burger" id="burgerIcon"><i class="fa-solid fa-bars"></i></a>
@@ -100,7 +101,7 @@
     color: #f20056;
   }
 
-  body.dark .checkbox-label{
+  body.dark .checkbox-label {
     border: #7f8880 1px solid;
   }
 
@@ -169,10 +170,10 @@
   @media screen and (max-width: 780px) {
     header {
       position: sticky;
-    top: 0;
-    z-index: 1000;
+      top: 0;
+      z-index: 1000;
     }
-    .pos_fixed{
+    .pos_fixed {
       position: relative;
     }
     .navbar {
@@ -182,11 +183,17 @@
 
     .burger {
       background-color: #95bb72;
-      position: sticky; top: 0px;
+      position: sticky;
+      top: 0px;
     }
     body.dark .burger {
       background-color: #1b2d24;
     }
+
+    body.dark .navbar_menu a.active {
+      color: #f20056;
+    }
+
     .navbar_menu {
       display: flex;
       flex-direction: column;
@@ -239,7 +246,7 @@
       padding: 10px 0;
     }
 
-    .checkbox-label{
+    .checkbox-label {
       margin: 45px;
     }
   }
