@@ -192,8 +192,6 @@ img {
   margin: 15px auto;
   color: #bad0bf;
   margin: 15px 33px;
-  display: flex;
-  justify-content: center;
 }
 .form p {
   padding-top: 10px;
@@ -281,6 +279,11 @@ img {
   }
   .front_workshop_img img {
     width: 100%;
+  }
+  .form {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
   }
 }
 
