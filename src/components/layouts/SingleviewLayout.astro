@@ -4,14 +4,14 @@ import Footer from "../Footer.astro";
 const { title } = Astro.props;
 ---
 
-
 <!doctype html>
 <html lang="da">
   <head>
     <meta charset="utf-8" />
-    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin />
     <script src="https://kit.fontawesome.com/0b02d067e0.js" crossorigin="anonymous"></script>
-    <meta name="robots" content="noindex,nofollow">
+    <link rel="shortcut icon" href="../images/header_logo.webp" type="image/webp" />
+    <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -27,37 +27,32 @@ const { title } = Astro.props;
   </body>
 </html>
 
-
 <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  
-  
-    /******** MOBIL FORMAT ********/
-  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /******** MOBIL FORMAT ********/
+
+  main {
+    margin: 15%;
+  }
+
+  /******** TABLET FORMAT ********/
+
+  @media (min-width: 768px) {
     main {
-      margin: 15%;
+      margin: 10%;
     }
-  
-  
-    /******** TABLET FORMAT ********/
-  
-    @media (min-width: 768px) {
-      main {
-        margin: 10%;
-      }
+  }
+
+  /******** DESKTOP FORMAT ********/
+
+  @media (min-width: 1024px) {
+    main {
+      margin: 5% 15%;
     }
-  
-    /******** DESKTOP FORMAT ********/
-  
-    @media (min-width: 1024px) {
-      main {
-        margin: 5% 15%;
-      }
-  
-    }
-  </style>
-  
+  }
+</style>
