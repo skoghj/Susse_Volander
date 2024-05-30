@@ -17,6 +17,9 @@ body.dark .container_background {
 body.dark .front_gallery_container h2 {
   filter: none;
 }
+body.dark .email-icon:hover {
+  background-color: #58716a;
+}
 
 body.dark .white-box {
   background-color: rgba(40, 45, 40, 0.9);
@@ -228,7 +231,7 @@ img {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .email-icon:hover {
-  background-color: #8aaf9d;
+  background-color: #f20056;
 }
 
 .email-icon i {
