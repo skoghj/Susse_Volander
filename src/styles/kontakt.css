@@ -11,15 +11,14 @@ main {
 
 h1 {
   margin: 60px;
-  padding: 20px 0;
   text-align: left; /* Added for better positioning */
   font-weight: 400;
 }
 
 .flower_1 {
   position: absolute;
-  left: 343px;
-  top: 15px;
+  left: 359px;
+  top: 39px;
 }
 
 /* CONTAINER */
